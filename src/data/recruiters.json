@@ -1,0 +1,47 @@
+[
+  {
+    "name": "IndiGo",
+    "sector": "Aviation",
+    "logo": "/images/recruiters/indigo.png"
+  },
+  {
+    "name": "Air India",
+    "sector": "Aviation",
+    "logo": "/images/recruiters/airindia.png"
+  },
+  {
+    "name": "SpiceJet",
+    "sector": "Aviation",
+    "logo": "/images/recruiters/spicejet.png"
+  },
+  {
+    "name": "GMR",
+    "sector": "Aviation",
+    "logo": "/images/recruiters/gmr.png"
+  },
+  {
+    "name": "Taj Hotels",
+    "sector": "Hospitality",
+    "logo": "/images/recruiters/taj.png"
+  },
+  {
+    "name": "Marriott",
+    "sector": "Hospitality",
+    "logo": "/images/recruiters/marriott.png"
+  },
+  {
+    "name": "Hyatt",
+    "sector": "Hospitality",
+    "logo": "/images/recruiters/hyatt.png"
+  },
+  {
+    "name": "ITC Hotels",
+    "sector": "Hospitality",
+    "logo": "/images/recruiters/itc.png"
+  },
+  {
+    "name": "MakeMyTrip",
+    "sector": "Hospitality",
+    "logo": "/images/recruiters/makemytrip.png"
+  }
+]

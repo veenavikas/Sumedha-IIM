@@ -9,9 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#fcfcfc",
+        navy: {
+          DEFAULT: "#1A3050",
+          deep: "#0D1B2A",
+        },
+        slate: {
+          DEFAULT: "#3D4F5C",
+        },
+        border: {
+          DEFAULT: "#e5e7eb",
+        },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        serif: ['var(--font-playfair)'],
+      },
+      animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'slow-zoom': 'zoom 10s ease-out forwards',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        zoom: {
+          '0%': { transform: 'scale(1.05)' },
+          '100%': { transform: 'scale(1)' },
+        }
+      }
     },
   },
   plugins: [],

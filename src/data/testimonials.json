@@ -1,0 +1,32 @@
+[
+  {
+    "id": "t1",
+    "name": "Priya Sharma",
+    "batch": "Batch of 2024",
+    "program": "BBA Aviation Management",
+    "company": "IndiGo Airlines",
+    "role": "Cabin Crew",
+    "quote": "Sumedha IIM gave me the wings to fly. The mock cabin training and grooming sessions were instrumental in helping me clear the IndiGo interview on my first attempt.",
+    "image": "/images/testimonials/priya.jpg"
+  },
+  {
+    "id": "t2",
+    "name": "Rahul Verma",
+    "batch": "Batch of 2023",
+    "program": "Bachelor of Hotel Management",
+    "company": "Taj Hotels",
+    "role": "Management Trainee",
+    "quote": "The practical exposure at Sumedha's advanced kitchen labs is unmatched. By the time I graduated, I was completely confident in managing a high-pressure 5-star kitchen environment.",
+    "image": "/images/testimonials/rahul.jpg"
+  },
+  {
+    "id": "t3",
+    "name": "Ananya Reddy",
+    "batch": "Batch of 2024",
+    "program": "Diploma in Aviation Management",
+    "company": "GMR Airports",
+    "role": "Ground Handling Executive",
+    "quote": "Joining Sumedha IIM was the best decision of my career. The faculty's industry experience and the continuous placement support helped me secure my dream job immediately after my course.",
+    "image": "/images/testimonials/ananya.jpg"
+  }
+]

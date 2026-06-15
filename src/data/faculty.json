@@ -1,0 +1,34 @@
+[
+  {
+    "id": "f1",
+    "name": "Dr. K. Srinivasa Rao",
+    "designation": "Principal & Head of Hospitality",
+    "expertise": "Food & Beverage Management, Hospitality Operations",
+    "background": "Former General Manager at Taj Group with 20+ years of industry experience.",
+    "image": "/images/faculty/srinivasa.jpg"
+  },
+  {
+    "id": "f2",
+    "name": "Capt. Ramesh Kumar",
+    "designation": "Head of Aviation Management",
+    "expertise": "Airport Operations, Aviation Safety",
+    "background": "Ex-Air India Pilot & Aviation Consultant.",
+    "image": "/images/faculty/ramesh.jpg"
+  },
+  {
+    "id": "f3",
+    "name": "Ms. Sunita Sharma",
+    "designation": "Lead Instructor - Grooming & Communication",
+    "expertise": "Personality Development, Cabin Crew Training",
+    "background": "Former Senior Cabin Crew at Emirates Airlines.",
+    "image": "/images/faculty/sunita.jpg"
+  },
+  {
+    "id": "f4",
+    "name": "Chef Anand Menon",
+    "designation": "Executive Chef Instructor",
+    "expertise": "Culinary Arts, Food Production",
+    "background": "Over 15 years as Executive Chef across international luxury cruise lines.",
+    "image": "/images/faculty/anand.jpg"
+  }
+]

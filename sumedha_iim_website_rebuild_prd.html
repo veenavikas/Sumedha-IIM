@@ -1,0 +1,946 @@
+<style>
+  * {
+    box-sizing: border-box
+  }
+
+  .wrap {
+    font-family: var(--font-sans);
+    max-width: 700px;
+    padding: 1.5rem 0;
+    color: var(--color-text-primary)
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 12px;
+    border-radius: 99px
+  }
+
+  .b-navy {
+    background: #1A3050;
+    color: #C9A84C
+  }
+
+  .b-gold {
+    background: #C9A84C;
+    color: #1A3050
+  }
+
+  .b-red {
+    background: var(--color-background-danger);
+    color: var(--color-text-danger)
+  }
+
+  .b-green {
+    background: var(--color-background-success);
+    color: var(--color-text-success)
+  }
+
+  .b-info {
+    background: var(--color-background-info);
+    color: var(--color-text-info)
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap
+  }
+
+  .tab {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: none;
+    background: var(--color-background-secondary);
+    color: var(--color-text-secondary);
+    transition: all .15s;
+    border-right: 0.5px solid var(--color-border-tertiary)
+  }
+
+  .tab:last-child {
+    border-right: none
+  }
+
+  .tab.active {
+    background: #1A3050;
+    color: #C9A84C
+  }
+
+  .pane {
+    display: none
+  }
+
+  .pane.active {
+    display: block
+  }
+
+  .sec-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 8px
+  }
+
+  .sec-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0 0 12px
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0 0 10px
+  }
+
+  .audit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px
+  }
+
+  .audit-card {
+    border-radius: var(--border-radius-md);
+    padding: 12px 14px;
+    border: 0.5px solid var(--color-border-tertiary)
+  }
+
+  .audit-card.bad {
+    background: var(--color-background-danger);
+    border-color: var(--color-border-tertiary)
+  }
+
+  .audit-card.good {
+    background: var(--color-background-success);
+    border-color: var(--color-border-tertiary)
+  }
+
+  .audit-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 6px
+  }
+
+  .audit-card.bad .audit-label {
+    color: var(--color-text-danger)
+  }
+
+  .audit-card.good .audit-label {
+    color: var(--color-text-success)
+  }
+
+  .audit-card ul {
+    margin: 0;
+    padding-left: 14px
+  }
+
+  .audit-card li {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-text-secondary)
+  }
+
+  .page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px
+  }
+
+  .page-card {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: 12px
+  }
+
+  .pc-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 0 4px;
+    color: var(--color-text-primary)
+  }
+
+  .pc-tag {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 99px;
+    display: inline-block;
+    margin-bottom: 6px
+  }
+
+  .new-tag {
+    background: var(--color-background-info);
+    color: var(--color-text-info)
+  }
+
+  .keep-tag {
+    background: var(--color-background-success);
+    color: var(--color-text-success)
+  }
+
+  .merge-tag {
+    background: var(--color-background-warning);
+    color: var(--color-text-warning)
+  }
+
+  .pc-desc {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0
+  }
+
+  .spec-block {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border: 0.5px solid var(--color-border-tertiary)
+  }
+
+  .spec-title {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 0 6px
+  }
+
+  .spec-body {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0
+  }
+
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+    margin-bottom: 14px
+  }
+
+  .token-card {
+    background: var(--color-background-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 10px 12px;
+    border: 0.5px solid var(--color-border-tertiary)
+  }
+
+  .tk-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--color-text-tertiary);
+    margin-bottom: 4px;
+    font-weight: 500
+  }
+
+  .tk-val {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-primary)
+  }
+
+  .req-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px
+  }
+
+  .req-list li {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    padding: 6px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.55
+  }
+
+  .req-list li:last-child {
+    border-bottom: none
+  }
+
+  .req-list li i {
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 14px
+  }
+
+  .chip {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 0.5px solid var(--color-border-secondary);
+    color: var(--color-text-secondary);
+    margin: 2px 3px 2px 0
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    margin: 1.25rem 0
+  }
+
+  .color-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px
+  }
+
+  .color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-md);
+    border: 0.5px solid var(--color-border-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 8px;
+    font-weight: 500;
+    color: #fff
+  }
+
+  .fix-row {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 0.5px solid var(--color-border-tertiary)
+  }
+
+  .fix-row:last-child {
+    border-bottom: none
+  }
+
+  .fix-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 99px;
+    flex-shrink: 0;
+    margin-top: 1px
+  }
+
+  .fix-text {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.55
+  }
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only">Sumedha IIM website rebuild PRD — complete product requirements</h2>
+
+  <div class="top">
+    <span class="badge b-navy">Website Rebuild PRD v2.0</span>
+    <span class="badge b-gold">mysumedha.com</span>
+    <span class="badge b-info">Next.js 14 · TypeScript · Tailwind</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('audit',this)">Site audit</button>
+    <button class="tab" onclick="showTab('sitemap',this)">Sitemap</button>
+    <button class="tab" onclick="showTab('design',this)">Design system</button>
+    <button class="tab" onclick="showTab('pages',this)">Page specs</button>
+    <button class="tab" onclick="showTab('tech',this)">Tech & SEO</button>
+    <button class="tab" onclick="showTab('deliver',this)">Deliverables</button>
+  </div>
+
+  <!-- TAB 1: AUDIT -->
+  <div class="pane active" id="pane-audit">
+    <div class="sec-label">01 — Current site audit</div>
+    <div class="sec-title">What the live site has — and what it's missing</div>
+    <p>The current mysumedha.com is a WordPress site built with Slider Revolution and a generic theme. It is functional
+      but critically undersells the institution. Below is a full gap analysis based on the live pages scraped.</p>
+
+    <div class="audit-grid">
+      <div class="audit-card bad">
+        <div class="audit-label"><i class="ti ti-x" aria-hidden="true"></i> Critical problems</div>
+        <ul>
+          <li>Homepage returning 500 server error intermittently — killing lead generation</li>
+          <li>All course links point to same single URL (diploma-in-hotel-management/) — broken UX</li>
+          <li>No individual course detail pages — no curriculum, no fees, no apply CTA per course</li>
+          <li>No placement/recruiter page — biggest trust signal completely absent</li>
+          <li>No faculty/team page</li>
+          <li>No campus gallery with real infrastructure photos</li>
+          <li>No WhatsApp or lead capture on homepage — only on inner pages</li>
+          <li>Slider Revolution plugin — heavy, slow, mobile-broken</li>
+          <li>WordPress vulnerability surface — security risk</li>
+          <li>Zero SEO meta descriptions or structured data</li>
+          <li>No mobile-first design — text too small on phones</li>
+          <li>Testimonials show logo only, no real student names or photos</li>
+          <li>Chairman's Message page exists but feels generic and unpolished</li>
+        </ul>
+      </div>
+      <div class="audit-card good">
+        <div class="audit-label"><i class="ti ti-check" aria-hidden="true"></i> What exists to keep</div>
+        <ul>
+          <li>Real contact details — 8886197778, 9966319916, info@mysumedha.com</li>
+          <li>Physical address — 4th Floor, 2nd Line, Diamond Park, Dwarakanagar, Vizag</li>
+          <li>Operating hours — Mon–Sun 9AM–8PM (7-day availability)</li>
+          <li>7 courses correctly named and structured</li>
+          <li>Vision & Mission copy is usable (needs polishing)</li>
+          <li>WhatsApp chat widget concept is correct</li>
+          <li>Instagram + YouTube channel links are live</li>
+          <li>Collaborations page structure exists</li>
+          <li>Gallery and Videos pages exist (need new content)</li>
+          <li>Admission Form page exists (needs redesign)</li>
+          <li>Privacy Policy and Terms pages exist</li>
+          <li>NSDC / Skill India approval — strong trust signal to promote more</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec-label" style="margin-top:1rem">Current nav structure</div>
+    <p>Home → About (Chairman's Message) → Programmes → Admission (Prospectus, Admission Form) → Career (Collaborations)
+      → Media (Gallery, Videos) → Contact</p>
+    <p style="color:var(--color-text-danger)">Problems: "Career" is used for a generic page about hospitality careers —
+      confusing. "Media" is buried. No placements, no faculty, no campus life section, no blog/news, no dedicated
+      enquiry flow.</p>
+  </div>
+
+  <!-- TAB 2: SITEMAP -->
+  <div class="pane" id="pane-sitemap">
+    <div class="sec-label">02 — Rebuilt sitemap</div>
+    <div class="sec-title">New information architecture — 14 pages</div>
+    <p>Pages marked <span class="pc-tag new-tag">New</span> are additions. <span class="pc-tag keep-tag">Rebuild</span>
+      means the page exists but must be fully redesigned. <span class="pc-tag merge-tag">Merged</span> means
+      consolidating what was scattered.</p>
+
+    <div class="page-grid">
+      <div class="page-card">
+        <p class="pc-name">/ Home</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Complete redesign — hero, stats, programs, placements, testimonials, CTA</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/about</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Story, vision, mission, chairman's message, NSDC badge, founding year</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/programmes</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">All 7 programs in filterable card grid — aviation vs hospitality tabs</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/programmes/[slug]</p><span class="pc-tag new-tag">New</span>
+        <p class="pc-desc">7 individual course pages — curriculum, eligibility, fees, duration, apply CTA</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/admissions</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Timeline, eligibility, documents, deadlines, prospectus download, form link</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/admissions/apply</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Multi-step admission form — replaces current single-page form</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/placements</p><span class="pc-tag new-tag">New</span>
+        <p class="pc-desc">Stats, recruiter logos, alumni stories, sector breakdown — top priority page</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/campus</p><span class="pc-tag new-tag">New</span>
+        <p class="pc-desc">Infrastructure, labs, mock cabin, front office, Vizag city pride, gallery</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/collaborations</p><span class="pc-tag merge-tag">Merged</span>
+        <p class="pc-desc">Moved under About or Placements — partner logos, MOU details</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/faculty</p><span class="pc-tag new-tag">New</span>
+        <p class="pc-desc">Team cards — photo, name, designation, expertise, industry background</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/media</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Unified gallery + YouTube video embeds in clean masonry/grid layout</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/news</p><span class="pc-tag new-tag">New</span>
+        <p class="pc-desc">Blog/news listing — events, student achievements, industry news</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/contact</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Google Maps embed, 2 phone numbers, email, WhatsApp link, enquiry form</p>
+      </div>
+      <div class="page-card">
+        <p class="pc-name">/privacy · /terms</p><span class="pc-tag keep-tag">Rebuild</span>
+        <p class="pc-desc">Clean legal pages with Sumedha branding — not the current plain-text versions</p>
+      </div>
+    </div>
+
+    <div class="sec-label">New nav structure</div>
+    <div class="spec-block">
+      <p class="spec-title">Primary navigation (desktop)</p>
+      <p class="spec-body">Logo | Home · About · Programmes ▾ · Admissions ▾ · Placements · Campus · Media · Contact ||
+        [WhatsApp icon] [Call: 8886197778] [Apply Now — gold pill]</p>
+    </div>
+    <div class="spec-block">
+      <p class="spec-title">Programmes dropdown</p>
+      <p class="spec-body">All Programmes | — Aviation: BBA Aviation, DAM, PGDAM | — Hospitality: BHM, DHM, PGDHM, MBA
+      </p>
+    </div>
+    <div class="spec-block">
+      <p class="spec-title">Admissions dropdown</p>
+      <p class="spec-body">Admission Process · Download Prospectus · Apply Online</p>
+    </div>
+  </div>
+
+  <!-- TAB 3: DESIGN -->
+  <div class="pane" id="pane-design">
+    <div class="sec-label">03 — Design system</div>
+    <div class="sec-title">Visual identity — no dark, no purple, premium corporate</div>
+
+    <div class="sec-label">Colour palette (strictly enforced)</div>
+    <div class="color-row">
+      <div class="color-swatch" style="background:#FFFFFF;border:0.5px solid #ccc"><span
+          style="color:#333;font-size:8px">White</span><span style="color:#333;font-size:7px">#FFFFFF</span></div>
+      <div class="color-swatch" style="background:#F8F5EF"><span style="color:#5a4a2a;font-size:8px">Ivory</span><span
+          style="color:#5a4a2a;font-size:7px">#F8F5EF</span></div>
+      <div class="color-swatch" style="background:#F2EDE3"><span style="color:#5a4a2a;font-size:8px">Cream</span><span
+          style="color:#5a4a2a;font-size:7px">#F2EDE3</span></div>
+      <div class="color-swatch" style="background:#1A3050"><span style="font-size:8px">Navy</span><span
+          style="font-size:7px">#1A3050</span></div>
+      <div class="color-swatch" style="background:#0D1B2A"><span style="font-size:8px">Deep navy</span><span
+          style="font-size:7px">#0D1B2A</span></div>
+      <div class="color-swatch" style="background:#C9A84C"><span style="font-size:8px">Gold</span><span
+          style="font-size:7px">#C9A84C</span></div>
+      <div class="color-swatch" style="background:#3D4F5C"><span style="font-size:8px">Slate</span><span
+          style="font-size:7px">#3D4F5C</span></div>
+      <div class="color-swatch" style="background:#D9D0C3"><span style="color:#333;font-size:8px">Border</span><span
+          style="color:#333;font-size:7px">#D9D0C3</span></div>
+    </div>
+    <p style="font-size:11px;color:var(--color-text-danger)">Prohibited: no dark (#111/#000) hero backgrounds · no
+      purple tones · no neon · no heavy drop shadows · no gradient-heavy sections</p>
+
+    <div class="sec-label">Typography</div>
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tk-label">Display headings</div>
+        <div class="tk-val">Playfair Display — serif, 400–700</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Body & UI</div>
+        <div class="tk-val">Inter — sans-serif, 300–600</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">h1 hero</div>
+        <div class="tk-val">60–72px Playfair, navy #0D1B2A</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">h2 section</div>
+        <div class="tk-val">36–44px Playfair, navy</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">h3 card title</div>
+        <div class="tk-val">20–24px Inter 600, navy</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Body text</div>
+        <div class="tk-val">16–18px Inter 400, slate #3D4F5C</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Labels / tags</div>
+        <div class="tk-val">11–12px Inter 500, uppercase</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">CTAs</div>
+        <div class="tk-val">14px Inter 600, pill shape</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Spacing & components</div>
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tk-label">Base grid</div>
+        <div class="tk-val">8px</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Section padding</div>
+        <div class="tk-val">80–120px vertical</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Max content width</div>
+        <div class="tk-val">1200px centred</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Card border-radius</div>
+        <div class="tk-val">12px</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Button style</div>
+        <div class="tk-val">Pill (rounded-full)</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Primary CTA</div>
+        <div class="tk-val">Gold fill, navy text</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Secondary CTA</div>
+        <div class="tk-val">Navy outline, navy text</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">WhatsApp float</div>
+        <div class="tk-val">Fixed bottom-right, green #25D366</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: PAGE SPECS -->
+  <div class="pane" id="pane-pages">
+    <div class="sec-label">04 — Page-by-page specs</div>
+    <div class="sec-title">Detailed section breakdown for every page</div>
+
+    <div class="spec-block">
+      <p class="spec-title">/ Home — 9 sections</p>
+      <p class="spec-body">
+        <b>S1 Navbar:</b> Fixed, white bg on scroll, logo left, nav centre, gold "Apply Now" pill + WhatsApp icon right.
+        Mobile: hamburger drawer.<br>
+        <b>S2 Hero:</b> Ivory bg, two-column — left: Playfair 64px headline "Visakhapatnam's Gateway to Aviation &
+        Hospitality Careers", 18px sub-line, two CTAs (gold "Explore Programmes" + navy outline "Download Prospectus").
+        Right: real campus photo or student-in-uniform image with a floating stats card overlay (Est. 2010 · 500+ Placed
+        · 7 Programmes). NO dark hero.<br>
+        <b>S3 Trust bar:</b> Cream bg, logos: NSDC · Skill India · approvals. Simple centred row.<br>
+        <b>S4 About snapshot:</b> Two-column — left: 3-para about text + "Know More" link. Right: 2×2 achievement tile
+        grid (gold numerals).<br>
+        <b>S5 Programmes:</b> Tab toggle — Aviation | Hospitality. Cards below: course name, duration badge,
+        eligibility, fee, "View Details" link. Gold top-border accent on each card.<br>
+        <b>S6 Stats strip:</b> Ivory bg. 4 animated counters: 500+ Placed · 50+ Recruiters · 3 Campuses · Est. 2010.
+        Gold numerals.<br>
+        <b>S7 Placements:</b> Headline "Our graduates work here". Recruiter logo marquee strip (IndiGo, Air India, Taj,
+        Marriott, etc.). "View Placement Report" CTA.<br>
+        <b>S8 Testimonials:</b> 3-card grid, Playfair italic quote, gold quote marks, student name + programme + batch.
+        Real names required.<br>
+        <b>S9 CTA strip + Footer:</b> Cream bg, centred "Begin your journey at Sumedha IIM", Apply Now (gold) + WhatsApp
+        Enquiry (outline). Footer: 4-col — logo/tagline, quick links, programmes, contact (8886197778 · 9966319916 ·
+        info@mysumedha.com · Dwaraka Nagar address). Social icons: Instagram · YouTube · Facebook · LinkedIn.
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/about — 5 sections</p>
+      <p class="spec-body">
+        <b>S1:</b> Page hero — ivory bg, "About Sumedha IIM" headline, breadcrumb.<br>
+        <b>S2:</b> Founding story — established 2010, 2-col layout, campus photo right. Key milestones timeline: 2010
+        Founded → 2013 NSDC Approved → 2018 Expanded to Tirupati/Nellore → 2025 500+ Alumni placed.<br>
+        <b>S3:</b> Vision & Mission — two cards, gold icon, clean navy text. Vision: "Transforming India through
+        world-class employability-linked skill training." Mission: "Creating success stories through skill and quality
+        training across our network of institutes."<br>
+        <b>S4:</b> Chairman's Message — full-width, Playfair italic pull quote, photo left, message right. Name and
+        designation clearly stated.<br>
+        <b>S5:</b> NSDC & Skill India recognition — trust badges, approval details, partner logos.
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/programmes + /programmes/[slug] — 7 detail pages</p>
+      <p class="spec-body">
+        <b>Listing page:</b> Tab filter — All · Aviation · Hospitality. 3-col grid of cards. Each card: course image,
+        name, duration badge, eligibility, fee range, "View Details" gold link.<br>
+        <b>Course pages (7 slugs):</b> /bba-aviation · /bhm · /mba · /pgdam · /dam · /pgdhm · /dhm<br>
+        Each detail page contains: Hero with course name + badge + 3 quick facts. Tabs: Overview · Curriculum ·
+        Eligibility & Fees · Career Prospects. Sticky right panel: Duration · Eligibility · Fee · Mode · Next batch date
+        · Apply CTA (gold) + Download Brochure (outline).<br>
+        <b>7 courses with real data:</b><br>
+        BBA (Aviation Management) — 3 yrs, Intermediate, Regular<br>
+        BHM (Bachelor of Hotel Management) — 3 yrs, Intermediate, Regular<br>
+        MBA — 2 yrs, Any Degree, Regular/Part-time<br>
+        PGDAM — 3 yrs, Intermediate, Regular/Part-time<br>
+        DAM (Diploma in Aviation Management) — 1 yr, Intermediate, Regular/Part-time<br>
+        PGDHM — 2 yrs, Any Degree, Regular/Part-time<br>
+        DHM (Diploma in Hotel Management) — 1 yr / 6 months, 10th pass, Part-time
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/placements — NEW — highest priority</p>
+      <p class="spec-body">
+        <b>S1:</b> Hero stat — "500+ Students Placed" in large Playfair gold numerals on ivory bg.<br>
+        <b>S2:</b> Sector breakdown — Aviation (Airlines, Airports, Ground) vs Hospitality (5-star, Budget, F&B) — icon
+        cards with approximate count.<br>
+        <b>S3:</b> Recruiter logos grid — IndiGo, Air India, SpiceJet, GMR, GVK, Taj Hotels, Marriott, Hyatt, ITC,
+        MakeMyTrip etc. Greyscale + hover colour reveal.<br>
+        <b>S4:</b> Alumni spotlight — 3 cards. Photo, Name, Batch, Programme, Current role, Company. Gold quotation mark
+        + one-line quote.<br>
+        <b>S5:</b> CTA — "Join the network. Apply now."
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/campus — NEW</p>
+      <p class="spec-body">
+        <b>S1:</b> Location hero — "4th Floor, Diamond Park, Dwaraka Nagar, Visakhapatnam" — Google Maps embed
+        full-width below.<br>
+        <b>S2:</b> Infrastructure grid — Mock Aircraft Cabin · Hotel Front-Office Lab · Grooming Studio · AV Classroom ·
+        Communication Lab — each with real photo + description card.<br>
+        <b>S3:</b> Vizag pride section — "Proud to train Vizag's next generation" — Vizag city imagery, 2-column text +
+        photo.<br>
+        <b>S4:</b> Branch locations — Visakhapatnam (HQ) · Tirupati · Nellore · Eluru — map pins with address cards.<br>
+        <b>S5:</b> Campus gallery — masonry photo grid (minimum 12 photos), lightbox on click.
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/admissions</p>
+      <p class="spec-body">
+        <b>S1:</b> "Admissions Open 2025" hero, navy bg exception allowed here for urgency only, gold text.<br>
+        <b>S2:</b> 5-step process timeline — Choose Programme → Fill Application → Submit Documents → Counselling Call →
+        Enroll & Begin. Gold connector line.<br>
+        <b>S3:</b> Documents checklist card — 10th/12th marksheets, passport photos, ID proof, transfer certificate.<br>
+        <b>S4:</b> Prospectus download — prominent card, one-click PDF download.<br>
+        <b>S5:</b> Apply Now button → /admissions/apply (multi-step form with name, phone, email, programme, city,
+        message).
+      </p>
+    </div>
+
+    <div class="spec-block">
+      <p class="spec-title">/contact</p>
+      <p class="spec-body">
+        Two-column layout. Left: Google Maps iframe (Dwaraka Nagar, Vizag). Right: contact details card — phone 1:
+        8886197778, phone 2: 9966319916, email: info@mysumedha.com, address: 4th Floor, 2nd Line, Diamond Park,
+        Dwarakanagar, Visakhapatnam, hours: Mon–Sun 9AM–8PM. + Enquiry form (Name, Phone, Email, Programme interest,
+        Message). WhatsApp direct link button: 919966319916.
+      </p>
+    </div>
+  </div>
+
+  <!-- TAB 5: TECH -->
+  <div class="pane" id="pane-tech">
+    <div class="sec-label">05 — Tech stack & SEO</div>
+    <div class="sec-title">Build requirements and performance targets</div>
+
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tk-label">Framework</div>
+        <div class="tk-val">Next.js 14 (App Router)</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Language</div>
+        <div class="tk-val">TypeScript strict mode</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Styling</div>
+        <div class="tk-val">Tailwind CSS v3</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Animations</div>
+        <div class="tk-val">Framer Motion</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Forms</div>
+        <div class="tk-val">React Hook Form + Zod</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Icons</div>
+        <div class="tk-val">Lucide React</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Fonts</div>
+        <div class="tk-val">Playfair Display + Inter (next/font)</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Images</div>
+        <div class="tk-val">next/image — WebP, lazy load</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Content</div>
+        <div class="tk-val">Local JSON/MDX (CMS-ready)</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Email/form</div>
+        <div class="tk-val">Resend or Nodemailer API route</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">WhatsApp</div>
+        <div class="tk-val">wa.me link — no third-party widget</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Deployment</div>
+        <div class="tk-val">Vercel (replaces WordPress host)</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Performance targets (Lighthouse)</div>
+    <ul class="req-list">
+      <li><i class="ti ti-bolt" style="color:var(--color-text-success)" aria-hidden="true"></i>Performance ≥ 90. FCP
+        &lt; 1.5s on broadband. LCP &lt; 2.5s. CLS &lt; 0.1.</li>
+      <li><i class="ti ti-accessible" style="color:var(--color-text-info)" aria-hidden="true"></i>Accessibility ≥ 95.
+        WCAG 2.1 AA. All images have alt text. Keyboard navigable. 4.5:1 contrast minimum.</li>
+      <li><i class="ti ti-search" style="color:var(--color-text-warning)" aria-hidden="true"></i>SEO ≥ 95. Unique meta
+        title + description per page. Open Graph tags for all pages. Sitemap.xml + robots.txt. Schema.org
+        EducationalOrganization JSON-LD on homepage.</li>
+      <li><i class="ti ti-device-mobile" aria-hidden="true"></i>Mobile-first. Tested at 375px, 768px, 1280px, 1440px.
+        Touch targets ≥ 44px. No horizontal scroll.</li>
+      <li><i class="ti ti-shield-check" aria-hidden="true"></i>Security: no WordPress, no plugin vulnerabilities. HTTPS
+        enforced. CSP headers via Vercel config.</li>
+    </ul>
+
+    <div class="sec-label">SEO — priority pages and target keywords</div>
+    <ul class="req-list">
+      <li><i class="ti ti-tag" aria-hidden="true"></i><b>Homepage:</b> "aviation college in Visakhapatnam", "hotel
+        management institute Vizag", "cabin crew training Visakhapatnam"</li>
+      <li><i class="ti ti-tag" aria-hidden="true"></i><b>/programmes/bba-aviation:</b> "BBA aviation management Vizag",
+        "aviation degree Visakhapatnam"</li>
+      <li><i class="ti ti-tag" aria-hidden="true"></i><b>/programmes/dam:</b> "cabin crew course Visakhapatnam", "air
+        hostess training Vizag"</li>
+      <li><i class="ti ti-tag" aria-hidden="true"></i><b>/placements:</b> "aviation placement Visakhapatnam", "hotel
+        management placements Andhra Pradesh"</li>
+      <li><i class="ti ti-tag" aria-hidden="true"></i><b>/admissions:</b> "aviation college admission 2025 Vizag",
+        "hotel management admission Andhra Pradesh"</li>
+    </ul>
+
+    <div class="sec-label">What to fix from current site — checklist</div>
+    <div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-danger);color:var(--color-text-danger)">Critical</span><span
+          class="fix-text">Fix 500 error on homepage — migrate off overloaded WordPress host</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-danger);color:var(--color-text-danger)">Critical</span><span
+          class="fix-text">All course links point to /diploma-in-hotel-management/ — create 7 individual slugs</span>
+      </div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-danger);color:var(--color-text-danger)">Critical</span><span
+          class="fix-text">Remove Slider Revolution — replace with lightweight Framer Motion hero</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-warning);color:var(--color-text-warning)">High</span><span
+          class="fix-text">Add placements page — currently the biggest missing trust signal</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-warning);color:var(--color-text-warning)">High</span><span
+          class="fix-text">Add real student testimonials with names and photos, not just logo</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-warning);color:var(--color-text-warning)">High</span><span
+          class="fix-text">WhatsApp button on every page — currently missing from homepage</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-warning);color:var(--color-text-warning)">High</span><span
+          class="fix-text">Add meta descriptions and OG tags — zero present on current site</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-info);color:var(--color-text-info)">Medium</span><span
+          class="fix-text">Rename "Career" nav item — currently confusing (it's about hospitality careers, not job
+          listings at the institute)</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-info);color:var(--color-text-info)">Medium</span><span
+          class="fix-text">Add Google Maps embed to contact page — currently just text address</span></div>
+      <div class="fix-row"><span class="fix-badge"
+          style="background:var(--color-background-info);color:var(--color-text-info)">Medium</span><span
+          class="fix-text">Add both phone numbers prominently to every page (currently inconsistent)</span></div>
+    </div>
+  </div>
+
+  <!-- TAB 6: DELIVERABLES -->
+  <div class="pane" id="pane-deliver">
+    <div class="sec-label">06 — Deliverables & handoff</div>
+    <div class="sec-title">What the rebuild must produce</div>
+
+    <ul class="req-list">
+      <li><i class="ti ti-code" aria-hidden="true"></i>Complete Next.js 14 App Router project with TypeScript, ESLint,
+        Prettier configured</li>
+      <li><i class="ti ti-layout" aria-hidden="true"></i>Global layout: Navbar (desktop + mobile drawer) + Footer —
+        shared across all pages</li>
+      <li><i class="ti ti-files" aria-hidden="true"></i>All 14 pages built with full section content — no placeholder
+        "Lorem ipsum" allowed</li>
+      <li><i class="ti ti-database" aria-hidden="true"></i>Structured data files: /data/courses.json ·
+        /data/faculty.json · /data/testimonials.json · /data/recruiters.json · /data/news.json</li>
+      <li><i class="ti ti-palette" aria-hidden="true"></i>tailwind.config.ts with all design tokens (colours, fonts,
+        spacing) matching this PRD</li>
+      <li><i class="ti ti-components" aria-hidden="true"></i>Reusable component library: CourseCard · TestimonialCard ·
+        StatCounter · RecruiterStrip · HeroSection · PageHero · CTAStrip · WhatsAppFloat · AdmissionTimeline ·
+        ProgramTab</li>
+      <li><i class="ti ti-mail" aria-hidden="true"></i>Working contact/admission form with email notification (Resend
+        API route)</li>
+      <li><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp floating button — fixed bottom-right, links to
+        wa.me/919966319916 with pre-filled message</li>
+      <li><i class="ti ti-search" aria-hidden="true"></i>SEO: metadata per page, OG tags, sitemap.xml, robots.txt,
+        JSON-LD schema on homepage</li>
+      <li><i class="ti ti-device-mobile" aria-hidden="true"></i>Fully responsive — all pages tested at 375px / 768px /
+        1280px</li>
+      <li><i class="ti ti-file-download" aria-hidden="true"></i>Prospectus PDF download linked from /admissions and
+        course detail pages</li>
+      <li><i class="ti ti-rocket" aria-hidden="true"></i>Vercel deployment config (vercel.json) with headers for
+        security and caching</li>
+      <li><i class="ti ti-book" aria-hidden="true"></i>README.md with local dev setup, content update guide, deployment
+        instructions</li>
+      <li><i class="ti ti-chart-bar" aria-hidden="true"></i>Google Analytics 4 integration via next/script (page view
+        tracking)</li>
+    </ul>
+
+    <div class="sec-label" style="margin-top:1rem">Phase 2 — post-launch (optional)</div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem">
+      <span class="chip">Sanity or Contentful CMS</span>
+      <span class="chip">Telugu language toggle</span>
+      <span class="chip">WhatsApp chatbot (Wati/AiSensy)</span>
+      <span class="chip">Online fee payment</span>
+      <span class="chip">Student login portal</span>
+      <span class="chip">Live chat widget</span>
+      <span class="chip">Blog/news with CMS</span>
+    </div>
+
+    <div class="sec-label">Real contact data (verified from live site)</div>
+    <div class="token-grid">
+      <div class="token-card">
+        <div class="tk-label">Phone 1</div>
+        <div class="tk-val">+91 8886 197 778</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Phone 2</div>
+        <div class="tk-val">+91 9966 319 916</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Email</div>
+        <div class="tk-val">info@mysumedha.com</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Address</div>
+        <div class="tk-val">4th Floor, 2nd Line, Diamond Park, Dwarakanagar, Visakhapatnam</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Hours</div>
+        <div class="tk-val">Mon–Sun 9:00AM – 8:00PM</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">WhatsApp</div>
+        <div class="tk-val">wa.me/919966319916</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">Instagram</div>
+        <div class="tk-val">instagram.com/sumedhaiim</div>
+      </div>
+      <div class="token-card">
+        <div class="tk-label">YouTube</div>
+        <div class="tk-val">youtube.com/@SUMEDHA-o7v</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function showTab(id, btn) {
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pane-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>

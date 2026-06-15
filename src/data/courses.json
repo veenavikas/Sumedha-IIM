@@ -1,0 +1,93 @@
+[
+  {
+    "id": "bba-aviation",
+    "title": "BBA Aviation Management",
+    "category": "Aviation",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular",
+    "fee": "₹3,50,000",
+    "description": "A comprehensive undergraduate program focusing on airport operations, passenger handling, cargo management, and aviation safety.",
+    "overview": "The BBA in Aviation Management is designed to prepare students for leadership roles in the fast-paced aviation industry. Combining core business management principles with specialized aviation operations, this 3-year program ensures graduates are ready to tackle challenges in airline management, airport operations, and allied sectors.",
+    "curriculum": ["Principles of Management", "Airport Operations", "Aviation Safety & Security", "Airline Marketing", "Travel & Tourism Management", "Business Communication"],
+    "careerProspects": ["Airport Manager", "Airline Operations Executive", "Ground Handling Manager", "Aviation Security Officer", "Cargo Manager"]
+  },
+  {
+    "id": "bhm",
+    "title": "Bachelor of Hotel Management (BHM)",
+    "category": "Hospitality",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular",
+    "fee": "₹3,20,000",
+    "description": "An intensive degree program covering all aspects of hospitality, including food production, F&B service, front office, and housekeeping.",
+    "overview": "The Bachelor of Hotel Management (BHM) program transforms students into polished hospitality professionals. Through a blend of rigorous classroom instruction and extensive practical training in our mock setups, students learn the intricacies of managing world-class hotels, resorts, and restaurants.",
+    "curriculum": ["Food Production Operations", "Food & Beverage Service", "Front Office Management", "Accommodation Operations", "Hospitality Marketing", "Human Resource Management"],
+    "careerProspects": ["Hotel Manager", "Chef / F&B Director", "Front Office Manager", "Event Coordinator", "Cruise Line Manager"]
+  },
+  {
+    "id": "mba",
+    "title": "Master of Business Administration",
+    "category": "Hospitality",
+    "duration": "2 Years",
+    "eligibility": "Any Degree",
+    "mode": "Regular / Part-time",
+    "fee": "₹4,00,000",
+    "description": "A premium postgraduate program designed to build strategic leadership and advanced management skills for the global hospitality sector.",
+    "overview": "Our MBA program offers advanced business education tailored for the hospitality and service industries. It focuses on strategic management, international hospitality operations, and corporate leadership, empowering graduates to take on senior executive roles globally.",
+    "curriculum": ["Strategic Management", "International Hospitality Management", "Corporate Finance", "Digital Marketing", "Organizational Behavior", "Business Analytics"],
+    "careerProspects": ["General Manager", "Corporate Director", "Management Consultant", "Entrepreneur", "Revenue Manager"]
+  },
+  {
+    "id": "pgdam",
+    "title": "Post Graduate Diploma in Aviation Management (PGDAM)",
+    "category": "Aviation",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular / Part-time",
+    "fee": "₹2,80,000",
+    "description": "An integrated PG diploma program focusing on advanced aviation operations, fleet management, and airline economics.",
+    "overview": "The PGDAM is an extensive program designed for students aiming for specialized roles in aviation. Over three years, the curriculum covers in-depth operational procedures, regulatory frameworks, and the business strategies that drive modern airlines and airports.",
+    "curriculum": ["Aviation Economics", "Fleet Management", "Air Traffic Control Basics", "Aviation Law", "Crew Management", "Logistics & Supply Chain"],
+    "careerProspects": ["Aviation Consultant", "Fleet Operations Manager", "Regulatory Affairs Officer", "Airline Commercial Manager"]
+  },
+  {
+    "id": "dam",
+    "title": "Diploma in Aviation Management (DAM)",
+    "category": "Aviation",
+    "duration": "1 Year",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular / Part-time",
+    "fee": "₹1,20,000",
+    "description": "A fast-track diploma program for aspiring cabin crew and ground staff, emphasizing grooming, communication, and basic aviation operations.",
+    "overview": "The Diploma in Aviation Management (DAM) is a specialized 1-year course focused on immediate employability. It thoroughly trains students in cabin crew responsibilities, ground handling, personality development, and passenger service excellence.",
+    "curriculum": ["Cabin Crew Training", "Personality Development", "First Aid & Emergency Procedures", "Passenger Handling", "In-flight Services"],
+    "careerProspects": ["Cabin Crew / Air Hostess", "Ground Staff", "Ticketing Executive", "Guest Relationship Executive"]
+  },
+  {
+    "id": "pgdhm",
+    "title": "Post Graduate Diploma in Hotel Management (PGDHM)",
+    "category": "Hospitality",
+    "duration": "2 Years",
+    "eligibility": "Any Degree",
+    "mode": "Regular / Part-time",
+    "fee": "₹2,50,000",
+    "description": "A focused PG diploma equipping graduates with advanced skills in hotel administration and operational leadership.",
+    "overview": "Designed for graduates from any discipline, the PGDHM offers a fast-tracked immersion into hotel management. The 2-year program focuses on advanced operational techniques, leadership, and the financial aspects of running hospitality establishments.",
+    "curriculum": ["Advanced Hotel Administration", "Hospitality Finance", "Strategic Marketing", "Facility Planning", "Service Quality Management"],
+    "careerProspects": ["Assistant Hotel Manager", "F&B Manager", "Banquet Manager", "Guest Experience Director"]
+  },
+  {
+    "id": "dhm",
+    "title": "Diploma in Hotel Management (DHM)",
+    "category": "Hospitality",
+    "duration": "1 Year / 6 Months",
+    "eligibility": "10th Pass",
+    "mode": "Part-time",
+    "fee": "₹80,000",
+    "description": "An entry-level, highly practical diploma for immediate entry into the hospitality workforce.",
+    "overview": "The DHM is perfect for students seeking quick entry into the hospitality sector. Available in 6-month and 1-year formats, it covers the absolute essentials of hotel operations, focusing heavily on practical skills in food service and housekeeping.",
+    "curriculum": ["Basic Food Production", "Housekeeping Operations", "Communication Skills", "Hygiene & Sanitation", "Basic F&B Service"],
+    "careerProspects": ["Commis Chef", "F&B Steward", "Housekeeping Executive", "Front Desk Assistant"]
+  }
+]
