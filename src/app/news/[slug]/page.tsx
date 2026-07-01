@@ -1,3 +1,7 @@
+export async function generateStaticParams() {
+  return [{ slug: 'dummy' }];
+}
+
 export default function NewsArticlePage({ params }: { params: { slug: string } }) {
   return (
     <div className="py-32 px-4 max-w-7xl mx-auto min-h-[60vh]">

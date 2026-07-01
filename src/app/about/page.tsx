@@ -13,10 +13,13 @@ export default function About() {
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 uppercase tracking-[0.2em] mb-4">Our Legacy</h2>
+            <h2 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 uppercase tracking-[0.2em] mb-4">WE ARE SUMEDHA</h2>
             <h3 className="font-serif text-4xl font-bold text-navy mb-6">A Decade of Excellence</h3>
+            <p className="text-slate leading-relaxed mb-4">
+              Established in 2010, Sumedha International Institute began with a single vision: to bridge the gap between academic education and industry requirements. We are a leading private organization that implants professional training in the fields of Hospitality Management, Aviation, and Tours & Travel Management with expert quality academic programs.
+            </p>
             <p className="text-slate leading-relaxed mb-8">
-              Established in 2010, Sumedha IIM Visakhapatnam began with a single vision: to bridge the gap between academic education and industry requirements in the fast-growing sectors of Aviation and Hospitality. Over the years, we have grown from a single campus in Vizag to multiple training centres across Andhra Pradesh.
+              For students looking forward to starting a career in aviation and hospitality, we have the highest placement records globally at various Airports, Airlines & Hotel Industries. Our alumni remain active across the globe and continue to support the development of this exciting and effective centre of learning.
             </p>
             
             <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">

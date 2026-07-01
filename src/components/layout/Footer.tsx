@@ -22,7 +22,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-navy text-ivory/80 pt-20 pb-10">
+    <footer className="bg-navy text-white/80 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
@@ -31,20 +31,20 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-6 bg-white/5 p-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
               <Image src="/images/image.png" alt="Sumedha IIM Logo" width={220} height={60} className="h-12 w-auto object-contain" />
             </Link>
-            <p className="text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-6 text-white/70">
               Visakhapatnam&apos;s Gateway to Aviation & Hospitality Careers. Transforming India through world-class employability-linked skill training since 2010.
             </p>
             <div className="flex space-x-4">
-              <a href="https://instagram.com/sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none hover:text-navy transition-all">
+              <a href="https://instagram.com/sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
                 <InstagramIcon />
               </a>
-              <a href="https://youtube.com/@SUMEDHA-o7v" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none hover:text-navy transition-all">
+              <a href="https://youtube.com/@SUMEDHA-o7v" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
                 <YoutubeIcon />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none hover:text-navy transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
                 <FacebookIcon />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none hover:text-navy transition-all">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
                 <LinkedinIcon />
               </a>
             </div>
@@ -54,11 +54,11 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-xl font-bold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><Link href="/about" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/placements" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">Placements</Link></li>
-              <li><Link href="/campus" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">Campus Life</Link></li>
-              <li><Link href="/faculty" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">Faculty</Link></li>
-              <li><Link href="/news" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">News & Events</Link></li>
+              <li><Link href="/about" className="hover:text-gold transition-colors text-sm text-white/70">About Us</Link></li>
+              <li><Link href="/placements" className="hover:text-gold transition-colors text-sm text-white/70">Placements</Link></li>
+              <li><Link href="/campus" className="hover:text-gold transition-colors text-sm text-white/70">Campus Life</Link></li>
+              <li><Link href="/faculty" className="hover:text-gold transition-colors text-sm text-white/70">Faculty</Link></li>
+              <li><Link href="/news" className="hover:text-gold transition-colors text-sm text-white/70">News & Events</Link></li>
             </ul>
           </div>
 
@@ -66,11 +66,11 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-xl font-bold text-white mb-6">Programmes</h3>
             <ul className="space-y-3">
-              <li><Link href="/programmes/bba-aviation" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">BBA Aviation Management</Link></li>
-              <li><Link href="/programmes/bhm" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">BHM (Hotel Management)</Link></li>
-              <li><Link href="/programmes/mba" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">MBA Hospitality</Link></li>
-              <li><Link href="/programmes/pgdam" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">PG Diploma Aviation (PGDAM)</Link></li>
-              <li><Link href="/programmes/dam" className="hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors text-sm">Diploma Aviation (DAM)</Link></li>
+              <li><Link href="/programmes/bba-aviation" className="hover:text-gold transition-colors text-sm text-white/70">BBA Aviation Management</Link></li>
+              <li><Link href="/programmes/bhm" className="hover:text-gold transition-colors text-sm text-white/70">BHM (Hotel Management)</Link></li>
+              <li><Link href="/programmes/mba" className="hover:text-gold transition-colors text-sm text-white/70">MBA Hospitality</Link></li>
+              <li><Link href="/programmes/pgdam" className="hover:text-gold transition-colors text-sm text-white/70">PG Diploma Aviation (PGDAM)</Link></li>
+              <li><Link href="/programmes/dam" className="hover:text-gold transition-colors text-sm text-white/70">Diploma Aviation (DAM)</Link></li>
             </ul>
           </div>
 
@@ -79,19 +79,19 @@ export default function Footer() {
             <h3 className="font-serif text-xl font-bold text-white mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3 flex-shrink-0 mt-1" />
-                <span className="text-sm">4th Floor, 2nd Line, Diamond Park, Dwarakanagar, Visakhapatnam</span>
+                <MapPin className="w-5 h-5 text-gold mr-3 flex-shrink-0 mt-1" />
+                <span className="text-sm text-white/70">4th Floor, 2nd Line, Diamond Park, Dwarakanagar, Visakhapatnam</span>
               </li>
               <li className="flex items-center">
-                <Phone className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <a href="tel:+918886197778" className="text-sm hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors">+91 8886 197 778</a>
-                  <a href="tel:+919966319916" className="text-sm hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors">+91 9966 319 916</a>
+                  <a href="tel:+918886197778" className="text-sm hover:text-gold transition-colors">+91 8886 197 778</a>
+                  <a href="tel:+919966319916" className="text-sm hover:text-gold transition-colors">+91 9966 319 916</a>
                 </div>
               </li>
               <li className="flex items-center">
-                <Mail className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3 flex-shrink-0" />
-                <a href="mailto:info@mysumedha.com" className="text-sm hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors">info@mysumedha.com</a>
+                <Mail className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
+                <a href="mailto:info@mysumedha.com" className="text-sm hover:text-gold transition-colors">info@mysumedha.com</a>
               </li>
             </ul>
           </div>
@@ -100,12 +100,12 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs mb-4 md:mb-0">
+          <p className="text-xs mb-4 md:mb-0 text-white/50">
             &copy; {currentYear} Sumedha IIM Visakhapatnam. All Rights Reserved.
           </p>
           <div className="flex space-x-6">
-            <Link href="/privacy" className="text-xs hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-xs hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="text-xs hover:text-white transition-colors text-white/50">Privacy Policy</Link>
+            <Link href="/terms" className="text-xs hover:text-white transition-colors text-white/50">Terms of Service</Link>
           </div>
         </div>
       </div>

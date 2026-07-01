@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
 import CTAStrip from "@/components/ui/CTAStrip";
 import RecruiterStrip from "@/components/ui/RecruiterStrip";
 import CourseCard from "@/components/ui/CourseCard";
@@ -14,11 +13,6 @@ import courses from "@/data/courses.json";
 import testimonials from "@/data/testimonials.json";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<"All" | "Aviation" | "Hospitality">("Aviation");
-  
-  const filteredCourses = activeTab === "All" 
-    ? courses 
-    : courses.filter(c => c.category === activeTab);
 
   return (
     <div className="flex flex-col w-full">
@@ -75,13 +69,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 uppercase tracking-[0.2em] mb-4">About Sumedha IIM</h2>
-              <h3 className="font-serif text-4xl font-bold text-navy mb-6 leading-tight">Forging Visionary Leaders Since 2010</h3>
+              <h2 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 uppercase tracking-[0.2em] mb-4">WE ARE SUMEDHA</h2>
+              <h3 className="font-serif text-4xl font-bold text-navy mb-6 leading-tight">Best Aviation & Hotel Management in Visakhapatnam</h3>
               <p className="text-slate leading-relaxed mb-6">
-                Sumedha IIM Visakhapatnam is an institution of eminence, forging visionary leaders through rigorous academics and immersive, real-world strategy. For over a decade, we have been the premier destination for students aiming to build careers in Aviation and Hospitality.
+                Sumedha International Institute of Aviation & Hotel Management implants professional training in the fields of Hospitality, Aviation, and Tours & Travel Management. Established in 2010, it is the premier organization for students looking forward to starting a successful career.
               </p>
               <p className="text-slate leading-relaxed mb-8">
-                Our NSDC-approved curriculum ensures that every student graduates with industry-relevant skills, professional grooming, and the confidence to succeed globally.
+                With expert quality academic programs and committed faculties, we provide aviation courses, hospitality courses, and cabin crew training. Our alumni are active globally, contributing to our highest placement records at various Airports, Airlines & Hotel Industries.
               </p>
               <Link href="/about" className="inline-flex items-center text-navy font-bold text-sm uppercase tracking-widest hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors group">
                 Know More <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform" />
@@ -126,7 +120,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courses.slice(0, 3).map((course, index) => (
               <AnimatedSection key={course.id} direction="up" delay={index * 0.1}>
-                <CourseCard course={course} />
+                <CourseCard {...course} />
               </AnimatedSection>
             ))}
           </div>
@@ -162,15 +156,124 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.slice(0, 3).map((testimonial, index) => (
-              <AnimatedSection key={testimonial.id} direction="up" delay={index * 0.1}>
-                <TestimonialCard testimonial={testimonial} />
+              <AnimatedSection key={index} direction="up" delay={index * 0.1}>
+                <TestimonialCard {...testimonial} />
               </AnimatedSection>
             ))}
           </div>
         </div>
       </AnimatedSection>
 
-      {/* S9 CTA Strip */}
+      {/* S8 Our Features */}
+      <AnimatedSection direction="up" className="py-24 bg-white border-t border-border/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 block">Why Choose Us</span>
+            <h2 className="font-serif text-4xl font-bold text-navy mb-6">Our Features</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 bg-[#fcfcfc] rounded-2xl border border-border/50 hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Industry Exposure</h3>
+              <p className="text-slate">Sumedha provides extensive exposure and opportunities. This gives real-life experiences of a fully functional hotel for the students to learn on the job.</p>
+            </div>
+            <div className="p-8 bg-[#fcfcfc] rounded-2xl border border-border/50 hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Cultural Diversity</h3>
+              <p className="text-slate">Our multi-cultural environment enriches the learning experience for Aviation & Hotel Management students, preparing them for diverse global careers.</p>
+            </div>
+            <div className="p-8 bg-[#fcfcfc] rounded-2xl border border-border/50 hover:shadow-lg transition-shadow">
+              <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-4">Modern Infrastructure</h3>
+              <p className="text-slate">State-of-the-art educational infrastructure and facilities, including well-equipped kitchens, advanced technology labs, and modern classrooms.</p>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* S9 FAQ Section */}
+      <section className="py-24 bg-[#fcfcfc] border-t border-border/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-sm font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-4 block">Frequently Asked Questions</span>
+            <h2 className="font-serif text-4xl font-bold text-navy">Answers to Mostly Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            <details className="group bg-white border border-border/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-navy font-bold hover:text-blue-600 transition-colors">
+                <h3 className="text-lg">What courses are offered in Sumedha?</h3>
+                <span className="relative size-5 shrink-0">
+                  <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4"/></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-slate leading-relaxed">
+                <p>Sumedha offers a wide range of courses such as DHM, DAM, BHM, and Specialized diplomas like Food Production, Bartending, Bakery and Culinary Skills.</p>
+              </div>
+            </details>
+            
+            <details className="group bg-white border border-border/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-navy font-bold hover:text-blue-600 transition-colors">
+                <h3 className="text-lg">What are the eligibility criteria for enrolling in courses?</h3>
+                <span className="relative size-5 shrink-0">
+                  <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4"/></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-slate leading-relaxed">
+                <p>The eligibility criteria by course require students to have completed their 10th or Intermediate (10+2) board of Education.</p>
+              </div>
+            </details>
+
+            <details className="group bg-white border border-border/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-navy font-bold hover:text-blue-600 transition-colors">
+                <h3 className="text-lg">What are the campus facilities available at the Sumedha Institute?</h3>
+                <span className="relative size-5 shrink-0">
+                  <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4"/></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-slate leading-relaxed">
+                <p>Sumedha campus is equipped with modern infrastructure including state-of-the-art kitchens, mock bars, Front Office training areas, & classrooms. The campus also offers a library & other resources for students.</p>
+              </div>
+            </details>
+
+            <details className="group bg-white border border-border/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-navy font-bold hover:text-blue-600 transition-colors">
+                <h3 className="text-lg">Are there Internship opportunities available for students?</h3>
+                <span className="relative size-5 shrink-0">
+                  <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4"/></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-slate leading-relaxed">
+                <p>Yes, students can participate in both National and International Internships as part of their curriculum. The Institute has collaborations with reputed hotels & hospitality organizations for hands-on experience.</p>
+              </div>
+            </details>
+
+            <details className="group bg-white border border-border/50 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-6 text-navy font-bold hover:text-blue-600 transition-colors">
+                <h3 className="text-lg">Does the Institute provide placements after completing the course?</h3>
+                <span className="relative size-5 shrink-0">
+                  <svg className="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <svg className="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4"/></svg>
+                </span>
+              </summary>
+              <div className="px-6 pb-6 text-slate leading-relaxed">
+                <p>Yes, Sumedha IIM provides 100% placement assistance. Graduates have access to placement opportunities both in India & Abroad including top hotels, restaurants, resorts, and Cruise lines.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* S10 CTA Strip */}
       <CTAStrip />
     </div>
   );

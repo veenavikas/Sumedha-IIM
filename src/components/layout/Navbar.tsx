@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -30,7 +30,7 @@ export default function Navbar() {
       dropdown: [
         { name: "All Programmes", path: "/programmes" },
         { name: "BBA Aviation", path: "/programmes/bba-aviation" },
-        { name: "BHM (Hotel Management)", path: "/programmes/bhm" },
+        { name: "BHM", path: "/programmes/bhm" },
         { name: "MBA", path: "/programmes/mba" },
         { name: "PGDAM", path: "/programmes/pgdam" },
         { name: "DAM", path: "/programmes/dam" },
@@ -53,168 +53,155 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 flex flex-col">
-      {/* Top Bar */}
-      <div className={`hidden lg:flex w-full transition-all duration-300 ${isScrolled ? 'h-0 overflow-hidden' : 'bg-gradient-to-r from-blue-700 to-navy text-white py-2'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center text-xs font-medium tracking-wide">
-          <div className="flex space-x-6">
-            <a href="mailto:info@mysumedha.com" className="flex items-center hover:text-blue-300 transition-colors">
-              <Mail className="w-3 h-3 mr-2" /> info@mysumedha.com
-            </a>
-            <a href="tel:+918886197778" className="flex items-center hover:text-blue-300 transition-colors">
-              <Phone className="w-3 h-3 mr-2" /> +91 8886 197 778
-            </a>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span>NSDC Approved</span>
-            <span className="w-1 h-1 bg-white/50 rounded-full"></span>
-            <span>Skill India Partner</span>
-          </div>
-        </div>
-      </div>
+    <header className="fixed top-0 w-full z-50 flex flex-col items-center px-4 sm:px-6 lg:px-8 transition-all duration-500 pt-4">
 
-      {/* Main Navbar */}
+
+      {/* Main Floating Pill Navbar */}
       <div 
-        className={`w-full transition-all duration-300 ${
-          isScrolled ? "bg-navy shadow-lg py-2" : "bg-navy/95 backdrop-blur-md py-4"
+        className={`w-full max-w-7xl transition-all duration-500 rounded-2xl lg:rounded-full border ${
+          isScrolled 
+            ? "bg-navy/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] border-white/10 py-2.5" 
+            : "bg-navy/95 backdrop-blur-md border-white/20 shadow-lg py-3"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <Link href="/" className="flex-shrink-0 flex items-center bg-white/5 p-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
-              <Image src="/images/image.png" alt="Sumedha IIM Logo" width={220} height={60} className="h-12 w-auto object-contain" />
-            </Link>
+        <div className="px-4 lg:px-6 flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0 flex items-center transition-transform hover:scale-105">
+            <div className="bg-white/5 backdrop-blur-sm p-1.5 rounded-full border border-white/10">
+              <Image src="/images/image.png" alt="Sumedha IIM Logo" width={275} height={70} className="h-12 lg:h-14 w-auto object-contain" />
+            </div>
+          </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center space-x-6">
-              {navLinks.map((link) => (
-                <div key={link.name} className="relative group">
-                  {link.dropdown ? (
-                    <div className="flex items-center space-x-1 cursor-pointer py-2">
-                      <Link 
-                        href={link.path}
-                        className={`text-sm font-semibold uppercase tracking-widest hover:text-cyan-400 transition-colors ${
-                          pathname.startsWith(link.path) && link.path !== '/' ? "text-cyan-400" : "text-white/90"
-                        }`}
-                      >
-                        {link.name}
-                      </Link>
-                      <ChevronDown className="w-4 h-4 text-white/70 group-hover:text-cyan-400 transition-colors" />
-                      
-                      {/* Dropdown Menu */}
-                      <div className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-md overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100 flex flex-col mt-2">
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <div key={link.name} className="relative group">
+                {link.dropdown ? (
+                  <div className="flex items-center px-4 py-2 cursor-pointer rounded-full hover:bg-white/10 transition-colors">
+                    <Link 
+                      href={link.path}
+                      className={`text-[15px] font-medium transition-colors ${
+                        pathname.startsWith(link.path) && link.path !== '/' ? "text-gold" : "text-white/90 group-hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                    <ChevronDown className="w-4 h-4 ml-1.5 text-white/50 group-hover:text-white transition-colors group-hover:-rotate-180 duration-300" />
+                    
+                    {/* Dropdown Menu - Modernized */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                      <div className="bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.2)] rounded-2xl overflow-hidden border border-white/20 p-2 transform origin-top scale-95 group-hover:scale-100 transition-transform duration-300">
                         {link.dropdown.map((dropLink) => (
                           <Link
                             key={dropLink.name}
                             href={dropLink.path}
-                            className="px-6 py-3 text-sm font-medium text-navy hover:bg-[#fcfcfc] hover:text-blue-600 border-b border-border/30 last:border-none transition-colors"
+                            className="block px-4 py-2.5 text-sm font-medium text-navy/80 hover:bg-slate-100 hover:text-blue-600 rounded-xl transition-all"
                           >
                             {dropLink.name}
                           </Link>
                         ))}
                       </div>
                     </div>
-                  ) : (
-                    <Link 
-                      href={link.path} 
-                      className={`text-sm font-semibold uppercase tracking-widest hover:text-cyan-400 transition-colors py-2 block ${
-                        pathname === link.path ? "text-cyan-400" : "text-white/90"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </nav>
+                  </div>
+                ) : (
+                  <Link 
+                    href={link.path} 
+                    className={`block px-4 py-2 text-[15px] font-medium rounded-full transition-all ${
+                      pathname === link.path 
+                        ? "bg-white/15 text-white shadow-inner" 
+                        : "text-white/90 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
 
-            {/* CTAs Desktop */}
-            <div className="hidden lg:flex items-center space-x-4 pl-4 border-l border-white/20">
-              <Link 
-                href="/admissions/apply" 
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-cyan-400 text-white border-none font-bold text-xs uppercase tracking-widest hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all duration-300 rounded-full"
-              >
-                Apply Now
-              </Link>
-            </div>
+          {/* CTAs Desktop */}
+          <div className="hidden lg:flex items-center pl-2">
+            <Link 
+              href="/admissions/apply" 
+              className="px-6 py-2.5 bg-gold text-navy hover:bg-white font-bold text-sm rounded-full shadow-[0_0_15px_rgba(201,168,76,0.3)] hover:shadow-[0_0_20px_rgba(201,168,76,0.5)] hover:scale-105 transition-all duration-300"
+            >
+              Apply Now
+            </Link>
+          </div>
 
-            {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center">
-              <button 
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-white hover:text-cyan-400 focus:outline-none transition-colors"
-              >
-                {mobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
-              </button>
-            </div>
+          {/* Mobile menu button */}
+          <div className="lg:hidden flex items-center">
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 focus:outline-none transition-colors"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 w-full bg-navy shadow-xl border-t border-white/10 flex flex-col max-h-[calc(100vh-80px)] overflow-y-auto">
-            <div className="px-4 py-4 flex-grow">
-              {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col">
-                  {link.dropdown ? (
-                    <>
-                      <button 
-                        className="flex justify-between items-center py-4 text-sm font-semibold text-white uppercase border-b border-white/10"
-                        onClick={() => {
-                          if (link.name === 'Programmes') setProgramsOpen(!programsOpen);
-                          if (link.name === 'Admissions') setAdmissionsOpen(!admissionsOpen);
-                        }}
-                      >
-                        {link.name}
-                        <ChevronDown className={`w-5 h-5 transition-transform ${
-                          (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "rotate-180 text-cyan-400" : "text-white/70"
-                        }`} />
-                      </button>
-                      <div className={`flex-col pl-4 mt-1 mb-2 space-y-1 ${
-                        (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "flex" : "hidden"
-                      }`}>
-                        {link.dropdown.map((dropLink) => (
-                          <Link
-                            key={dropLink.name}
-                            href={dropLink.path}
-                            className="py-2.5 text-sm text-white/80 hover:text-cyan-400 transition-colors"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {dropLink.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link 
-                      href={link.path} 
-                      className="py-4 text-sm font-semibold text-white uppercase border-b border-white/10 hover:text-cyan-400 transition-colors"
-                      onClick={() => setMobileMenuOpen(false)}
+        {/* Mobile Menu - Sleeker dropdown */}
+        <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"}`}>
+          <div className="px-4 py-4 mt-2 bg-navy/40 backdrop-blur-md rounded-b-2xl border-t border-white/10 flex flex-col overflow-y-auto">
+            {navLinks.map((link) => (
+              <div key={link.name} className="flex flex-col">
+                {link.dropdown ? (
+                  <>
+                    <button 
+                      className="flex justify-between items-center px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 rounded-xl transition-colors"
+                      onClick={() => {
+                        if (link.name === 'Programmes') setProgramsOpen(!programsOpen);
+                        if (link.name === 'Admissions') setAdmissionsOpen(!admissionsOpen);
+                      }}
                     >
                       {link.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="p-6 bg-deep/50 space-y-4">
+                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
+                        (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "rotate-180 text-cyan-400" : "text-white/50"
+                      }`} />
+                    </button>
+                    <div className={`flex-col pl-4 mt-1 mb-2 space-y-1 overflow-hidden transition-all duration-300 ${
+                      (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    }`}>
+                      {link.dropdown.map((dropLink) => (
+                        <Link
+                          key={dropLink.name}
+                          href={dropLink.path}
+                          className="block px-4 py-2.5 text-sm font-medium text-white/70 hover:text-cyan-300 hover:bg-white/5 rounded-lg transition-colors"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {dropLink.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link 
+                    href={link.path} 
+                    className="px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 rounded-xl transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+            <div className="mt-4 pt-4 border-t border-white/10 space-y-3 px-2">
               <a 
                 href="tel:+918886197778"
-                className="block w-full py-3.5 text-center border border-white/30 text-white font-semibold text-sm uppercase rounded-full hover:bg-white/10 transition-colors"
+                className="flex items-center justify-center w-full py-3 text-white/90 font-medium text-sm rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
               >
-                Call: 8886197778
+                <Phone className="w-4 h-4 mr-2 opacity-70" /> Call: 8886197778
               </a>
               <Link 
                 href="/admissions/apply" 
-                className="block w-full py-3.5 text-center bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold text-sm uppercase rounded-full shadow-[0_4px_15px_rgba(6,182,212,0.3)]"
+                className="flex items-center justify-center w-full py-3 bg-white text-navy font-semibold text-sm rounded-xl shadow-[0_4px_15px_rgba(255,255,255,0.15)] active:scale-95 transition-all"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Apply Now
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );
