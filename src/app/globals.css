@@ -8,17 +8,131 @@
   }
 
   body {
-    @apply bg-[#fcfcfc] font-sans antialiased;
-    color: #3D4F5C;
+    background-color: #f8fafc;
+    @apply text-slate-900 font-sans antialiased;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-navy;
+    @apply font-serif font-bold tracking-tight;
   }
+
+  ::selection {
+    @apply bg-sky-200 text-[#0B2A68];
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical 20s linear infinite;
+}
+
+.animate-marquee-vertical:hover {
+  animation-play-state: paused;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .glass {
+    @apply bg-white/90 backdrop-blur-md border border-sky-100 shadow-sm;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px -2px rgba(2, 132, 199, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s ease;
+  }
+  .glass-card-hover:hover {
+    border-color: #0284c7;
+    box-shadow: 0 10px 30px -4px rgba(2, 132, 199, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .glass-dark {
+    @apply bg-[#0B2A68]/95 backdrop-blur-lg border border-sky-400/20 text-white;
+  }
+
+  .bg-brand-gradient {
+    background: linear-gradient(90deg, #0B2A68 0%, #0284c7 50%, #0369a1 100%);
+  }
+
+  .bg-sky-gradient {
+    background: linear-gradient(180deg, #f0f7ff 0%, #e0f2fe 50%, #f0f7ff 100%);
   }
 }

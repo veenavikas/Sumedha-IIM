@@ -1,149 +1,142 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import HoverCard from "@/components/animations/HoverCard";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    router.push('/thank-you');
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#fcfcfc] min-h-screen">
+    <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 overflow-hidden">
       <PageHero 
-        title="Contact Us" 
-        subtitle="Get in touch with our admissions team. We are here to help you navigate your career choices." 
+        title="Contact Sumedha IIM" 
+        subtitle="Get in touch with our admissions & counseling team. We are here to guide your career path." 
       />
 
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
           
           {/* Contact Details */}
-          <div>
-            <h2 className="font-serif text-4xl font-bold text-navy mb-8">Get in Touch</h2>
-            <p className="text-slate leading-relaxed mb-12">
-              Whether you have a question about our programmes, admissions, or campus facilities, our team is ready to answer all your queries.
+          <AnimatedSection direction="up" className="flex flex-col h-full">
+            <span className="px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 font-extrabold text-xs uppercase tracking-widest border border-sky-200 w-fit mb-4">
+              Get In Touch
+            </span>
+            <h2 className="font-sans text-3xl md:text-5xl font-black text-[#0b2a68] mb-6">Connect With Our Counselors</h2>
+            <p className="text-slate-600 text-base leading-relaxed mb-8 max-w-md">
+              Whether you have questions about our Hotel Management, Aviation, BBA, or Diploma programmes, our counselors are ready to help.
             </p>
             
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-full border border-border/50 flex items-center justify-center shrink-0 mr-6 shadow-sm">
-                  <Phone className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500" />
+            <div className="space-y-4 flex-grow">
+              <HoverCard className="p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-sky-100 shadow-sm flex items-start text-left">
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0 mr-4 border border-sky-200">
+                  <Phone className="w-5 h-5 text-sky-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-xl mb-2">Phone</h3>
-                  <div className="flex flex-col space-y-1">
-                    <a href="tel:+918886197778" className="text-slate hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors font-medium">+91 8886 197 778</a>
-                    <a href="tel:+919966319916" className="text-slate hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors font-medium">+91 9966 319 916</a>
+                  <h3 className="font-bold text-[#0b2a68] text-base mb-1">Phone Counseling</h3>
+                  <div className="flex flex-col space-y-1 text-slate-700 font-semibold text-sm">
+                    <a href="tel:+918886197778" className="hover:text-sky-600 transition-colors">+91 8886 197 778</a>
+                    <a href="tel:+918886197779" className="hover:text-sky-600 transition-colors">+91 8886 197 779</a>
                   </div>
                 </div>
-              </div>
+              </HoverCard>
 
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-full border border-border/50 flex items-center justify-center shrink-0 mr-6 shadow-sm">
-                  <Mail className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500" />
+              <HoverCard className="p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-sky-100 shadow-sm flex items-start text-left">
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0 mr-4 border border-sky-200">
+                  <Mail className="w-5 h-5 text-sky-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-xl mb-2">Email</h3>
-                  <a href="mailto:info@mysumedha.com" className="text-slate hover:text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 transition-colors font-medium">info@mysumedha.com</a>
+                  <h3 className="font-bold text-[#0b2a68] text-base mb-1">Email Enquiry</h3>
+                  <a href="mailto:admissions@mysumedha.com" className="text-slate-700 hover:text-sky-600 transition-colors font-semibold text-sm">admissions@mysumedha.com</a>
                 </div>
-              </div>
+              </HoverCard>
 
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-full border border-border/50 flex items-center justify-center shrink-0 mr-6 shadow-sm">
-                  <MapPin className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500" />
+              <HoverCard className="p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-sky-100 shadow-sm flex items-start text-left">
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0 mr-4 border border-sky-200">
+                  <MapPin className="w-5 h-5 text-sky-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-xl mb-2">Campus Address</h3>
-                  <p className="text-slate leading-relaxed">
-                    4th Floor, 2nd Line, Diamond Park,<br />
-                    Dwarakanagar, Visakhapatnam,<br />
+                  <h3 className="font-bold text-[#0b2a68] text-base mb-1">Campus Address</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed font-medium">
+                    5th Ln, behind Pawan showroom,<br />
+                    Dwaraka Nagar, Visakhapatnam,<br />
                     Andhra Pradesh 530016
                   </p>
                 </div>
-              </div>
+              </HoverCard>
 
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-full border border-border/50 flex items-center justify-center shrink-0 mr-6 shadow-sm">
-                  <Clock className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500" />
+              <HoverCard className="p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-sky-100 shadow-sm flex items-start text-left">
+                <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center shrink-0 mr-4 border border-sky-200">
+                  <Clock className="w-5 h-5 text-sky-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-navy text-xl mb-2">Operating Hours</h3>
-                  <p className="text-slate font-medium">Monday &ndash; Sunday: 9:00 AM &ndash; 8:00 PM</p>
-                  <p className="text-xs text-slate mt-1 italic">We are open all 7 days of the week.</p>
+                  <h3 className="font-bold text-[#0b2a68] text-base mb-1">Operating Hours</h3>
+                  <p className="text-slate-700 font-semibold text-sm">Mon &ndash; Sun: 9:00 AM &ndash; 8:00 PM</p>
+                  <p className="text-xs text-slate-500 italic mt-0.5">Open all 7 days for campus visits.</p>
                 </div>
-              </div>
+              </HoverCard>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-8">
               <a 
-                href="https://wa.me/919966319916" 
+                href="https://wa.me/919966199883" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-[#25D366] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#128C7E] transition-colors duration-300 rounded-full"
+                className="inline-flex items-center px-8 py-3.5 bg-[#25D366] text-white font-extrabold text-xs uppercase tracking-widest hover:bg-[#128C7E] transition-all rounded-full shadow-md"
               >
-                <MessageCircle className="w-5 h-5 mr-3" /> Chat on WhatsApp
+                <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Admission Help
               </a>
             </div>
-          </div>
+          </AnimatedSection>
 
           {/* Form & Map */}
-          <div className="space-y-12">
-            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-border/50">
-              <h3 className="font-serif text-3xl font-bold text-navy mb-8">Send an Enquiry</h3>
-              {submitted ? (
-                <div className="bg-[#fcfcfc] p-6 rounded-xl border border-border/50 text-center">
-                  <h4 className="font-bold text-navy text-xl mb-2">Message Sent!</h4>
-                  <p className="text-slate text-sm">Thank you for reaching out. We will get back to you shortly.</p>
+          <AnimatedSection direction="up" delay={0.2} className="space-y-8 h-full flex flex-col">
+            <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-sky-100 shadow-lg">
+              <h3 className="text-2xl font-black text-[#0b2a68] mb-6">Send an Online Enquiry</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Full Name</label>
+                  <input type="text" required placeholder="Enter your name" className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wider">Full Name</label>
-                    <input type="text" id="name" required className="w-full px-4 py-3 rounded-lg border border-border/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wider">Phone</label>
-                      <input type="tel" id="phone" required className="w-full px-4 py-3 rounded-lg border border-border/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wider">Email</label>
-                      <input type="email" id="email" required className="w-full px-4 py-3 rounded-lg border border-border/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
-                    </div>
+                    <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Mobile Number</label>
+                    <input type="tel" required placeholder="Mobile number" className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500" />
                   </div>
                   <div>
-                    <label htmlFor="interest" className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wider">Programme Interest</label>
-                    <input type="text" id="interest" className="w-full px-4 py-3 rounded-lg border border-border/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" />
+                    <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Email Address</label>
+                    <input type="email" required placeholder="Email address" className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500" />
                   </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2 uppercase tracking-wider">Message</label>
-                    <textarea id="message" rows={4} required className="w-full px-4 py-3 rounded-lg border border-border/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"></textarea>
-                  </div>
-                  <button type="submit" className="w-full py-4 bg-navy text-white font-bold text-sm uppercase tracking-widest hover:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none hover:text-navy transition-colors duration-300 rounded-full mt-2">
-                    Send Message
-                  </button>
-                </form>
-              )}
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Course Interested In</label>
+                  <select required className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500">
+                    <option value="">Select Programme</option>
+                    <option value="DHM">Diploma in Hotel Management (DHM)</option>
+                    <option value="DAM">Diploma in Aviation Management (DAM)</option>
+                    <option value="BHM">Degree in Hotel Management (BHM)</option>
+                    <option value="BBA Aviation">BBA Aviation Management</option>
+                    <option value="PGDHM">PG Diploma Hospitality</option>
+                    <option value="MBA">MBA Aviation & Hospitality</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Message</label>
+                  <textarea rows={3} placeholder="Ask a question..." className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500"></textarea>
+                </div>
+                <button type="submit" className="w-full py-4 bg-gradient-to-r from-[#0b2a68] to-[#0284c7] text-white font-extrabold text-xs uppercase tracking-widest rounded-xl hover:shadow-sky-glow transition-all">
+                  Submit Enquiry <Send className="w-4 h-4 inline ml-2" />
+                </button>
+              </form>
             </div>
-
-            <div className="w-full h-[300px] bg-slate/10 relative rounded-2xl overflow-hidden border border-border/50">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.126485066928!2d83.3054523153526!3d17.734005187870984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39433878b277d3%3A0x63ce9515bd18f2!2sSumedha%20IIM!5e0!3m2!1sen!2sin!4v1655000000000!5m2!1sen!2sin" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Sumedha IIM Location"
-              ></iframe>
-            </div>
-          </div>
+          </AnimatedSection>
 
         </div>
       </section>

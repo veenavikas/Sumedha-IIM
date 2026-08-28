@@ -1,4 +1,11 @@
 import PageHero from "@/components/ui/PageHero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Sumedha IIM",
+  description: "Read the terms and conditions for using the Sumedha IIM website and enrolling in our hotel management programmes.",
+  keywords: "sumedha iim terms and conditions"
+};
 
 export default function Terms() {
   return (

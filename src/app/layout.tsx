@@ -1,17 +1,30 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const plusJakarta = Plus_Jakarta_Sans({ 
+  subsets: ["latin"], 
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"]
+});
+
+const outfit = Outfit({ 
+  subsets: ["latin"], 
+  variable: "--font-outfit",
+  weight: ["500", "600", "700", "800", "900"]
+});
 
 export const metadata: Metadata = {
-  title: "Sumedha IIM Visakhapatnam | Aviation & Hospitality Degrees",
-  description: "Visakhapatnam's premier institute for Aviation and Hotel Management. NSDC Approved. 100% Placement Assistance. Apply now for BBA, BHM, MBA, and Diploma courses.",
-  keywords: "aviation college in Visakhapatnam, hotel management institute Vizag, cabin crew training Visakhapatnam, BBA aviation management Vizag, BHM course",
+  title: "Hotel Management & Aviation Institute in Vizag | Sumedha IIM",
+  description: "Sumedha IIM is Visakhapatnam's leading hotel management & aviation institute. Explore courses, placements & 2026 admissions. Apply now!",
+  keywords: "hotel management colleges in vizag, hospitality courses in vizag, best hotel management institute near me, sumedha iim",
+  icons: {
+    icon: '/icon.png',
+  },
   openGraph: {
     title: "Sumedha IIM Visakhapatnam",
     description: "Visakhapatnam's Gateway to Aviation & Hospitality Careers.",
@@ -62,7 +75,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased min-h-screen flex flex-col pt-20`}
+        className={`${plusJakarta.variable} ${outfit.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
         <main className="flex-grow">
@@ -70,6 +83,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppFloat />
+        <Script src="https://www.noupe.com/embed/019f370b67107000833c89aed7ebf6ef0d70.js" strategy="afterInteractive" />
       </body>
     </html>
   );

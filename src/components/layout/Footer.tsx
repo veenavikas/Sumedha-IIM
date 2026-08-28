@@ -1,112 +1,114 @@
-"use client";
-
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
-import Image from "next/image";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  // Simple SVG icons for social media
-  const InstagramIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  );
-  const YoutubeIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-  );
-  const FacebookIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.6l.4-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-  );
-  const LinkedinIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-  );
-
   return (
-    <footer className="bg-navy text-white/80 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          {/* Brand Col */}
-          <div>
-            <Link href="/" className="inline-block mb-6 bg-white/5 p-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors">
-              <Image src="/images/image.png" alt="Sumedha IIM Logo" width={220} height={60} className="h-12 w-auto object-contain" />
-            </Link>
-            <p className="text-sm leading-relaxed mb-6 text-white/70">
-              Visakhapatnam&apos;s Gateway to Aviation & Hospitality Careers. Transforming India through world-class employability-linked skill training since 2010.
+    <footer className="bg-[#031436] text-white pt-16 pb-8 border-t border-white/10 relative overflow-hidden">
+      {/* Top CTA Banner in Footer */}
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="bg-gradient-to-r from-[#0284c7] via-[#0369a1] to-[#0B2A68] p-8 md:p-12 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-sky-400/30">
+          <div className="text-center md:text-left">
+            <span className="text-xs font-black text-[#d9a441] uppercase tracking-widest block mb-1">Admissions Open 2026-27</span>
+            <h3 className="font-serif text-2xl md:text-4xl font-bold text-white">Begin Your Career in Aviation & Hotel Management</h3>
+            <p className="text-sky-100 text-xs md:text-sm mt-2 max-w-2xl font-medium">
+              Join Visakhapatnam&apos;s most trusted institute with 100% placement record and 4-term flexible fee payment options.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://instagram.com/sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
-                <InstagramIcon />
-              </a>
-              <a href="https://youtube.com/@SUMEDHA-o7v" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
-                <YoutubeIcon />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
-                <FacebookIcon />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold text-white hover:text-navy transition-all">
-                <LinkedinIcon />
-              </a>
-            </div>
           </div>
+          <Link
+            href="/admissions/apply"
+            className="px-8 py-4 bg-gradient-to-r from-[#d9a441] to-[#ffe9b0] text-[#0B2A68] font-black text-xs uppercase tracking-widest rounded-full shadow-lg hover:from-[#b88328] hover:to-[#d9a441] transition-all shrink-0 hover:scale-105"
+          >
+            Apply Online 2026 <ArrowRight className="w-4 h-4 inline ml-1" />
+          </Link>
+        </div>
+      </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-serif text-xl font-bold text-white mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              <li><Link href="/about" className="hover:text-gold transition-colors text-sm text-white/70">About Us</Link></li>
-              <li><Link href="/placements" className="hover:text-gold transition-colors text-sm text-white/70">Placements</Link></li>
-              <li><Link href="/campus" className="hover:text-gold transition-colors text-sm text-white/70">Campus Life</Link></li>
-              <li><Link href="/faculty" className="hover:text-gold transition-colors text-sm text-white/70">Faculty</Link></li>
-              <li><Link href="/news" className="hover:text-gold transition-colors text-sm text-white/70">News & Events</Link></li>
-            </ul>
+      {/* Main Footer Grid */}
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        {/* Col 1: About & Logo */}
+        <div className="lg:col-span-2 space-y-4">
+          <div className="flex items-center gap-3">
+            <img src="/images/sumedha-full-logo.png" alt="Sumedha IIM Logo" className="h-12 sm:h-14 w-auto object-contain" />
           </div>
-
-          {/* Programmes */}
-          <div>
-            <h3 className="font-serif text-xl font-bold text-white mb-6">Programmes</h3>
-            <ul className="space-y-3">
-              <li><Link href="/programmes/bba-aviation" className="hover:text-gold transition-colors text-sm text-white/70">BBA Aviation Management</Link></li>
-              <li><Link href="/programmes/bhm" className="hover:text-gold transition-colors text-sm text-white/70">BHM (Hotel Management)</Link></li>
-              <li><Link href="/programmes/mba" className="hover:text-gold transition-colors text-sm text-white/70">MBA Hospitality</Link></li>
-              <li><Link href="/programmes/pgdam" className="hover:text-gold transition-colors text-sm text-white/70">PG Diploma Aviation (PGDAM)</Link></li>
-              <li><Link href="/programmes/dam" className="hover:text-gold transition-colors text-sm text-white/70">Diploma Aviation (DAM)</Link></li>
-            </ul>
+          <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
+            Sumedha International Institute of Hospitality & Management is Visakhapatnam&apos;s premier institute for Aviation, Hotel Management, and Airport Ground Operations. Approved by NSDC & Skill India.
+          </p>
+          <div className="space-y-2 text-xs text-slate-300">
+            <p className="flex items-start gap-2">
+              <MapPin className="w-4 h-4 text-[#d9a441] shrink-0 mt-0.5" />
+              <span>5th Ln, behind Pawan showroom, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-[#d9a441] shrink-0" />
+              <span>+91 8886 197 778, +91 8886 197 779</span>
+            </p>
+            <p className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-[#d9a441] shrink-0" />
+              <span>admissions@mysumedha.com</span>
+            </p>
           </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-serif text-xl font-bold text-white mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="w-5 h-5 text-gold mr-3 flex-shrink-0 mt-1" />
-                <span className="text-sm text-white/70">4th Floor, 2nd Line, Diamond Park, Dwarakanagar, Visakhapatnam</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
-                <div className="flex flex-col">
-                  <a href="tel:+918886197778" className="text-sm hover:text-gold transition-colors">+91 8886 197 778</a>
-                  <a href="tel:+919966319916" className="text-sm hover:text-gold transition-colors">+91 9966 319 916</a>
-                </div>
-              </li>
-              <li className="flex items-center">
-                <Mail className="w-5 h-5 text-gold mr-3 flex-shrink-0" />
-                <a href="mailto:info@mysumedha.com" className="text-sm hover:text-gold transition-colors">info@mysumedha.com</a>
-              </li>
-            </ul>
-          </div>
-
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs mb-4 md:mb-0 text-white/50">
-            &copy; {currentYear} Sumedha IIM Visakhapatnam. All Rights Reserved.
-          </p>
-          <div className="flex space-x-6">
-            <Link href="/privacy" className="text-xs hover:text-white transition-colors text-white/50">Privacy Policy</Link>
-            <Link href="/terms" className="text-xs hover:text-white transition-colors text-white/50">Terms of Service</Link>
+        {/* Col 2: Quick Links */}
+        <div>
+          <h4 className="text-sm font-black uppercase tracking-wider text-[#d9a441] mb-4 border-b border-[#d9a441]/30 pb-2">Quick Links</h4>
+          <ul className="space-y-2 text-xs text-slate-300 font-medium">
+            <li><Link href="/" className="hover:text-[#d9a441] transition-colors">Home Page</Link></li>
+            <li><Link href="/about" className="hover:text-[#d9a441] transition-colors">About Institution</Link></li>
+            <li><Link href="/programmes" className="hover:text-[#d9a441] transition-colors">Academic Programmes</Link></li>
+            <li><Link href="/admissions" className="hover:text-[#d9a441] transition-colors">Admission Process</Link></li>
+            <li><Link href="/placements" className="hover:text-[#d9a441] transition-colors">100% Placements</Link></li>
+            <li><Link href="/campus" className="hover:text-[#d9a441] transition-colors">Campus Facilities</Link></li>
+            <li><Link href="/media" className="hover:text-[#d9a441] transition-colors">Media Gallery</Link></li>
+            <li><Link href="/contact" className="hover:text-[#d9a441] transition-colors">Contact Counselors</Link></li>
+          </ul>
+        </div>
+
+        {/* Col 3: Programmes */}
+        <div>
+          <h4 className="text-sm font-black uppercase tracking-wider text-[#d9a441] mb-4 border-b border-[#d9a441]/30 pb-2">Top Courses</h4>
+          <ul className="space-y-2 text-xs text-slate-300 font-medium">
+            <li><Link href="/programmes/bba-aviation" className="hover:text-[#d9a441] transition-colors">BBA Aviation Management</Link></li>
+            <li><Link href="/programmes/bhm" className="hover:text-[#d9a441] transition-colors">Degree in Hotel Mgmt (BHM)</Link></li>
+            <li><Link href="/programmes/dam" className="hover:text-[#d9a441] transition-colors">Diploma in Aviation (DAM)</Link></li>
+            <li><Link href="/programmes/dhm" className="hover:text-[#d9a441] transition-colors">Diploma in Hotel Mgmt (DHM)</Link></li>
+            <li><Link href="/programmes/pgdhm" className="hover:text-[#d9a441] transition-colors">PG Diploma Hospitality</Link></li>
+            <li><Link href="/programmes/mba" className="hover:text-[#d9a441] transition-colors">MBA Aviation & Hospitality</Link></li>
+          </ul>
+        </div>
+
+        {/* Col 4: Location Map Thumbnail (Gokul-Group Exact Style) */}
+        <div>
+          <h4 className="text-sm font-black uppercase tracking-wider text-[#d9a441] mb-4 border-b border-[#d9a441]/30 pb-2">Campus Location</h4>
+          <div className="bg-white/10 p-2 rounded-2xl border border-white/20 shadow-md overflow-hidden">
+            <div className="w-full h-36 rounded-xl overflow-hidden relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.3375812555983!2d83.3049957!3d17.728725999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a394356da8e53bd%3A0xe549dfff2f7bfec2!2sSumedha%20International%20Institute%20of%20Aviation%20%26%20Hotel%20Management!5e0!3m2!1sen!2sin!4v1787935302028!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Sumedha IIM Map"
+              ></iframe>
+            </div>
+            <p className="text-[10px] text-center text-slate-300 font-semibold mt-1">Dwaraka Nagar, Visakhapatnam</p>
           </div>
+        </div>
+
+      </div>
+
+      {/* Bottom Copyright & Legal Links */}
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p>© 2026 Sumedha International Institute of Hospitality & Management. All Rights Reserved.</p>
+        <div className="flex items-center space-x-6 text-xs font-semibold">
+          <Link href="/privacy" className="hover:text-[#d9a441]">Privacy Policy</Link>
+          <span>•</span>
+          <Link href="/terms" className="hover:text-[#d9a441]">Terms of Service</Link>
+          <span>•</span>
+          <Link href="/sitemap.xml" className="hover:text-[#d9a441]">Sitemap</Link>
         </div>
       </div>
     </footer>

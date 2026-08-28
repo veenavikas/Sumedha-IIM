@@ -6,9 +6,9 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
 const images = [
-  "/images/hero-campus.png",
-  "/images/hero-1.jpg",
-  "/images/hero-2.jpg",
+  "/images/www.mysumedha (1004).JPG",
+  "/images/www.mysumedha (1008).JPG",
+  "/images/IMG_9009.JPG",
 ];
 
 export default function HeroSlider() {
@@ -30,7 +30,7 @@ export default function HeroSlider() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+    <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl group">
       <div className="overflow-hidden h-full" ref={emblaRef}>
         <div className="flex h-full">
           {images.map((src, index) => (

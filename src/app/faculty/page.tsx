@@ -1,43 +1,140 @@
 import PageHero from "@/components/ui/PageHero";
 import CTAStrip from "@/components/ui/CTAStrip";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import HoverCard from "@/components/animations/HoverCard";
 import facultyData from "@/data/faculty.json";
+import { GraduationCap, Award, Briefcase, BookOpen } from "lucide-react";
+
+export const metadata = {
+  title: "Expert Faculty & Mentors | Sumedha IIM Vizag",
+  description: "Learn from industry experts, former cabin crew, 5-star hotel executive chefs, and senior hospitality professors at Sumedha IIM.",
+};
+
+const facultyPhotos: { [key: string]: string } = {
+  "1": "/images/IMG_9194.JPG",
+  "2": "/images/hero-2.jpg",
+  "3": "/images/hotel-management-content-1.jpg",
+  "4": "/images/hero-1.jpg",
+  "5": "/images/IMG_9023.JPG",
+  "6": "/images/IMG_9009.JPG",
+};
 
 export default function Faculty() {
   return (
-    <div className="flex flex-col w-full bg-[#fcfcfc] min-h-screen">
+    <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 overflow-hidden">
       <PageHero 
-        title="Our Faculty" 
-        subtitle="Learn directly from industry veterans and experienced professionals." 
+        title="Our Expert Faculty" 
+        subtitle="Learn directly from industry veterans, former airline cabin crew, and 5-star executive chefs." 
       />
 
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 uppercase tracking-[0.2em] mb-4">Leadership</h2>
-          <h3 className="font-serif text-4xl font-bold text-navy">Meet the Mentors</h3>
+      {/* Leadership & Faculty Grid */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 font-extrabold text-xs uppercase tracking-widest border border-sky-200">
+            THE STRENGTH BEHIND OUR SUCCESS
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl font-black text-[#0B2A68] mt-3">
+            Meet Our Industry Mentors
+          </h2>
+          <p className="text-slate-600 text-sm mt-3 font-medium">
+            Our professors bring decades of real-world operational experience from international airlines and 5-star luxury hotel chains.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {facultyData.map((f) => (
-            <div key={f.id} className="bg-white rounded-xl shadow-lg border border-border/50 overflow-hidden flex flex-col group hover:-translate-y-2 transition-transform duration-300">
-              <div className="h-64 w-full bg-slate/20 relative">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-navy to-slate/50"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {facultyData.map((f, idx) => {
+            const photoSrc = facultyPhotos[f.id] || "/images/hero-1.jpg";
+            return (
+              <AnimatedSection key={f.id} direction="up" delay={idx * 0.08}>
+                <HoverCard className="bg-white/95 backdrop-blur-xl rounded-[32px] border border-slate-200/80 shadow-xl hover:shadow-2xl overflow-hidden flex flex-col h-full group hover:-translate-y-2 transition-all duration-300">
+                  
+                  {/* Photo Container */}
+                  <div className="h-64 w-full relative overflow-hidden bg-slate-100">
+                    <img 
+                      src={photoSrc} 
+                      alt={f.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A68]/80 via-transparent to-transparent" />
+                    
+                    <span className="absolute top-4 left-4 px-3 py-1 bg-[#0B2A68]/90 text-[#d9a441] text-[10px] font-black uppercase rounded-full shadow-md backdrop-blur-sm border border-white/20">
+                      {f.expertise}
+                    </span>
+                  </div>
+
+                  {/* Body Content */}
+                  <div className="p-7 flex flex-col flex-grow text-left justify-between">
+                    <div>
+                      <h3 className="font-serif font-black text-xl text-[#0B2A68] mb-1 group-hover:text-sky-600 transition-colors">
+                        {f.name}
+                      </h3>
+                      <p className="text-xs font-bold uppercase tracking-wider text-[#d9a441] mb-4">
+                        {f.designation}
+                      </p>
+
+                      <div className="w-10 h-[2px] bg-[#d9a441] mb-4" />
+
+                      <p className="text-slate-600 text-xs leading-relaxed font-normal mb-6">
+                        {f.background}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+                      <span className="flex items-center gap-1.5 text-sky-700">
+                        <Award className="w-4 h-4 text-[#d9a441]" /> Certified Trainer
+                      </span>
+                      <span className="text-[#0B2A68] font-black">Sumedha IIM</span>
+                    </div>
+
+                  </div>
+
+                </HoverCard>
+              </AnimatedSection>
+            );
+          })}
+        </div>
+
+      </section>
+
+      {/* Faculty Credentials Banner */}
+      <section className="py-20 bg-[#0B2A68] text-white border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#d9a441] flex items-center justify-center mb-3">
+                <GraduationCap className="w-6 h-6" />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h4 className="font-serif text-xl font-bold text-navy mb-1">{f.name}</h4>
-                <p className="text-xs text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 font-bold uppercase tracking-wider mb-4">{f.designation}</p>
-                
-                <div className="mb-4">
-                  <p className="text-xs uppercase tracking-widest text-slate mb-1">Expertise</p>
-                  <p className="text-sm font-semibold text-navy">{f.expertise}</p>
-                </div>
-                
-                <p className="text-sm text-slate mt-auto line-clamp-3 border-t border-border/50 pt-4">
-                  {f.background}
-                </p>
-              </div>
+              <div className="font-serif font-black text-3xl text-white">15+</div>
+              <div className="text-xs text-sky-200 font-bold uppercase mt-1">Full-Time Mentors</div>
             </div>
-          ))}
+
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#d9a441] flex items-center justify-center mb-3">
+                <Briefcase className="w-6 h-6" />
+              </div>
+              <div className="font-serif font-black text-3xl text-white">20+ Yrs</div>
+              <div className="text-xs text-sky-200 font-bold uppercase mt-1">Combined Experience</div>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#d9a441] flex items-center justify-center mb-3">
+                <Award className="w-6 h-6" />
+              </div>
+              <div className="font-serif font-black text-3xl text-white">100%</div>
+              <div className="text-xs text-sky-200 font-bold uppercase mt-1">Industry Certified</div>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#d9a441] flex items-center justify-center mb-3">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <div className="font-serif font-black text-3xl text-white">6</div>
+              <div className="text-xs text-sky-200 font-bold uppercase mt-1">Academic Wings</div>
+            </div>
+
+          </div>
         </div>
       </section>
 

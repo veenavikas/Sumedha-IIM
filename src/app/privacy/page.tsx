@@ -1,4 +1,11 @@
 import PageHero from "@/components/ui/PageHero";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Sumedha IIM",
+  description: "Learn how Sumedha IIM collects, uses and protects your personal information when you visit our website or apply for admission.",
+  keywords: "sumedha iim privacy policy"
+};
 
 export default function Privacy() {
   return (

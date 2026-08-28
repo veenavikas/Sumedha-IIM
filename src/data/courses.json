@@ -1,55 +1,26 @@
 [
   {
-    "id": "bba-aviation",
-    "title": "BBA Aviation Management",
-    "category": "Aviation",
-    "duration": "3 Years",
-    "eligibility": "Intermediate (10+2)",
-    "mode": "Regular",
-    "fee": "₹3,50,000",
-    "description": "A comprehensive undergraduate program focusing on airport operations, passenger handling, cargo management, and aviation safety.",
-    "overview": "The BBA in Aviation Management is designed to prepare students for leadership roles in the fast-paced aviation industry. Combining core business management principles with specialized aviation operations, this 3-year program ensures graduates are ready to tackle challenges in airline management, airport operations, and allied sectors.",
-    "curriculum": ["Principles of Management", "Airport Operations", "Aviation Safety & Security", "Airline Marketing", "Travel & Tourism Management", "Business Communication"],
-    "careerProspects": ["Airport Manager", "Airline Operations Executive", "Ground Handling Manager", "Aviation Security Officer", "Cargo Manager"]
-  },
-  {
-    "id": "bhm",
-    "title": "Bachelor of Hotel Management (BHM)",
+    "id": "dhm",
+    "title": "Diploma in Hotel Management (DHM)",
     "category": "Hospitality",
-    "duration": "3 Years",
-    "eligibility": "Intermediate (10+2)",
-    "mode": "Regular",
-    "fee": "₹3,20,000",
-    "description": "An intensive degree program covering all aspects of hospitality, including food production, F&B service, front office, and housekeeping.",
-    "overview": "The Bachelor of Hotel Management (BHM) program transforms students into polished hospitality professionals. Through a blend of rigorous classroom instruction and extensive practical training in our mock setups, students learn the intricacies of managing world-class hotels, resorts, and restaurants.",
-    "curriculum": ["Food Production Operations", "Food & Beverage Service", "Front Office Management", "Accommodation Operations", "Hospitality Marketing", "Human Resource Management"],
-    "careerProspects": ["Hotel Manager", "Chef / F&B Director", "Front Office Manager", "Event Coordinator", "Cruise Line Manager"]
-  },
-  {
-    "id": "mba",
-    "title": "Master of Business Administration",
-    "category": "Hospitality",
-    "duration": "2 Years",
-    "eligibility": "Any Degree",
-    "mode": "Regular / Part-time",
-    "fee": "₹4,00,000",
-    "description": "A premium postgraduate program designed to build strategic leadership and advanced management skills for the global hospitality sector.",
-    "overview": "Our MBA program offers advanced business education tailored for the hospitality and service industries. It focuses on strategic management, international hospitality operations, and corporate leadership, empowering graduates to take on senior executive roles globally.",
-    "curriculum": ["Strategic Management", "International Hospitality Management", "Corporate Finance", "Digital Marketing", "Organizational Behavior", "Business Analytics"],
-    "careerProspects": ["General Manager", "Corporate Director", "Management Consultant", "Entrepreneur", "Revenue Manager"]
-  },
-  {
-    "id": "pgdam",
-    "title": "Post Graduate Diploma in Aviation Management (PGDAM)",
-    "category": "Aviation",
-    "duration": "3 Years",
-    "eligibility": "Intermediate (10+2)",
-    "mode": "Regular / Part-time",
-    "fee": "₹2,80,000",
-    "description": "An integrated PG diploma program focusing on advanced aviation operations, fleet management, and airline economics.",
-    "overview": "The PGDAM is an extensive program designed for students aiming for specialized roles in aviation. Over three years, the curriculum covers in-depth operational procedures, regulatory frameworks, and the business strategies that drive modern airlines and airports.",
-    "curriculum": ["Aviation Economics", "Fleet Management", "Air Traffic Control Basics", "Aviation Law", "Crew Management", "Logistics & Supply Chain"],
-    "careerProspects": ["Aviation Consultant", "Fleet Operations Manager", "Regulatory Affairs Officer", "Airline Commercial Manager"]
+    "duration": "1 Year / 6 Months",
+    "eligibility": "10th Pass",
+    "mode": "Part-time",
+    "description": "An entry-level, highly practical diploma for immediate entry into the hospitality workforce.",
+    "overview": "The DHM is perfect for students seeking quick entry into the hospitality sector. Available in 6-month and 1-year formats, it covers the absolute essentials of hotel operations, focusing heavily on practical skills in food service and housekeeping.",
+    "curriculum": [
+      "Basic Food Production",
+      "Housekeeping Operations",
+      "Communication Skills",
+      "Hygiene & Sanitation",
+      "Basic F&B Service"
+    ],
+    "careerProspects": [
+      "Commis Chef",
+      "F&B Steward",
+      "Housekeeping Executive",
+      "Front Desk Assistant"
+    ]
   },
   {
     "id": "dam",
@@ -58,11 +29,21 @@
     "duration": "1 Year",
     "eligibility": "Intermediate (10+2)",
     "mode": "Regular / Part-time",
-    "fee": "₹1,20,000",
     "description": "A fast-track diploma program for aspiring cabin crew and ground staff, emphasizing grooming, communication, and basic aviation operations.",
     "overview": "The Diploma in Aviation Management (DAM) is a specialized 1-year course focused on immediate employability. It thoroughly trains students in cabin crew responsibilities, ground handling, personality development, and passenger service excellence.",
-    "curriculum": ["Cabin Crew Training", "Personality Development", "First Aid & Emergency Procedures", "Passenger Handling", "In-flight Services"],
-    "careerProspects": ["Cabin Crew / Air Hostess", "Ground Staff", "Ticketing Executive", "Guest Relationship Executive"]
+    "curriculum": [
+      "Cabin Crew Training",
+      "Personality Development",
+      "First Aid & Emergency Procedures",
+      "Passenger Handling",
+      "In-flight Services"
+    ],
+    "careerProspects": [
+      "Cabin Crew / Air Hostess",
+      "Ground Staff",
+      "Ticketing Executive",
+      "Guest Relationship Executive"
+    ]
   },
   {
     "id": "pgdhm",
@@ -71,23 +52,227 @@
     "duration": "2 Years",
     "eligibility": "Any Degree",
     "mode": "Regular / Part-time",
-    "fee": "₹2,50,000",
     "description": "A focused PG diploma equipping graduates with advanced skills in hotel administration and operational leadership.",
     "overview": "Designed for graduates from any discipline, the PGDHM offers a fast-tracked immersion into hotel management. The 2-year program focuses on advanced operational techniques, leadership, and the financial aspects of running hospitality establishments.",
-    "curriculum": ["Advanced Hotel Administration", "Hospitality Finance", "Strategic Marketing", "Facility Planning", "Service Quality Management"],
-    "careerProspects": ["Assistant Hotel Manager", "F&B Manager", "Banquet Manager", "Guest Experience Director"]
+    "curriculum": [
+      "Advanced Hotel Administration",
+      "Hospitality Finance",
+      "Strategic Marketing",
+      "Facility Planning",
+      "Service Quality Management"
+    ],
+    "careerProspects": [
+      "Assistant Hotel Manager",
+      "F&B Manager",
+      "Banquet Manager",
+      "Guest Experience Director"
+    ]
   },
   {
-    "id": "dhm",
-    "title": "Diploma in Hotel Management (DHM)",
+    "id": "pgdam",
+    "title": "Post Graduate Diploma in Aviation Management (PGDAM)",
+    "category": "Aviation",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular / Part-time",
+    "description": "An integrated PG diploma program focusing on advanced aviation operations, fleet management, and airline economics.",
+    "overview": "The PGDAM is an extensive program designed for students aiming for specialized roles in aviation. Over three years, the curriculum covers in-depth operational procedures, regulatory frameworks, and the business strategies that drive modern airlines and airports.",
+    "curriculum": [
+      "Aviation Economics",
+      "Fleet Management",
+      "Air Traffic Control Basics",
+      "Aviation Law",
+      "Crew Management",
+      "Logistics & Supply Chain"
+    ],
+    "careerProspects": [
+      "Aviation Consultant",
+      "Fleet Operations Manager",
+      "Regulatory Affairs Officer",
+      "Airline Commercial Manager"
+    ]
+  },
+  {
+    "id": "bhm",
+    "title": "Bachelor of Hotel Management (BHM)",
     "category": "Hospitality",
-    "duration": "1 Year / 6 Months",
-    "eligibility": "10th Pass",
-    "mode": "Part-time",
-    "fee": "₹80,000",
-    "description": "An entry-level, highly practical diploma for immediate entry into the hospitality workforce.",
-    "overview": "The DHM is perfect for students seeking quick entry into the hospitality sector. Available in 6-month and 1-year formats, it covers the absolute essentials of hotel operations, focusing heavily on practical skills in food service and housekeeping.",
-    "curriculum": ["Basic Food Production", "Housekeeping Operations", "Communication Skills", "Hygiene & Sanitation", "Basic F&B Service"],
-    "careerProspects": ["Commis Chef", "F&B Steward", "Housekeeping Executive", "Front Desk Assistant"]
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular",
+    "description": "An intensive degree program covering all aspects of hospitality, including food production, F&B service, front office, and housekeeping.",
+    "overview": "The Bachelor of Hotel Management (BHM) program transforms students into polished hospitality professionals. Through a blend of rigorous classroom instruction and extensive practical training in our mock setups, students learn the intricacies of managing world-class hotels, resorts, and restaurants.",
+    "curriculum": [
+      "Food Production Operations",
+      "Food & Beverage Service",
+      "Front Office Management",
+      "Accommodation Operations",
+      "Hospitality Marketing",
+      "Human Resource Management"
+    ],
+    "careerProspects": [
+      "Hotel Manager",
+      "Chef / F&B Director",
+      "Front Office Manager",
+      "Event Coordinator",
+      "Cruise Line Manager"
+    ]
+  },
+  {
+    "id": "bba-aviation",
+    "title": "BBA - CAT, MAT coaching included with 3 years degree",
+    "category": "Aviation",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular",
+    "description": "A comprehensive undergraduate program focusing on airport operations, passenger handling, cargo management, and aviation safety.",
+    "overview": "The BBA in Aviation Management is designed to prepare students for leadership roles in the fast-paced aviation industry. Combining core business management principles with specialized aviation operations, this 3-year program ensures graduates are ready to tackle challenges in airline management, airport operations, and allied sectors.",
+    "curriculum": [
+      "Principles of Management",
+      "Airport Operations",
+      "Aviation Safety & Security",
+      "Airline Marketing",
+      "Travel & Tourism Management",
+      "Business Communication"
+    ],
+    "careerProspects": [
+      "Airport Manager",
+      "Airline Operations Executive",
+      "Ground Handling Manager",
+      "Aviation Security Officer",
+      "Cargo Manager"
+    ]
+  },
+  {
+    "id": "bca-ds-ai",
+    "title": "BCA - Data Science & Artificial Intelligence",
+    "category": "Technology",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2) with Mathematics",
+    "mode": "Regular",
+    "description": "A future-ready undergraduate program blending computer applications with Data Science and AI, equipping students for the digital economy.",
+    "overview": "The BCA in Data Science & Artificial Intelligence is a cutting-edge 3-year program designed to develop proficient technology professionals. Students gain a strong foundation in programming, machine learning, data analysis, and AI frameworks, preparing them for high-demand roles in the rapidly growing tech industry.",
+    "curriculum": [
+      "Programming in Python & Java",
+      "Data Structures & Algorithms",
+      "Machine Learning & Deep Learning",
+      "Big Data Analytics",
+      "Artificial Intelligence & Neural Networks",
+      "Database Management Systems",
+      "Cloud Computing & DevOps"
+    ],
+    "careerProspects": [
+      "Data Scientist",
+      "AI/ML Engineer",
+      "Data Analyst",
+      "Business Intelligence Developer",
+      "Python Developer",
+      "Research Analyst"
+    ]
+  },
+  {
+    "id": "bsc-ds",
+    "title": "BSC - Data Science",
+    "category": "Technology",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2) with Mathematics / Statistics",
+    "mode": "Regular",
+    "description": "A rigorous science-based undergraduate program focused on statistics, data analytics, and computational techniques for real-world problem solving.",
+    "overview": "The BSC in Data Science provides a strong mathematical and computational foundation for aspiring data professionals. Over 3 years, students learn statistical modeling, data visualization, programming, and the use of modern analytical tools to extract meaningful insights from complex datasets.",
+    "curriculum": [
+      "Statistics & Probability",
+      "Data Visualization",
+      "R Programming & Python",
+      "Machine Learning",
+      "Data Mining & Warehousing",
+      "Mathematical Modeling",
+      "Research Methodology"
+    ],
+    "careerProspects": [
+      "Data Scientist",
+      "Statistical Analyst",
+      "Data Engineer",
+      "Market Research Analyst",
+      "Quantitative Analyst",
+      "Healthcare Data Analyst"
+    ]
+  },
+  {
+    "id": "bcom-computers",
+    "title": "B.Com - Computers",
+    "category": "Commerce",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2) with Commerce / MPC / BiPC",
+    "mode": "Regular",
+    "description": "An integrated commerce degree combining core business studies with computer applications, accounting software, and digital business skills.",
+    "overview": "The B.Com in Computers bridges the gap between commerce and technology. This 3-year program equips students with expertise in accounting, taxation, and business management alongside practical computer skills including tally, ERP systems, and digital tools, making graduates industry-ready for the modern business environment.",
+    "curriculum": [
+      "Financial Accounting & Tally",
+      "Business Mathematics & Statistics",
+      "Corporate Law & Taxation",
+      "E-Commerce & Digital Marketing",
+      "Computer Fundamentals & MS Office",
+      "Database Management",
+      "Entrepreneurship & Business Ethics"
+    ],
+    "careerProspects": [
+      "Accounts Executive",
+      "Tax Consultant",
+      "Financial Analyst",
+      "E-Commerce Executive",
+      "ERP Coordinator",
+      "Banking & Finance Officer"
+    ]
+  },
+  {
+    "id": "bsc-mpc",
+    "title": "BSC - General (MPC)",
+    "category": "Science",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2) with MPC (Mathematics, Physics, Chemistry)",
+    "mode": "Regular",
+    "description": "A foundational science degree in Mathematics, Physics, and Chemistry that builds analytical thinking and opens pathways to engineering, research, and postgraduate studies.",
+    "overview": "The BSC General (MPC) is a comprehensive 3-year program designed for students passionate about fundamental sciences. It provides a thorough grounding in Mathematics, Physics, and Chemistry with emphasis on theoretical understanding and practical laboratory skills, paving the way for careers in research, academia, or competitive examinations.",
+    "curriculum": [
+      "Mathematics (Calculus, Algebra, Differential Equations)",
+      "Physics (Classical Mechanics, Optics, Electromagnetism)",
+      "Chemistry (Organic, Inorganic & Physical Chemistry)",
+      "Practical Laboratory Skills",
+      "Computer Science Basics",
+      "Scientific Research Methods",
+      "Environmental Science"
+    ],
+    "careerProspects": [
+      "Research Scientist",
+      "Lab Analyst / Chemist",
+      "Mathematics Educator",
+      "Civil Services (UPSC/TSPSC)",
+      "Data Analyst (after PG)",
+      "M.Sc / Engineering (PG pathway)"
+    ]
+  },
+  {
+    "id": "mba",
+    "title": "Master of Business Administration",
+    "category": "Hospitality",
+    "duration": "2 Years",
+    "eligibility": "Any Degree",
+    "mode": "Regular / Part-time",
+    "description": "A premium postgraduate program designed to build strategic leadership and advanced management skills for the global hospitality sector.",
+    "overview": "Our MBA program offers advanced business education tailored for the hospitality and service industries. It focuses on strategic management, international hospitality operations, and corporate leadership, empowering graduates to take on senior executive roles globally.",
+    "curriculum": [
+      "Strategic Management",
+      "International Hospitality Management",
+      "Corporate Finance",
+      "Digital Marketing",
+      "Organizational Behavior",
+      "Business Analytics"
+    ],
+    "careerProspects": [
+      "General Manager",
+      "Corporate Director",
+      "Management Consultant",
+      "Entrepreneur",
+      "Revenue Manager"
+    ]
   }
 ]

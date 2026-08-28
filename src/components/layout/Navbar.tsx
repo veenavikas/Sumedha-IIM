@@ -1,41 +1,46 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ChevronDown, FileText, Sparkles, MapPin } from "lucide-react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [programsOpen, setProgramsOpen] = useState(false);
-  const [admissionsOpen, setAdmissionsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const announcements = [
+    { text: "Admissions Open 2026-27 — Degree & Diploma Programmes in Aviation & Hotel Management", href: "/admissions/apply" },
+    { text: "100% Placement Record — Over 2000+ Alumni placed in Taj, Marriott, IndiGo & Qatar Airways", href: "/placements" },
+    { text: "Flexible 4-Term Fee Installment Options Available for All Courses", href: "/admissions" },
+    { text: "NSDC & Skill India Approved Practical Lab Facilities in Dwaraka Nagar, Vizag", href: "/about" },
+  ];
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
+    { 
+      name: "About Us", 
+      path: "/about",
+      dropdown: [
+        { name: "About College", path: "/about" },
+        { name: "Accreditations & Approvals", path: "/about" },
+        { name: "Faculty & Team", path: "/faculty" },
+        { name: "Grievance & Disclosures", path: "/privacy" }
+      ]
+    },
     { 
       name: "Programmes", 
       path: "/programmes",
       dropdown: [
-        { name: "All Programmes", path: "/programmes" },
-        { name: "BBA Aviation", path: "/programmes/bba-aviation" },
-        { name: "BHM", path: "/programmes/bhm" },
-        { name: "MBA", path: "/programmes/mba" },
-        { name: "PGDAM", path: "/programmes/pgdam" },
-        { name: "DAM", path: "/programmes/dam" },
-        { name: "PGDHM", path: "/programmes/pgdhm" },
-        { name: "DHM", path: "/programmes/dhm" },
+        { name: "DHM - Hotel Management", path: "/programmes/dhm" },
+        { name: "DAM - Aviation Management", path: "/programmes/dam" },
+        { name: "PGDHM - Post Graduate Hospitality", path: "/programmes/pgdhm" },
+        { name: "PGDAM - Post Graduate Aviation", path: "/programmes/pgdam" },
+        { name: "BHM - Degree in Hotel Mgmt", path: "/programmes/bhm" },
+        { name: "BBA Aviation Management", path: "/programmes/bba-aviation" },
+        { name: "MBA - Hospitality & Aviation", path: "/programmes/mba" },
       ]
     },
     { 
@@ -43,166 +48,232 @@ export default function Navbar() {
       path: "/admissions",
       dropdown: [
         { name: "Admission Process", path: "/admissions" },
-        { name: "Apply Online", path: "/admissions/apply" }
+        { name: "Fee Payment Terms", path: "/blog/hotel-management-fee-payment-options-vizag" },
+        { name: "Apply Online 2026", path: "/admissions/apply" }
       ]
     },
     { name: "Placements", path: "/placements" },
-    { name: "Campus", path: "/campus" },
+    { name: "Campus Life", path: "/campus" },
     { name: "Media", path: "/media" },
-    { name: "Contact", path: "/contact" },
+    { name: "News & Blog", path: "/blog" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 flex flex-col items-center px-4 sm:px-6 lg:px-8 transition-all duration-500 pt-4">
-
-
-      {/* Main Floating Pill Navbar */}
-      <div 
-        className={`w-full max-w-7xl transition-all duration-500 rounded-2xl lg:rounded-full border ${
-          isScrolled 
-            ? "bg-navy/85 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] border-white/10 py-2.5" 
-            : "bg-navy/95 backdrop-blur-md border-white/20 shadow-lg py-3"
-        }`}
-      >
-        <div className="px-4 lg:px-6 flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center transition-transform hover:scale-105">
-            <div className="bg-white/5 backdrop-blur-sm p-1.5 rounded-full border border-white/10">
-              <Image src="/images/image.png" alt="Sumedha IIM Logo" width={275} height={70} className="h-12 lg:h-14 w-auto object-contain" />
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
-                {link.dropdown ? (
-                  <div className="flex items-center px-4 py-2 cursor-pointer rounded-full hover:bg-white/10 transition-colors">
-                    <Link 
-                      href={link.path}
-                      className={`text-[15px] font-medium transition-colors ${
-                        pathname.startsWith(link.path) && link.path !== '/' ? "text-gold" : "text-white/90 group-hover:text-white"
-                      }`}
-                    >
-                      {link.name}
+    <header className="w-full flex flex-col z-50">
+      {/* 1. Marquee Announcement Ticker (Scrolling Infinite Bar) */}
+      <div className="group bg-[#041a4a] text-white text-[11px] sm:text-sm font-semibold py-2 overflow-hidden border-b border-white/10 relative z-30">
+        <div className="animate-marquee">
+          {[...Array(3)].map((_, idx) => (
+            <div key={idx} className="flex items-center shrink-0">
+              {announcements.map((item, index) => (
+                <span key={index} className="flex items-center">
+                  <span className="mx-4 sm:mx-6 flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1 shrink-0 rounded-full px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-[#0B2A68] bg-gradient-to-r from-[#d9a441] via-[#ffe9b0] to-[#d9a441]">
+                      <Sparkles className="w-3 h-3 text-[#0B2A68]" /> NEW
+                    </span>
+                    <Link href={item.href} className="inline-flex items-center gap-1.5 text-white hover:text-[#d9a441] transition-colors font-medium whitespace-nowrap">
+                      <FileText className="w-3.5 h-3.5 text-[#d9a441] shrink-0 opacity-80" />
+                      {item.text}
                     </Link>
-                    <ChevronDown className="w-4 h-4 ml-1.5 text-white/50 group-hover:text-white transition-colors group-hover:-rotate-180 duration-300" />
-                    
-                    {/* Dropdown Menu - Modernized */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                      <div className="bg-white/95 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.2)] rounded-2xl overflow-hidden border border-white/20 p-2 transform origin-top scale-95 group-hover:scale-100 transition-transform duration-300">
-                        {link.dropdown.map((dropLink) => (
-                          <Link
-                            key={dropLink.name}
-                            href={dropLink.path}
-                            className="block px-4 py-2.5 text-sm font-medium text-navy/80 hover:bg-slate-100 hover:text-blue-600 rounded-xl transition-all"
-                          >
-                            {dropLink.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <Link 
-                    href={link.path} 
-                    className={`block px-4 py-2 text-[15px] font-medium rounded-full transition-all ${
-                      pathname === link.path 
-                        ? "bg-white/15 text-white shadow-inner" 
-                        : "text-white/90 hover:bg-white/10 hover:text-white"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </nav>
+                  </span>
+                  <span className="text-[#d9a441]/40 text-lg mx-2">•</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
 
-          {/* CTAs Desktop */}
-          <div className="hidden lg:flex items-center pl-2">
-            <Link 
-              href="/admissions/apply" 
-              className="px-6 py-2.5 bg-gold text-navy hover:bg-white font-bold text-sm rounded-full shadow-[0_0_15px_rgba(201,168,76,0.3)] hover:shadow-[0_0_20px_rgba(201,168,76,0.5)] hover:scale-105 transition-all duration-300"
-            >
-              Apply Now
+      {/* 2. Top Institutional Header (Featuring Complete Full Official Logo) */}
+      <div className="relative bg-white py-3.5 sm:py-4 px-4 sm:px-8 border-b border-slate-200 shadow-sm">
+        <div className="max-w-[1500px] mx-auto flex items-center justify-between gap-4 sm:gap-8">
+          
+          {/* Left Complete Official Logo */}
+          <div className="flex shrink-0 items-center">
+            <Link href="/" className="flex items-center group">
+              <img 
+                src="/images/sumedha-full-logo.png" 
+                alt="Sumedha International Institute of Hospitality & Management" 
+                className="h-12 sm:h-16 lg:h-20 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 bg-white/10 rounded-full text-white hover:bg-white/20 focus:outline-none transition-colors"
+          {/* Center Details: Institution Name, Approvals, Address & Contact */}
+          <div className="flex flex-1 flex-col items-center text-center min-w-0 space-y-0.5">
+            <h1 className="font-serif font-black leading-none tracking-tight text-[#0B2A68] text-xl sm:text-2xl lg:text-3xl uppercase">
+              SUMEDHA
+            </h1>
+            <h2 className="text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider text-[#0284c7]">
+              International Institute of Hospitality & Management
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-xs font-semibold text-[#1F3560] pt-0.5">
+              <span>Approved by:<span className="font-bold text-[#0B2A68]"> NSDC & Skill India</span></span>
+              <span className="text-[#d9a441]">|</span>
+              <span>Affiliated to:<span className="font-bold text-[#0B2A68]"> State Board & Industry Partners</span></span>
+            </div>
+            
+            <p className="text-[10px] sm:text-xs font-medium text-slate-600 flex items-center justify-center gap-1">
+              <MapPin className="w-3 h-3 text-[#0284c7] inline shrink-0" />
+              5th Ln, behind Pawan showroom, Dwaraka Nagar, Visakhapatnam - 530016
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 text-[9px] sm:text-[10px] font-medium text-slate-500">
+              <span>admissions@mysumedha.com</span>
+              <span className="text-[#d9a441]">|</span>
+              <span>+91 8886197778, +91 8886197779</span>
+            </div>
+          </div>
+
+          {/* Right Excellence Badge */}
+          <div className="hidden lg:flex shrink-0 items-center">
+            <div className="w-22 lg:w-26 text-center p-2.5 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-sky-50 border border-amber-200 shadow-sm">
+              <div className="font-serif font-black text-[#0B2A68] text-lg lg:text-2xl leading-none">14+</div>
+              <div className="text-[8px] font-black text-[#d9a441] uppercase tracking-tight mt-0.5">Years Excellence</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Gold Accent Divider Line */}
+        <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-[#d9a441] to-transparent mt-2.5"></div>
+      </div>
+
+      {/* 3. Sticky Main Navigation Bar */}
+      <nav className="sticky top-0 z-40 bg-gradient-to-r from-[#0B2A68] via-[#0284c7] to-[#0369a1] text-white shadow-lg">
+        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex min-h-[56px] items-center justify-between">
+          
+          {/* Desktop Nav Items */}
+          <ul className="hidden lg:flex items-center justify-center space-x-1 xl:space-x-2 mx-auto">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.path || (link.path !== '/' && pathname.startsWith(link.path));
+              return (
+                <li 
+                  key={link.name} 
+                  className="relative group"
+                  onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
+                  onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
+                >
+                  <Link
+                    href={link.path}
+                    className={`relative flex items-center gap-1.5 px-4 py-3 text-[14px] font-semibold tracking-wide transition-all rounded-xl ${
+                      isActive ? "bg-white/15 text-white" : "text-white/80 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                    {link.dropdown && (
+                      <ChevronDown className="w-3.5 h-3.5 text-white/50 group-hover:rotate-180 transition-transform duration-300" />
+                    )}
+                    {isActive && (
+                      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-[#d9a441] rounded-full shadow-[0_0_8px_rgba(217,164,65,0.8)]" />
+                    )}
+                  </Link>
+
+                  {/* Dropdown Menu */}
+                  {link.dropdown && (
+                    <AnimatePresence>
+                      {activeDropdown === link.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 1 }}
+                          transition={{ duration: 0.18 }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-64 z-50"
+                        >
+                          <div className="bg-white/95 backdrop-blur-xl border border-slate-200 shadow-2xl rounded-2xl p-2.5 text-slate-800 space-y-1">
+                            <div className="px-3 py-1.5 border-b border-slate-100 mb-1">
+                              <span className="text-[10px] font-black uppercase tracking-widest text-[#d9a441]">{link.name} Options</span>
+                            </div>
+                            {link.dropdown.map((dropLink) => (
+                              <Link
+                                key={dropLink.name}
+                                href={dropLink.path}
+                                className="block px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0B2A68] hover:bg-sky-50 rounded-xl transition-colors"
+                              >
+                                {dropLink.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Quick Apply CTA (Right Desktop) */}
+          <div className="hidden lg:flex items-center shrink-0">
+            <Link
+              href="/admissions/apply"
+              className="px-6 py-2.5 text-xs font-black uppercase tracking-wider text-[#0B2A68] bg-gradient-to-r from-[#d9a441] to-[#ffe9b0] hover:from-[#b88328] hover:to-[#d9a441] rounded-xl shadow-md transition-all transform hover:scale-105"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              Apply Online 2026
+            </Link>
+          </div>
+
+          {/* Mobile Header Bar */}
+          <div className="lg:hidden flex items-center justify-between w-full py-2">
+            <div className="flex items-center gap-2">
+              <img src="/images/sumedha-full-logo.png" alt="Sumedha Logo" className="h-8 w-auto object-contain" />
+            </div>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 bg-white/10 rounded-lg text-white hover:bg-white/20 transition-colors"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu - Sleeker dropdown */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"}`}>
-          <div className="px-4 py-4 mt-2 bg-navy/40 backdrop-blur-md rounded-b-2xl border-t border-white/10 flex flex-col overflow-y-auto">
-            {navLinks.map((link) => (
-              <div key={link.name} className="flex flex-col">
-                {link.dropdown ? (
-                  <>
-                    <button 
-                      className="flex justify-between items-center px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 rounded-xl transition-colors"
-                      onClick={() => {
-                        if (link.name === 'Programmes') setProgramsOpen(!programsOpen);
-                        if (link.name === 'Admissions') setAdmissionsOpen(!admissionsOpen);
-                      }}
-                    >
-                      {link.name}
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
-                        (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "rotate-180 text-cyan-400" : "text-white/50"
-                      }`} />
-                    </button>
-                    <div className={`flex-col pl-4 mt-1 mb-2 space-y-1 overflow-hidden transition-all duration-300 ${
-                      (link.name === 'Programmes' && programsOpen) || (link.name === 'Admissions' && admissionsOpen) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}>
-                      {link.dropdown.map((dropLink) => (
-                        <Link
-                          key={dropLink.name}
-                          href={dropLink.path}
-                          className="block px-4 py-2.5 text-sm font-medium text-white/70 hover:text-cyan-300 hover:bg-white/5 rounded-lg transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {dropLink.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link 
-                    href={link.path} 
-                    className="px-4 py-3 text-base font-medium text-white/90 hover:bg-white/5 rounded-xl transition-colors"
+        {/* Mobile Dropdown Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-[#0B2A68] border-t border-white/10 px-6 py-4 space-y-2 text-white overflow-hidden"
+            >
+              {navLinks.map((link) => (
+                <div key={link.name} className="flex flex-col border-b border-white/10 pb-2">
+                  <Link
+                    href={link.path}
+                    className="py-2 text-sm font-bold text-white hover:text-[#d9a441] flex justify-between items-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
-                )}
+                  {link.dropdown && (
+                    <div className="pl-4 space-y-1.5 text-xs text-white/80 border-l border-[#d9a441]/40 ml-2">
+                      {link.dropdown.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          href={sub.path}
+                          className="block py-1 hover:text-[#d9a441]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4 flex flex-col gap-2">
+                <Link
+                  href="/admissions/apply"
+                  className="w-full text-center py-3 text-xs font-black uppercase bg-gradient-to-r from-[#d9a441] to-[#ffe9b0] text-[#0B2A68] rounded-xl shadow-md"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Apply Online 2026
+                </Link>
               </div>
-            ))}
-            <div className="mt-4 pt-4 border-t border-white/10 space-y-3 px-2">
-              <a 
-                href="tel:+918886197778"
-                className="flex items-center justify-center w-full py-3 text-white/90 font-medium text-sm rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-              >
-                <Phone className="w-4 h-4 mr-2 opacity-70" /> Call: 8886197778
-              </a>
-              <Link 
-                href="/admissions/apply" 
-                className="flex items-center justify-center w-full py-3 bg-white text-navy font-semibold text-sm rounded-xl shadow-[0_4px_15px_rgba(255,255,255,0.15)] active:scale-95 transition-all"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Apply Now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </header>
   );
 }

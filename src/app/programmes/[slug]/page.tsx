@@ -5,10 +5,26 @@ import coursesData from "@/data/courses.json";
 import PageHero from "@/components/ui/PageHero";
 import CTAStrip from "@/components/ui/CTAStrip";
 
+import { Metadata } from "next";
+
 export function generateStaticParams() {
   return coursesData.map((course) => ({
     slug: course.id,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  if (params.slug === "dhm") {
+    return {
+      title: "Diploma in Hotel Management in Vizag | Sumedha IIM",
+      description: "Join Sumedha IIM's Diploma in Hotel Management in Vizag. Industry-relevant curriculum, hands-on training & strong placements. Apply for 2026.",
+      keywords: "diploma in hotel management vizag, hotel management colleges in vizag, hotel management course after 12th, hotel management admission 2026"
+    };
+  }
+  const course = coursesData.find((c) => c.id === params.slug);
+  return {
+    title: `${course?.title || "Programme"} | Sumedha IIM`,
+  };
 }
 
 export default function ProgrammeDetail({ params }: { params: { slug: string } }) {
@@ -78,10 +94,6 @@ export default function ProgrammeDetail({ params }: { params: { slug: string } }
                 <li className="flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-slate mb-1">Learning Mode</span>
                   <span className="font-semibold text-navy">{course.mode}</span>
-                </li>
-                <li className="flex flex-col">
-                  <span className="text-xs uppercase tracking-wider text-slate mb-1">Fee Estimate</span>
-                  <span className="font-semibold text-navy">{course.fee}</span>
                 </li>
                 <li className="flex flex-col">
                   <span className="text-xs uppercase tracking-wider text-slate mb-1">Next Batch</span>

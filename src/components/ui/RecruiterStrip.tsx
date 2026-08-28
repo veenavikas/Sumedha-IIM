@@ -11,7 +11,7 @@ export default function RecruiterStrip() {
           <div key={idx} className="flex items-center space-x-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
             {/* If we had actual logos, we'd use Image. For now, text fallback */}
             <span className="text-2xl text-navy font-serif font-bold tracking-[0.05em]">{recruiter.name}</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mx-8 text-xl">✦</span>
+            <span className="text-primary mx-8 text-xl">✦</span>
           </div>
         ))}
       </div>

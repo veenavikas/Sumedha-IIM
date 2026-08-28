@@ -1,71 +1,85 @@
-import { FileText, Download, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import CTAStrip from "@/components/ui/CTAStrip";
+import PageHero from "@/components/ui/PageHero";
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Admissions Process 2026 | Sumedha IIM Vizag",
+  description: "Learn about the admission process, eligibility criteria, required documents, and flexible term fee options at Sumedha IIM Vizag.",
+  keywords: "sumedha iim admissions, hotel management admission vizag, aviation admission vizag, term fee options"
+};
 
 export default function Admissions() {
   return (
-    <div className="flex flex-col w-full bg-[#fcfcfc]">
-      {/* S1: Hero Exception Navy bg */}
-      <section className="relative w-full py-32 bg-navy flex items-center overflow-hidden">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-6 tracking-tight">Admissions Open 2026</h1>
-          <p className="text-ivory/80 font-sans text-xl max-w-2xl mx-auto">
-            Take the first step towards a global career in Aviation and Hospitality.
-          </p>
-        </div>
-      </section>
+    <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 overflow-hidden">
+      <PageHero 
+        title="Admissions Open 2026-27" 
+        subtitle="Take the first step towards a global career in Aviation & Hotel Management with Sumedha IIM." 
+      />
 
       {/* S2: Timeline */}
       <section className="py-24 max-w-5xl mx-auto px-4 w-full">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl font-bold text-navy">Admission Process</h2>
+          <span className="px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 font-extrabold text-xs uppercase tracking-widest border border-sky-200">
+            Step-by-Step Roadmap
+          </span>
+          <h2 className="font-sans text-3xl md:text-5xl font-black text-[#0b2a68] mt-3">Simple Admission Process</h2>
         </div>
         
-        <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none/30">
+        <div className="space-y-6 relative">
           {[
-            { step: "01", title: "Choose Programme", desc: "Browse our Aviation and Hospitality courses and select the one that aligns with your career goals." },
-            { step: "02", title: "Fill Application", desc: "Complete the online application form with your personal and educational details." },
-            { step: "03", title: "Submit Documents", desc: "Upload necessary documents including 10th/12th marksheets and ID proof." },
-            { step: "04", title: "Counselling Call", desc: "Our admission counselors will reach out to guide you through the next steps and answer queries." },
-            { step: "05", title: "Enroll & Begin", desc: "Pay the admission fee to confirm your seat and prepare for the upcoming batch." }
+            { step: "01", title: "Choose Programme", desc: "Select from BHM, BBA Aviation, DHM, DAM, or PG Diplomas based on your career interest." },
+            { step: "02", title: "Fill Online Application", desc: "Complete the quick online application form with basic educational details." },
+            { step: "03", title: "Personal Counseling", desc: "Meet or call our admissions desk for personalized course guidance & term payment plan setup." },
+            { step: "04", title: "Document Submission", desc: "Submit 10th/12th marksheets, transfer certificate, and passport size photos." },
+            { step: "05", title: "Seat Confirmation", desc: "Clear term 1 installment fee to confirm your seat and receive official orientation kit." }
           ].map((item, idx) => (
-            <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none text-navy font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg z-10">
+            <div key={idx} className="flex items-center gap-6 bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-sky-100 shadow-md">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0b2a68] to-[#0284c7] text-white font-black text-lg flex items-center justify-center shrink-0 shadow-md">
                 {item.step}
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl border border-border/50 bg-white shadow-md">
-                <h3 className="font-bold text-navy text-xl mb-2">{item.title}</h3>
-                <p className="text-slate">{item.desc}</p>
+              <div>
+                <h3 className="font-bold text-[#0b2a68] text-lg mb-1">{item.title}</h3>
+                <p className="text-slate-600 text-xs leading-relaxed font-medium">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* S3 & S4: Checklist & Prospectus */}
-      <section className="py-24 bg-white border-y border-border/50">
+      {/* S3 & S4: Checklist & Apply CTA */}
+      <section className="py-24 bg-white border-y border-sky-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Checklist */}
-            <div className="bg-[#fcfcfc] p-10 rounded-2xl border border-border/50 shadow-sm">
-              <h3 className="font-serif text-3xl font-bold text-navy mb-6">Required Documents</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center text-slate"><CheckCircle2 className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3" /> 10th Marksheet & Certificate</li>
-                <li className="flex items-center text-slate"><CheckCircle2 className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3" /> 12th Marksheet & Certificate</li>
-                <li className="flex items-center text-slate"><CheckCircle2 className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3" /> Transfer Certificate (TC)</li>
-                <li className="flex items-center text-slate"><CheckCircle2 className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3" /> Aadhar Card / ID Proof</li>
-                <li className="flex items-center text-slate"><CheckCircle2 className="w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mr-3" /> 4 Passport Size Photographs</li>
+            <div className="bg-sky-50/50 p-8 sm:p-10 rounded-3xl border border-sky-100 shadow-sm">
+              <h3 className="font-sans text-2xl font-black text-[#0b2a68] mb-6">Required Documents Checklist</h3>
+              <ul className="space-y-3.5 text-sm text-slate-700 font-semibold">
+                <li className="flex items-center"><CheckCircle2 className="w-5 h-5 text-sky-600 mr-3 shrink-0" /> 10th Standard Marksheet & Certificate</li>
+                <li className="flex items-center"><CheckCircle2 className="w-5 h-5 text-sky-600 mr-3 shrink-0" /> 12th / Intermediate (10+2) Marksheet</li>
+                <li className="flex items-center"><CheckCircle2 className="w-5 h-5 text-sky-600 mr-3 shrink-0" /> Transfer Certificate (TC) & Conduct Certificate</li>
+                <li className="flex items-center"><CheckCircle2 className="w-5 h-5 text-sky-600 mr-3 shrink-0" /> Aadhar Card / Valid ID Proof</li>
+                <li className="flex items-center"><CheckCircle2 className="w-5 h-5 text-sky-600 mr-3 shrink-0" /> 4 Passport Size Photographs</li>
               </ul>
             </div>
 
-            {/* Prospectus */}
-            <div className="bg-navy text-white p-10 rounded-2xl border border-blue-500/30 shadow-xl flex flex-col items-center justify-center text-center">
-              <FileText className="w-16 h-16 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-6" />
-              <h3 className="font-serif text-3xl font-bold mb-4">Download Prospectus</h3>
-              <p className="text-ivory/80 mb-8 max-w-sm">Get detailed information about all our programmes, campus facilities, fee structure, and placement records.</p>
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-none text-navy font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors duration-300 rounded-full inline-flex items-center">
-                <Download className="w-4 h-4 mr-2" /> Download PDF
-              </button>
+            {/* Apply Online Box */}
+            <div className="bg-gradient-to-br from-[#0b2a68] via-[#071d47] to-[#04122d] text-white p-8 sm:p-10 rounded-3xl border border-sky-400/20 shadow-xl flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-black text-sky-300 uppercase tracking-widest block mb-2">Direct Application</span>
+                <h3 className="font-sans text-3xl font-black text-white mb-4">Apply Online for 2026 Batch</h3>
+                <p className="text-sky-100 text-sm leading-relaxed mb-8">
+                  Submit your online application in less than 2 minutes to reserve your seat and get instant counseling support.
+                </p>
+              </div>
+              <Link 
+                href="/admissions/apply" 
+                className="w-full text-center py-4 bg-sky-500 hover:bg-sky-600 text-white font-black text-xs uppercase tracking-widest rounded-full shadow-lg transition-all"
+              >
+                Start Online Application <ArrowRight className="w-4 h-4 inline ml-2" />
+              </Link>
             </div>
 
           </div>
