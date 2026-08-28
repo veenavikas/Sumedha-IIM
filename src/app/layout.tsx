@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
-import Script from "next/script";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({ 
@@ -83,7 +82,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppFloat />
-        <Script src="https://www.noupe.com/embed/019f370b67107000833c89aed7ebf6ef0d70.js" strategy="afterInteractive" />
       </body>
     </html>
   );
