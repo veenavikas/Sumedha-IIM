@@ -151,10 +151,10 @@ export default function Home() {
     <div className="w-full bg-[#f8fafc] text-slate-900 flex flex-col font-sans">
       
       {/* 1. HERO SECTION WITH 2-COLUMN LAYOUT (TYPOGRAPHY LEFT + SLIDER RIGHT) & FLOATING STAT CARDS */}
-      <section className="relative bg-[#04173d] text-white flex flex-col justify-between overflow-hidden">
+      <section className="relative bg-[#04173d] text-white flex flex-col justify-between">
         
         {/* Background Image with Deep Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src="/images/hero-campus.png" 
             alt="Sumedha Campus" 
