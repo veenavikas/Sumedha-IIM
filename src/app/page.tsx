@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import HeroSlider from "@/components/ui/HeroSlider";
 import { 
   ArrowRight, Award, Users, BookOpen, Hotel, Plane, Briefcase, 
   GraduationCap, Play, Star, Calendar, Download, Sparkles, 
@@ -149,77 +150,87 @@ export default function Home() {
   return (
     <div className="w-full bg-[#f8fafc] text-slate-900 flex flex-col font-sans">
       
-      {/* 1. HERO SLIDER SECTION WITH FLOATING STAT CARDS */}
-      <section className="relative min-h-[580px] lg:min-h-[660px] bg-[#04173d] text-white flex flex-col justify-between overflow-hidden">
+      {/* 1. HERO SECTION WITH 2-COLUMN LAYOUT (TYPOGRAPHY LEFT + SLIDER RIGHT) & FLOATING STAT CARDS */}
+      <section className="relative bg-[#04173d] text-white flex flex-col justify-between overflow-hidden">
         
         {/* Background Image with Deep Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/hero-campus.png" 
             alt="Sumedha Campus" 
-            className="w-full h-full object-cover object-center opacity-30 scale-105 transition-transform duration-10000 animate-pulse" 
+            className="w-full h-full object-cover object-center opacity-20 scale-105 transition-transform duration-10000 animate-pulse" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2A68]/95 via-[#0B2A68]/80 to-[#031436]/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2A68]/95 via-[#0B2A68]/90 to-[#031436]/95" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A68] via-transparent to-[#041a4a]/70" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 lg:pt-24 pb-20 w-full flex flex-col items-center text-center">
-          
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#ffe9b0] text-xs font-bold uppercase tracking-widest mb-6 shadow-xl">
-            <Sparkles className="w-4 h-4 text-[#d9a441]" /> Visakhapatnam&apos;s Premier Hospitality & Aviation Institute
-          </div>
-
-          <h1 className="font-serif font-black text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[1.08] max-w-5xl">
-            BUILD A GLOBAL CAREER IN <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d9a441] via-[#ffe9b0] to-[#d9a441]">
-              HOSPITALITY & AVIATION
-            </span>
-          </h1>
-
-          <p className="mt-6 text-sm sm:text-base lg:text-xl text-slate-200 max-w-3xl font-medium leading-relaxed">
-            Approved by NSDC & Skill India. Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/admissions/apply"
-              className="px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-[#0B2A68] bg-gradient-to-r from-[#d9a441] via-[#ffe9b0] to-[#d9a441] hover:from-[#b88328] hover:to-[#d9a441] rounded-2xl shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
-            >
-              APPLY FOR ADMISSIONS 2026 <ArrowRight className="w-4 h-4" />
-            </Link>
+        {/* Hero Grid Container */}
+        <div className="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16 pb-24 lg:pb-32 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            <Link
-              href="/programmes"
-              className="px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 rounded-2xl transition-all hover:scale-105"
-            >
-              EXPLORE ALL COURSES
-            </Link>
-          </div>
+            {/* Left Column: Typography & CTAs */}
+            <div className="lg:col-span-7 text-left space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#ffe9b0] text-xs font-bold uppercase tracking-widest shadow-xl">
+                <Sparkles className="w-4 h-4 text-[#d9a441]" /> Visakhapatnam&apos;s Premier Hospitality & Aviation Institute
+              </div>
 
+              <h1 className="font-serif font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
+                BUILD A GLOBAL CAREER IN <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d9a441] via-[#ffe9b0] to-[#d9a441]">
+                  HOSPITALITY & AVIATION
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl font-medium leading-relaxed">
+                Approved by NSDC & Skill India. Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/admissions/apply"
+                  className="px-7 py-3.5 text-xs sm:text-sm font-black uppercase tracking-wider text-[#0B2A68] bg-gradient-to-r from-[#d9a441] via-[#ffe9b0] to-[#d9a441] hover:from-[#b88328] hover:to-[#d9a441] rounded-2xl shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
+                >
+                  APPLY FOR ADMISSIONS 2026 <ArrowRight className="w-4 h-4" />
+                </Link>
+                
+                <Link
+                  href="/programmes"
+                  className="px-7 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 rounded-2xl transition-all hover:scale-105"
+                >
+                  EXPLORE COURSES
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Hero Carousel Slider */}
+            <div className="lg:col-span-5 w-full">
+              <HeroSlider />
+            </div>
+
+          </div>
         </div>
 
         {/* 2. FLOATING OVERLAPPING 5 STAT CARDS GRID */}
-        <div className="relative z-20 max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 -mb-16 w-full">
+        <div className="relative z-20 max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 -mb-16 sm:-mb-20 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             {statCards.map((stat, idx) => {
               const Icon = stat.icon;
               return (
                 <div 
                   key={idx} 
-                  className="bg-white/95 backdrop-blur-xl p-5 rounded-3xl border border-slate-200/80 shadow-2xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-1 group flex flex-col justify-between"
+                  className="bg-white/95 backdrop-blur-xl p-4 sm:p-5 rounded-3xl border border-slate-200/80 shadow-2xl hover:shadow-sky-500/10 transition-all duration-300 transform hover:-translate-y-1 group flex flex-col justify-between min-h-[120px] sm:min-h-[140px]"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${stat.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
-                      <Icon className="w-5 h-5 text-white" />
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br ${stat.color} text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <span className="text-[10px] font-black text-[#d9a441] uppercase tracking-wider">OFFICIAL</span>
                   </div>
                   <div>
-                    <div className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#0B2A68] tracking-tight">
+                    <div className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-[#0B2A68] tracking-tight leading-none mb-1">
                       {stat.number}
                     </div>
-                    <div className="text-xs font-bold text-slate-600 mt-0.5 leading-tight">
+                    <div className="text-[11px] sm:text-xs font-bold text-slate-600 leading-snug">
                       {stat.label}
                     </div>
                   </div>
