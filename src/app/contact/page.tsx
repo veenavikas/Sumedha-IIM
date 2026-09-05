@@ -54,7 +54,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#0b2a68] text-base mb-1">Email Enquiry</h3>
-                  <a href="mailto:admissions@mysumedha.com" className="text-slate-700 hover:text-sky-600 transition-colors font-semibold text-sm">admissions@mysumedha.com</a>
+                  <p className="space-y-1">
+                    <a href="mailto:info@mysumedha.com" className="block text-slate-700 hover:text-sky-600 transition-colors font-semibold text-sm">info@mysumedha.com</a>
+                    <a href="mailto:admissions@mysumedha.com" className="block text-slate-500 hover:text-sky-600 transition-colors font-medium text-xs">admissions@mysumedha.com</a>
+                  </p>
                 </div>
               </HoverCard>
 

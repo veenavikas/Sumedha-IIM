@@ -45,8 +45,17 @@ export default function Footer() {
             </p>
             <p className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#d9a441] shrink-0" />
-              <span>admissions@mysumedha.com</span>
+              <span>info@mysumedha.com | admissions@mysumedha.com</span>
             </p>
+            <p className="text-[11px] text-slate-400 font-semibold pt-1">
+              <span className="text-[#d9a441]">Working Hours:</span> Mon - Sun: 09:00 AM - 08:00 PM
+            </p>
+          </div>
+          {/* Social Links */}
+          <div className="flex items-center gap-3 pt-2">
+            <a href="https://facebook.com/sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="Facebook">FB</a>
+            <a href="https://www.instagram.com/sumedhaiim?utm_source=qr&igsh=cnFud3RxZGhwdGxj" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="Instagram">IG</a>
+            <a href="https://www.youtube.com/@SUMEDHA-o7v" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="YouTube">YT</a>
           </div>
         </div>
 

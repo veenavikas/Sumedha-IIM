@@ -95,8 +95,8 @@ export default function About() {
           <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center relative">
             <span className="text-xs font-black text-sky-600 uppercase tracking-widest mb-2">Leadership Message</span>
             <h3 className="text-2xl md:text-3xl font-black text-[#0b2a68] mb-6">Shaping Careers for the Global Industry</h3>
-            <p className="text-base text-slate-600 mb-8 leading-relaxed font-medium italic">
-              At Sumedha IIM, we don&apos;t just teach syllabus; we shape careers. In an era where aviation and hospitality sectors are expanding at unprecedented rates, our goal is to ensure our students are not just employable, but are the first choice for premier global recruiters.
+            <p className="text-base text-slate-600 mb-6 leading-relaxed font-medium italic">
+              &quot;We&apos;re delighted that you&apos;re considering Sumedha for your post-secondary education. With a long and proud history in international education, our degree, graduate, diploma, and certificate programs will prepare you for a rewarding career across India and globally. You&apos;ll find Sumedha has a distinctly welcoming environment waiting for you. We are privileged to have students from across the region who come to Sumedha for high quality teaching, outstanding practical facilities and dedicated student placement support.&quot;
             </p>
             <div>
               <h4 className="font-black text-[#0b2a68] text-xl">Naga Sundar V</h4>
