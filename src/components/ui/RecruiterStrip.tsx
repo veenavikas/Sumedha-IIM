@@ -15,7 +15,9 @@ export default function RecruiterStrip() {
               src={recruiter.logo} 
               alt={recruiter.name} 
               title={recruiter.name}
-              className={`max-h-12 max-w-[130px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+              className={`w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                recruiter.name.includes('Jet Airways') ? 'max-h-16 max-w-[145px]' : 'max-h-12 max-w-[130px]'
+              } ${
                 recruiter.name === 'JetLite' ? 'brightness-0' : ''
               }`}
               onError={(e) => {

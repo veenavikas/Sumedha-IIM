@@ -73,7 +73,9 @@ export default function Placements() {
                     src={r.logo} 
                     alt={r.name} 
                     title={r.name}
-                    className={`max-h-16 max-w-[80%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                    className={`w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                      r.name.includes('Jet Airways') ? 'max-h-20 max-w-[92%]' : 'max-h-16 max-w-[85%]'
+                    } ${
                       r.name === 'JetLite' ? 'brightness-0' : ''
                     }`}
                     onError={(e) => {
