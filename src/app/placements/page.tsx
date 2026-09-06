@@ -68,21 +68,25 @@ export default function Placements() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {recruitersData.map((r, idx) => (
               <AnimatedSection key={idx} direction="up" delay={idx * 0.02}>
-                <HoverCard className="p-5 bg-white rounded-2xl border border-sky-100 hover:border-sky-300 transition-all shadow-sm flex flex-col items-center justify-center space-y-3 min-h-[120px]">
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 p-2 flex items-center justify-center overflow-hidden border border-sky-100">
-                    <img 
-                      src={r.logo} 
-                      alt={r.name} 
-                      className="max-h-full max-w-full object-contain"
-                      onError={(e) => {
-                        (e.target as HTMLElement).style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div className="text-center">
-                    <span className="font-sans font-bold text-sm text-[#0b2a68] block leading-tight">{r.name}</span>
-                    <span className="text-[10px] text-sky-600 font-extrabold uppercase tracking-wider mt-0.5 block">{r.sector}</span>
-                  </div>
+                <HoverCard className="p-6 bg-white rounded-2xl border border-slate-200/80 shadow-md hover:shadow-xl hover:border-sky-400 transition-all duration-300 flex items-center justify-center h-32 group relative overflow-hidden">
+                  <img 
+                    src={r.logo} 
+                    alt={r.name} 
+                    title={r.name}
+                    className={`max-h-16 max-w-[85%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                      r.logo.includes('white') || r.name.includes('JetLite') ? 'brightness-0' : ''
+                    }`}
+                    onError={(e) => {
+                      const target = e.target as HTMLElement;
+                      target.style.display = 'none';
+                      if (target.parentElement && !target.parentElement.querySelector('span')) {
+                        const span = document.createElement('span');
+                        span.className = 'font-sans font-bold text-base text-[#0b2a68] text-center tracking-wide';
+                        span.innerText = r.name;
+                        target.parentElement.appendChild(span);
+                      }
+                    }}
+                  />
                 </HoverCard>
               </AnimatedSection>
             ))}
