@@ -15,8 +15,8 @@ export default function RecruiterStrip() {
               src={recruiter.logo} 
               alt={recruiter.name} 
               title={recruiter.name}
-              className={`max-h-12 max-w-[120px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
-                recruiter.logo.includes('white') || recruiter.name.includes('JetLite') ? 'brightness-0' : ''
+              className={`max-h-12 max-w-[130px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 ${
+                recruiter.name === 'JetLite' ? 'brightness-0' : ''
               }`}
               onError={(e) => {
                 const target = e.target as HTMLElement;

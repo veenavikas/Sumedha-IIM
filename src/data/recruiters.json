@@ -2,111 +2,111 @@
   {
     "name": "Air India",
     "sector": "Aviation",
-    "logo": "https://www.airindia.com/adobe/dynamicmedia/deliver/dm-aid--3c6a707f-2e38-48d0-ac12-4751c4f554ba/AI_Logo_Red_New.svg"
+    "logo": "/images/recruiters/air-india.svg"
   },
   {
     "name": "IndiGo",
     "sector": "Aviation",
-    "logo": "https://www.goindigo.in/content/dam/s6web/in/en/assets/logo/IndiGo_logo_2x.png"
+    "logo": "/images/recruiters/indigo.png"
   },
   {
     "name": "SpiceJet",
     "sector": "Aviation",
-    "logo": "https://www.spicejet.com/v1.svg"
+    "logo": "/images/recruiters/spicejet.svg"
   },
   {
     "name": "Jet Airways",
     "sector": "Aviation",
-    "logo": "https://cdn.worldvectorlogo.com/logos/jet-airways.svg"
+    "logo": "/images/recruiters/jet-airways.svg"
   },
   {
     "name": "JetLite",
     "sector": "Aviation",
-    "logo": "https://static.wixstatic.com/media/56bd62_c30044b7d8eb407a8a5256076bff50db~mv2.png/v1/fill/w_222,h_84,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/jetlite_Logo-white.png"
+    "logo": "/images/recruiters/jetlite.png"
   },
   {
     "name": "Taj Hotels (IHCL)",
     "sector": "Hospitality",
-    "logo": "https://cdn.sanity.io/images/ocl5w36p/ihcl_prod/7bba7e538789e510d69f4cf107cf84dc096f65eb-165x57.svg"
+    "logo": "/images/recruiters/taj-ihcl.png"
   },
   {
     "name": "Hilton Hotels",
     "sector": "Hospitality",
-    "logo": "https://www.hilton.com/modules/assets/svgs/logos/HI.svg"
+    "logo": "/images/recruiters/hilton.svg"
   },
   {
     "name": "Novotel Accor",
     "sector": "Hospitality",
-    "logo": "https://novotel.accor.com/a/content/dam/brands/nov/global-marketing/brand-identity/logos/full-color.svg"
+    "logo": "/images/recruiters/novotel.svg"
   },
   {
     "name": "HotelF1 Accor",
     "sector": "Hospitality",
-    "logo": "https://hotelf1.accor.com/assets/images/logos/wide.svg"
+    "logo": "/images/recruiters/hotelf1.svg"
   },
   {
     "name": "Grand Mercure",
     "sector": "Hospitality",
-    "logo": "https://www.grandmercure.com/wp-content/themes/grand-mercure/css/images/Grand_Mercure_logo.png"
+    "logo": "/images/recruiters/grand-mercure.svg"
   },
   {
     "name": "ALL Accor Live Limitless",
     "sector": "Hospitality",
-    "logo": "https://all.accor.com/a/content/dam/all/global-marketing/brand-identity/logos/all-accor/blue/vertical/Logo%20ALL%20ACCOR_BLUE_Vertical_RGB.svg"
+    "logo": "/images/recruiters/all-accor.svg"
   },
   {
     "name": "Wyndham Hotels & Resorts",
     "sector": "Hospitality",
-    "logo": "https://cdn.worldvectorlogo.com/logos/wyndham-hotels-resorts.svg"
+    "logo": "/images/recruiters/wyndham.svg"
   },
   {
     "name": "Holiday Inn (IHG)",
     "sector": "Hospitality",
-    "logo": "https://digital.ihg.com/is/content/ihg/hi_logo"
+    "logo": "/images/recruiters/holiday-inn.svg"
   },
   {
     "name": "Fortune Hotels",
     "sector": "Hospitality",
-    "logo": "https://d2gx18f76jq9dw.cloudfront.net/44906/01KBW7M2HNVCZSSB1GMVD187VT.jpg"
+    "logo": "/images/recruiters/fortune-hotels.png"
   },
   {
     "name": "Sarovar Hotels",
     "sector": "Hospitality",
-    "logo": "https://assets.simplotel.com/simplotel/image/upload/x_0,y_0,w_1500,h_751,r_0,c_crop,q_90/w_355,h_200,f_auto,c_fit/sarovar-hotels---indias-leading-hotel-chain/Sarovar_Hotels_Logo_qubx1f"
+    "logo": "/images/recruiters/sarovar-hotels.png"
   },
   {
     "name": "Royal Orchid Hotels",
     "sector": "Hospitality",
-    "logo": "https://www.royalorchidhotels.com/images/logo-2.webp"
+    "logo": "/images/recruiters/royal-orchid.png"
   },
   {
     "name": "TCS (Tata Consultancy Services)",
     "sector": "Corporate",
-    "logo": "https://www.tcs.com/content/dam/global-tcs/en/images/home/tcs-logo-1.svg"
+    "logo": "/images/recruiters/tcs.svg"
   },
   {
     "name": "Wipro",
     "sector": "Corporate",
-    "logo": "https://www.wipro.com/content/dam/wipro/social-icons/wipro_new_logo.svg"
+    "logo": "/images/recruiters/wipro.svg"
   },
   {
     "name": "IBM",
     "sector": "Corporate",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
+    "logo": "/images/recruiters/ibm.svg"
   },
   {
     "name": "HSBC Bank",
     "sector": "Corporate",
-    "logo": "https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=FCDFB4DC1991B6B5EE0AB98E7208CB82"
+    "logo": "/images/recruiters/hsbc.svg"
   },
   {
     "name": "P&G (Procter & Gamble)",
     "sector": "Corporate",
-    "logo": "https://images.ctfassets.net/oe48y40ukei6/7znyJc3Y7SecEoKSYKWoaQ/823b9197d34f0dcb0f3dee778dc625a7/P_G_Logo_RGB.svg"
+    "logo": "/images/recruiters/pg.svg"
   },
   {
     "name": "Delite Softech",
     "sector": "Corporate",
-    "logo": "https://delitesoftech.com/img/logo.png"
+    "logo": "/images/recruiters/delite-softech.png"
   }
 ]
