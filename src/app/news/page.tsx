@@ -28,10 +28,10 @@ export default function News() {
     },
     {
       id: 3,
-      title: "Partnership Renewal with NSDC & Skill India",
+      title: "Industry Training Partnership & Placement Expansion",
       date: "March 10, 2026",
-      excerpt: "Reaffirming our commitment to employability-linked skill development, our NSDC industry accreditation has been renewed for government-backed certifications.",
-      category: "Accreditations"
+      excerpt: "Reaffirming our commitment to employability-linked skill development, our industry network expands with new leading airline and luxury hospitality partners.",
+      category: "Partnerships"
     },
     {
       id: 4,

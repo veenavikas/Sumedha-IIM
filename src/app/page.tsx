@@ -65,7 +65,7 @@ export default function Home() {
 
   const noticesList = [
     { title: "Online Registration Open for Admissions 2026-27 Batch", date: "AUG 20, 2026", isNew: true, link: "/admissions/apply" },
-    { title: "NSDC Skill Certification Practical Exam Schedule Announced", date: "AUG 18, 2026", isNew: true, link: "/news" },
+    { title: "Annual Aviation & Hotel Management Examination Schedule Announced", date: "AUG 18, 2026", isNew: true, link: "/news" },
     { title: "5-Star Hotel Internship Placement Drive for DHM Final Year", date: "AUG 12, 2026", isNew: false, link: "/placements" },
     { title: "Aviation Cabin Crew Mock Drill & Safety Workshop", date: "AUG 05, 2026", isNew: false, link: "/campus" },
     { title: "Annual Culinary Fest & Mocktail Competition Registration", date: "JUL 28, 2026", isNew: false, link: "/campus" },
@@ -144,7 +144,7 @@ export default function Home() {
     { title: "Annual Culinary & Flair Mixology Competition 2026", date: "SEP 15, 2026", type: "Featured Campus Event", category: "Culinary Arts", isVideo: true, videoThumb: "/images/hotel-management-content-1.jpg" },
     { title: "IndiGo & Qatar Airways Campus Recruitment Drive", date: "AUG 28, 2026", type: "Placement Drive", category: "Aviation", isVideo: false, videoThumb: "/images/hero-1.jpg" },
     { title: "Industrial Visit to Taj Gateway Hotel Visakhapatnam", date: "AUG 10, 2026", type: "Industry Exposure", category: "Hospitality", isVideo: false, videoThumb: "/images/hero-2.jpg" },
-    { title: "NSDC Skill Certification Graduation Day Ceremony", date: "JUL 18, 2026", type: "Convocation", category: "Academic", isVideo: true, videoThumb: "/images/hero-campus.png" },
+    { title: "Annual Convocation & Graduation Day Ceremony", date: "JUL 18, 2026", type: "Convocation", category: "Academic", isVideo: true, videoThumb: "/images/hero-campus.png" },
   ];
 
   return (
@@ -182,7 +182,7 @@ export default function Home() {
               </h1>
 
               <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl font-medium leading-relaxed">
-                Approved by NSDC & Skill India. Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
+                Affiliated to State Board & Industry Partners. Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">

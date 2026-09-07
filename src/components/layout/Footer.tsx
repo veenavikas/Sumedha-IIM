@@ -32,7 +32,7 @@ export default function Footer() {
             <img src="/images/sumedha-full-logo.png" alt="Sumedha IIM Logo" className="h-12 sm:h-14 w-auto object-contain" />
           </div>
           <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-            Sumedha International Institute of Hospitality & Management is Visakhapatnam&apos;s premier institute for Aviation, Hotel Management, and Airport Ground Operations. Approved by NSDC & Skill India.
+            Sumedha International Institute of Hospitality & Management is Visakhapatnam&apos;s premier institute for Aviation, Hotel Management, and Airport Ground Operations.
           </p>
           <div className="space-y-2 text-xs text-slate-300">
             <p className="flex items-start gap-2">

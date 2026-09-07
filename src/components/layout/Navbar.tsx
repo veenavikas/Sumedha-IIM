@@ -15,7 +15,7 @@ export default function Navbar() {
     { text: "Admissions Open 2026-27 — Degree & Diploma Programmes in Aviation & Hotel Management", href: "/admissions/apply" },
     { text: "100% Placement Record — Over 2000+ Alumni placed in Taj, Marriott, IndiGo & Qatar Airways", href: "/placements" },
     { text: "Flexible 4-Term Fee Installment Options Available for All Courses", href: "/admissions" },
-    { text: "NSDC & Skill India Approved Practical Lab Facilities in Dwaraka Nagar, Vizag", href: "/about" },
+    { text: "State-of-the-Art Practical Lab Facilities & Experienced Aviation & Hotel Faculty in Vizag", href: "/about" },
   ];
 
   const navLinks = [
@@ -25,7 +25,7 @@ export default function Navbar() {
       path: "/about",
       dropdown: [
         { name: "About College", path: "/about" },
-        { name: "Accreditations & Approvals", path: "/about" },
+        { name: "Accreditations & Affiliations", path: "/about" },
         { name: "Faculty & Team", path: "/faculty" },
         { name: "Grievance & Disclosures", path: "/privacy" }
       ]
@@ -85,58 +85,76 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. Top Institutional Header (Featuring Complete Full Official Logo) */}
-      <div className="relative bg-white py-3.5 sm:py-4 px-4 sm:px-8 border-b border-slate-200 shadow-sm">
-        <div className="max-w-[1500px] mx-auto flex items-center justify-between gap-4 sm:gap-8">
+      {/* 2. Sleek Modern Top Institutional Header */}
+      <div className="bg-white py-4 px-4 sm:px-8 border-b border-slate-200 shadow-sm relative">
+        <div className="max-w-[1500px] mx-auto flex items-center justify-between gap-6">
           
-          {/* Left Complete Official Logo */}
-          <div className="flex shrink-0 items-center">
-            <Link href="/" className="flex items-center group">
-              <img 
-                src="/images/sumedha-full-logo.png" 
-                alt="Sumedha International Institute of Hospitality & Management" 
-                className="h-12 sm:h-16 lg:h-20 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-transform duration-300 group-hover:scale-105"
-              />
-            </Link>
-          </div>
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center group shrink-0">
+            <img 
+              src="/images/sumedha-full-logo.png" 
+              alt="Sumedha International Institute of Hospitality & Management" 
+              className="h-12 sm:h-16 lg:h-20 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </Link>
 
-          {/* Center Details: Institution Name, Approvals, Address & Contact */}
-          <div className="flex flex-1 flex-col items-center text-center min-w-0 space-y-0.5">
-            <h1 className="font-serif font-black leading-none tracking-tight text-[#0B2A68] text-xl sm:text-2xl lg:text-3xl uppercase">
-              SUMEDHA
-            </h1>
-            <h2 className="text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-wider text-[#0284c7]">
-              International Institute of Hospitality & Management
-            </h2>
-            <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-xs font-semibold text-[#1F3560] pt-0.5">
-              <span>Approved by:<span className="font-bold text-[#0B2A68]"> NSDC & Skill India</span></span>
-              <span className="text-[#d9a441]">|</span>
-              <span>Affiliated to:<span className="font-bold text-[#0B2A68]"> State Board & Industry Partners</span></span>
-            </div>
+          {/* Clean Quick Info Cards (Desktop & Tablet) */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             
-            <p className="text-[10px] sm:text-xs font-medium text-slate-600 flex items-center justify-center gap-1">
-              <MapPin className="w-3 h-3 text-[#0284c7] inline shrink-0" />
-              5th Ln, behind Pawan showroom, Dwaraka Nagar, Visakhapatnam - 530016
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-2 text-[9px] sm:text-[10px] font-medium text-slate-500">
-              <span>admissions@mysumedha.com</span>
-              <span className="text-[#d9a441]">|</span>
-              <span>+91 8886197778, +91 8886197779</span>
+            {/* Location Pill */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#0284c7] shrink-0 shadow-sm">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#0284c7]">Campus Location</span>
+                <span className="text-xs font-bold text-[#0B2A68] leading-tight max-w-[220px]">
+                  Dwaraka Nagar, Visakhapatnam - 530016
+                </span>
+              </div>
             </div>
+
+            {/* Helpline Pill */}
+            <div className="flex items-center gap-3 border-l border-slate-200 pl-6 lg:pl-8">
+              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/80 flex items-center justify-center text-[#d9a441] shrink-0 shadow-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#d9a441]">Admissions Helpline</span>
+                <a href="tel:+918886197778" className="text-xs font-black text-[#0B2A68] hover:text-[#0284c7] transition-colors leading-tight">
+                  +91 88861 97778 / 779
+                </a>
+              </div>
+            </div>
+
+            {/* Email Pill */}
+            <div className="hidden lg:flex items-center gap-3 border-l border-slate-200 pl-8">
+              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0 shadow-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">Email Inquiry</span>
+                <a href="mailto:admissions@mysumedha.com" className="text-xs font-bold text-[#0B2A68] hover:text-[#0284c7] transition-colors leading-tight">
+                  admissions@mysumedha.com
+                </a>
+              </div>
+            </div>
+
+            {/* 14+ Years Badge */}
+            <div className="hidden xl:flex shrink-0 items-center border-l border-slate-200 pl-8">
+              <div className="px-4 py-2 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-sky-50 border border-amber-200/80 shadow-sm text-center">
+                <div className="font-serif font-black text-[#0B2A68] text-xl leading-none">14+</div>
+                <div className="text-[8px] font-black text-[#d9a441] uppercase tracking-tight mt-0.5">Years Excellence</div>
+              </div>
+            </div>
+
           </div>
 
-          {/* Right Excellence Badge */}
-          <div className="hidden lg:flex shrink-0 items-center">
-            <div className="w-22 lg:w-26 text-center p-2.5 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-sky-50 border border-amber-200 shadow-sm">
-              <div className="font-serif font-black text-[#0B2A68] text-lg lg:text-2xl leading-none">14+</div>
-              <div className="text-[8px] font-black text-[#d9a441] uppercase tracking-tight mt-0.5">Years Excellence</div>
-            </div>
-          </div>
         </div>
-
-        {/* Gold Accent Divider Line */}
-        <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-[#d9a441] to-transparent mt-2.5"></div>
       </div>
 
       {/* 3. Sticky Main Navigation Bar */}

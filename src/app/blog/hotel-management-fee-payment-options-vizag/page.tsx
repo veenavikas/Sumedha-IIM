@@ -46,7 +46,7 @@ export default function BlogPost() {
         "name": "Are education loan facilities available for hotel management courses?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Students enrolling in NSDC-approved programs at Sumedha IIM can apply for an education loan through nationalized or private banks. Our admissions office provides official bonafide certificates and fee estimation documents required by bank loan officers."
+          "text": "Yes. Students enrolling in professional programs at Sumedha IIM can apply for an education loan through nationalized or private banks. Our admissions office provides official bonafide certificates and fee estimation documents required by bank loan officers."
         }
       },
       {
@@ -192,7 +192,7 @@ export default function BlogPost() {
               <li><strong>Practical Infrastructure & Consumables:</strong> High-end culinary labs require fresh ingredients daily, imported cutlery for mock bar training, and specialized housekeeping setups.</li>
               <li><strong>Professional Grooming & Toolkits:</strong> Chef coats, customized knife sets, front-office blazers, and industry-standard study materials.</li>
               <li><strong>Industrial Training (IT) & Internships:</strong> Coordination with top-tier 5-star hotel chains in metro cities and abroad.</li>
-              <li><strong>Accreditation & Certification:</strong> <a href="https://www.nsdcindia.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">National Skill Development Corporation (NSDC)</a> approved partner institutes ensure nationally recognized certifications.</li>
+              <li><strong>Accreditation & Certification:</strong> Recognized industry partner institutes ensure nationally recognized certifications valued by recruiters.</li>
             </ul>
             <p>
               At Sumedha IIM, transparency comes first. Our admissions team provides parents with a complete, confidential breakdown of the <strong>Hotel Management Course Fees Vizag</strong> with zero hidden maintenance charges.
@@ -244,7 +244,7 @@ export default function BlogPost() {
           <h3 className="font-serif text-2xl font-bold text-navy mt-8 mb-4">1. Bank Education Loans</h3>
           <div className="prose prose-lg max-w-none text-slate-700 space-y-4 mb-8">
             <p>
-              Students enrolling in NSDC-approved institutions like Sumedha IIM are eligible to apply for an <strong>Education Loan</strong> through nationalized and private banks. Our dedicated administrative cell provides:
+              Students enrolling in professional programs like Sumedha IIM are eligible to apply for an <strong>Education Loan</strong> through nationalized and private banks. Our dedicated administrative cell provides:
             </p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Official bonafide student certificates.</li>
@@ -316,7 +316,7 @@ export default function BlogPost() {
             </p>
             <p>Here is why students choose Sumedha IIM:</p>
             <ul className="list-disc pl-5 space-y-3">
-              <li><strong>NSDC Approved Curriculum:</strong> Courses align with national standards, offering recognized certifications valued during corporate job interviews.</li>
+              <li><strong>Industry-Aligned Curriculum:</strong> Courses align with global hospitality standards, offering recognized certifications valued during corporate job interviews.</li>
               <li><strong>State-of-the-Art Practical Labs:</strong> Advanced culinary kitchens, bakery training suites, mock bar setups, and front office simulation labs give students real-world confidence.</li>
               <li><strong>Strategic Coastal Location:</strong> Vizag is a rapidly expanding tourism and luxury hotel hub. Our network ensures direct exposure to premier properties.</li>
               <li><strong>100% Placement Assistance:</strong> Our active placement cell connects students directly with leading recruiters across hotels, airlines, travel agencies, and cruise management companies.</li>
@@ -375,7 +375,7 @@ export default function BlogPost() {
             </div>
             <div className="bg-white p-6 rounded-xl border border-border/50 shadow-sm">
               <h4 className="font-bold text-lg text-navy mb-3">Q4: Are education loan facilities available for hotel management courses?</h4>
-              <p className="text-slate-700">Yes. Students enrolling in NSDC-approved programs at Sumedha IIM can apply for an Education Loan through nationalized or private banks. Our admissions office provides official Bonafide certificates and fee estimation documents required by bank loan officers.</p>
+              <p className="text-slate-700">Yes. Students enrolling in professional programs at Sumedha IIM can apply for an Education Loan through nationalized or private banks. Our admissions office provides official Bonafide certificates and fee estimation documents required by bank loan officers.</p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-border/50 shadow-sm">
               <h4 className="font-bold text-lg text-navy mb-3">Q5: What documents are needed to set up term payment options?</h4>

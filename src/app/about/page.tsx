@@ -38,7 +38,7 @@ export default function About() {
             <div className="space-y-4">
               {[
                 { year: "2010", text: "Founded in Visakhapatnam, Andhra Pradesh" },
-                { year: "2013", text: "NSDC & Skill India Industry Approval" },
+                { year: "2013", text: "State Board & Industry Training Accreditation" },
                 { year: "2026", text: "Over 2000+ Alumni Successfully Placed Globally" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-sky-100 shadow-sm">

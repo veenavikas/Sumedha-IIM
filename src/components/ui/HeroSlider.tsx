@@ -28,8 +28,8 @@ const slides = [
   },
   {
     src: "/images/www.mysumedha (1008).JPG",
-    title: "NSDC & Skill India Approved Center",
-    tag: "GOVT RECOGNIZED",
+    title: "State-of-the-Art Practical Training Labs",
+    tag: "INDUSTRY ACCREDITED",
   },
 ];
 
