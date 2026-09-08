@@ -114,7 +114,7 @@ export default function BlogPost() {
               However, for students evaluating post-Intermediate (10+2) or degree pathways, the ultimate decision-stage question remains: "What does an <strong>Aviation Management Salary India</strong> actually look like at entry level, and how fast does pay scale up with experience?"
             </p>
             <p>
-              In this decision-stage 2026 guide, we pull back the curtain on realistic earnings across airport operations, airline management, ground handling, and cargo logistics. Whether you are considering a <Link href="/programmes" className="text-primary hover:underline font-bold">Hotel Management Diploma</Link>, a specialized <Link href="/programmes/dam" className="text-primary hover:underline font-bold">Aviation Management Diploma</Link>, or a 3-year <Link href="/programmes" className="text-primary hover:underline font-bold">Degree in Aviation Management</Link>, here is what you can expect to earn from day one through to executive-level roles.
+              In this decision-stage 2026 guide, we pull back the curtain on realistic earnings across airport operations, airline management, ground handling, and cargo logistics. Whether you are considering a <Link href="/programmes" className="text-primary hover:underline font-bold">Hotel Management Diploma</Link>, a specialized <Link href="/programmes/sdam" className="text-primary hover:underline font-bold">Aviation Management Diploma</Link>, or a 3-year <Link href="/programmes" className="text-primary hover:underline font-bold">Degree in Aviation Management</Link>, here is what you can expect to earn from day one through to executive-level roles.
             </p>
           </div>
 

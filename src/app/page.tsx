@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import HeroSlider from "@/components/ui/HeroSlider";
+import HeroVideo from "@/components/ui/HeroVideo";
 import { 
   ArrowRight, Award, Users, BookOpen, Hotel, Plane, Briefcase, 
   GraduationCap, Play, Star, Calendar, Download, Sparkles, 
@@ -13,7 +13,7 @@ export default function Home() {
   const [activeFacilityTab, setActiveFacilityTab] = useState("All");
 
   const statCards = [
-    { number: "2000+", label: "Successful Graduates", icon: GraduationCap, color: "from-[#0B2A68] to-sky-700" },
+    { number: "1500+", label: "Successful Graduates", icon: GraduationCap, color: "from-[#0B2A68] to-sky-700" },
     { number: "100%", label: "Placement Rate", icon: Award, color: "from-[#d9a441] to-amber-600" },
     { number: "14+", label: "Years Excellence", icon: Trophy, color: "from-sky-600 to-blue-800" },
     { number: "50+", label: "Hotel & Airline Partners", icon: Hotel, color: "from-[#0B2A68] to-indigo-900" },
@@ -28,7 +28,7 @@ export default function Home() {
       badgeBg: "bg-blue-100 text-blue-800",
       textColor: "text-blue-600",
       desc: "Comprehensive culinary arts, food production, front office management, and housekeeping training with 5-star hotel internships.",
-      coursesCount: "4 Programmes Available",
+      coursesCount: "3 Programmes Available",
       link: "/programmes"
     },
     {
@@ -42,22 +42,22 @@ export default function Home() {
       link: "/programmes"
     },
     {
-      title: "Post Graduate Diplomas",
-      icon: Briefcase,
-      color: "from-amber-500 to-orange-600",
-      badgeBg: "bg-amber-100 text-amber-800",
-      textColor: "text-amber-600",
-      desc: "Executive PG Diplomas in Hospitality Operations & Aviation Management tailored for fast-track career advancement.",
-      coursesCount: "2 Programmes Available",
-      link: "/programmes"
-    },
-    {
-      title: "Degree Programmes (BHM / BBA)",
+      title: "Bachelors",
       icon: GraduationCap,
       color: "from-emerald-600 to-teal-700",
       badgeBg: "bg-emerald-100 text-emerald-800",
       textColor: "text-emerald-600",
-      desc: "3-Year Degree programs in Hospitality Management & Aviation with university certification and global internship pathways.",
+      desc: "Undergraduate degree programs including BHM, BCA Data Science & AI, B.Sc, and B.Com Computers with hands-on industrial pathways.",
+      coursesCount: "5 Programmes Available",
+      link: "/programmes"
+    },
+    {
+      title: "Management",
+      icon: Briefcase,
+      color: "from-amber-500 to-orange-600",
+      badgeBg: "bg-amber-100 text-amber-800",
+      textColor: "text-amber-600",
+      desc: "Industry-focused BBA & MBA management programmes designed for strategic leadership in aviation, hospitality, and corporate business.",
       coursesCount: "2 Programmes Available",
       link: "/programmes"
     }
@@ -66,30 +66,30 @@ export default function Home() {
   const noticesList = [
     { title: "Online Registration Open for Admissions 2026-27 Batch", date: "AUG 20, 2026", isNew: true, link: "/admissions/apply" },
     { title: "Annual Aviation & Hotel Management Examination Schedule Announced", date: "AUG 18, 2026", isNew: true, link: "/news" },
-    { title: "5-Star Hotel Internship Placement Drive for DHM Final Year", date: "AUG 12, 2026", isNew: false, link: "/placements" },
+    { title: "5-Star Hotel Internship Placement Drive for SDHM Final Year", date: "AUG 12, 2026", isNew: false, link: "/placements" },
     { title: "Aviation Cabin Crew Mock Drill & Safety Workshop", date: "AUG 05, 2026", isNew: false, link: "/campus" },
     { title: "Annual Culinary Fest & Mocktail Competition Registration", date: "JUL 28, 2026", isNew: false, link: "/campus" },
   ];
 
   const calendarsList = [
-    { title: "DHM & BHM Academic Calendar 2026-27", date: "DOWNLOAD PDF", link: "/programmes" },
+    { title: "SDHM & BHM Academic Calendar 2026-27", date: "DOWNLOAD PDF", link: "/programmes" },
     { title: "Aviation Management Term II Calendar", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "PG Diploma Internship Timetable 2026", date: "DOWNLOAD PDF", link: "/programmes" },
+    { title: "Vocational & Certificate Internship Timetable 2026", date: "DOWNLOAD PDF", link: "/programmes" },
     { title: "Examinations & Practical Evaluation Schedule", date: "DOWNLOAD PDF", link: "/programmes" },
     { title: "Industrial Exposure Training Calendar", date: "DOWNLOAD PDF", link: "/programmes" },
     { title: "Annual Campus Sports & Cultural Week", date: "DOWNLOAD PDF", link: "/programmes" },
   ];
 
   const curriculumList = [
-    { title: "DHM Hotel Management — course structure (R26)", link: "/programmes/dhm" },
-    { title: "DAM Aviation Management — course structure (R26)", link: "/programmes/dam" },
+    { title: "SDHM Hotel Management — course structure (R26)", link: "/programmes/sdhm" },
+    { title: "SDAM Aviation Management — course structure (R26)", link: "/programmes/sdam" },
   ];
 
   const syllabusList = [
     { title: "Hospitality Management (BHM) — syllabus (R26)", link: "/programmes/bhm" },
     { title: "Aviation Management (BBA) — syllabus (R26)", link: "/programmes/bba-aviation" },
-    { title: "PG Diploma Hospitality — course structure & syllabus", link: "/programmes/pgdhm" },
-    { title: "PG Diploma Aviation — syllabus (R26)", link: "/programmes/pgdam" },
+    { title: "BCA Data Science & AI — syllabus (R26)", link: "/programmes/bca-ds-ai" },
+    { title: "Master of Business Administration (MBA) — syllabus (R26)", link: "/programmes/mba" },
   ];
 
   const whyChooseUsCards = [
@@ -127,24 +127,79 @@ export default function Home() {
 
   const allFacilities = [
     { title: "Commercial Training Kitchen", category: "Culinary Labs", image: "/images/hotel-management-content-1.jpg", desc: "Advanced multi-station commercial kitchen for culinary training." },
-    { title: "Flight Cabin Mockup Studio", category: "Aviation Cabin", image: "/images/hero-1.jpg", desc: "Simulated aircraft flight cabin for cabin crew emergency drills." },
-    { title: "Front Office Reception Suite", category: "Front Office Suite", image: "/images/hero-2.jpg", desc: "Opera PMS software workstations and simulated hotel reception." },
-    { title: "Model Guest Room Lab", category: "Housekeeping Lab", image: "/images/hotel-management-hero.jpg", desc: "5-star luxury model suite for housekeeping & laundry operations." },
-    { title: "Digital Library & E-Learning", category: "Library & IT", image: "/images/hero-campus.png", desc: "Quiet study zones, hospitality journals, and high-speed e-library." },
-    { title: "Mock Bar & Beverage Lab", category: "Culinary Labs", image: "/images/front.jpeg", desc: "Mixology & beverage service lab for flair bartending and sommelier skills." },
-    { title: "Student Cafeteria & Lounge", category: "Student Amenities", image: "/images/IMG_9009.JPG", desc: "Hygienic campus cafeteria serving nutritious meals and coffee." },
-    { title: "Air-Conditioned Classrooms", category: "Student Amenities", image: "/images/IMG_9023.JPG", desc: "Smart interactive AV classrooms with ergonomic seating." }
+    { title: "Flight Cabin Mockup Studio", category: "Aviation Cabin", image: "/images/www.mysumedha (561).jpg", desc: "Simulated aircraft flight cabin for cabin crew emergency drills." },
+    { title: "Front Office Reception Suite", category: "Front Office Suite", image: "/images/www.mysumedha (558).jpg", desc: "Opera PMS software workstations and simulated hotel reception." },
+    { title: "Model Guest Room Lab", category: "Housekeeping Lab", image: "/images/WhatsApp Image 2026-06-06 at 12.11.59.jpeg", desc: "5-star luxury model suite for housekeeping & laundry operations." },
+    { title: "Digital Library & E-Learning", category: "Library & IT", image: "/images/WhatsApp Image 2026-05-06 at 9.59.28 AM.jpeg", desc: "Quiet study zones, hospitality journals, and high-speed e-library." },
+    { title: "Mock Bar & Beverage Lab", category: "Culinary Labs", image: "/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg", desc: "Mixology & beverage service lab for flair bartending and sommelier skills." },
+    { title: "Student Cafeteria & Lounge", category: "Student Amenities", image: "/images/WhatsApp Image 2026-06-06 at 12.12.51 (1).jpeg", desc: "Hygienic campus cafeteria serving nutritious meals and coffee." },
+    { title: "Air-Conditioned Classrooms", category: "Student Amenities", image: "/images/IMG_9009.JPG", desc: "Smart interactive AV classrooms with ergonomic seating." }
   ];
 
   const filteredFacilities = activeFacilityTab === "All" 
     ? allFacilities 
     : allFacilities.filter(f => f.category === activeFacilityTab);
 
-  const spotlightEvents = [
-    { title: "Annual Culinary & Flair Mixology Competition 2026", date: "SEP 15, 2026", type: "Featured Campus Event", category: "Culinary Arts", isVideo: true, videoThumb: "/images/hotel-management-content-1.jpg" },
-    { title: "IndiGo & Qatar Airways Campus Recruitment Drive", date: "AUG 28, 2026", type: "Placement Drive", category: "Aviation", isVideo: false, videoThumb: "/images/hero-1.jpg" },
-    { title: "Industrial Visit to Taj Gateway Hotel Visakhapatnam", date: "AUG 10, 2026", type: "Industry Exposure", category: "Hospitality", isVideo: false, videoThumb: "/images/hero-2.jpg" },
-    { title: "Annual Convocation & Graduation Day Ceremony", date: "JUL 18, 2026", type: "Convocation", category: "Academic", isVideo: true, videoThumb: "/images/hero-campus.png" },
+  interface SpotlightItem {
+    title: string;
+    date: string;
+    type: string;
+    category: string;
+    mediaType: "image" | "video";
+    src: string;
+  }
+
+  const spotlightEvents: SpotlightItem[] = [
+    { 
+      title: "Annual Culinary & Flair Mixology Competition 2026", 
+      date: "SEP 15, 2026", 
+      type: "Featured Campus Event", 
+      category: "Culinary Arts", 
+      mediaType: "image", 
+      src: "/images/hotel-management-content-1.jpg" 
+    },
+    { 
+      title: "IndiGo & Qatar Airways Campus Recruitment Drive", 
+      date: "AUG 28, 2026", 
+      type: "Placement Drive", 
+      category: "Aviation", 
+      mediaType: "image", 
+      src: "/images/WhatsApp Image 2026-05-06 at 9.59.05 AM.jpeg" 
+    },
+    { 
+      title: "Industrial Visit to Fairfield by Marriott Visakhapatnam", 
+      date: "AUG 10, 2026", 
+      type: "Industry Exposure", 
+      category: "Hospitality", 
+      mediaType: "image", 
+      src: "/images/WhatsApp Image 2026-06-06 at 12.12.44.jpeg" 
+    },
+    { 
+      title: "Annual Convocation & Graduation Day Ceremony", 
+      date: "JUL 18, 2026", 
+      type: "Convocation", 
+      category: "Academic", 
+      mediaType: "image", 
+      src: "/images/WhatsApp Image 2026-05-06 at 9.59.41 AM.jpeg" 
+    },
+  ];
+
+  const placementPartners = [
+    { name: "Taj Hotels (IHCL)", logo: "/images/recruiters/taj-ihcl.svg" },
+    { name: "IndiGo Airlines", logo: "/images/recruiters/indigo.png" },
+    { name: "Hilton Worldwide", logo: "/images/recruiters/hilton.svg" },
+    { name: "Air India", logo: "/images/recruiters/air-india.svg" },
+    { name: "Novotel Accor", logo: "/images/recruiters/novotel.svg" },
+    { name: "SpiceJet Airlines", logo: "/images/recruiters/spicejet.svg" },
+    { name: "Holiday Inn (IHG)", logo: "/images/recruiters/holiday-inn.svg" },
+    { name: "Grand Mercure", logo: "/images/recruiters/grand-mercure.png" },
+    { name: "ALL Accor Live Limitless", logo: "/images/recruiters/all-accor.svg" },
+    { name: "Wyndham Hotels & Resorts", logo: "/images/recruiters/wyndham.svg" },
+    { name: "Fortune Hotels", logo: "/images/recruiters/fortune-hotels.png" },
+    { name: "Sarovar Hotels", logo: "/images/recruiters/sarovar-hotels.png" },
+    { name: "Royal Orchid Hotels", logo: "/images/recruiters/royal-orchid.webp" },
+    { name: "Jet Airways", logo: "/images/recruiters/jet-airways.svg" },
+    { name: "HotelF1 Accor", logo: "/images/recruiters/hotelf1.svg" },
   ];
 
   return (
@@ -156,9 +211,9 @@ export default function Home() {
         {/* Background Image with Deep Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-            src="/images/hero-campus.png" 
-            alt="Sumedha Campus" 
-            className="w-full h-full object-cover object-center opacity-20 scale-105 transition-transform duration-10000 animate-pulse" 
+            src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" 
+            alt="Sumedha Diamond Park Campus" 
+            className="w-full h-full object-cover object-[center_20%] opacity-20 scale-105 transition-transform duration-10000 animate-pulse" 
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B2A68]/95 via-[#0B2A68]/90 to-[#031436]/95" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2A68] via-transparent to-[#041a4a]/70" />
@@ -182,7 +237,7 @@ export default function Home() {
               </h1>
 
               <p className="text-sm sm:text-base lg:text-lg text-slate-200 max-w-2xl font-medium leading-relaxed">
-                Affiliated to State Board & Industry Partners. Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
+                Master Hotel Management, Flight Cabin Crew, Airport Ground Operations & Culinary Arts with 100% placement support.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -202,9 +257,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column: Hero Carousel Slider */}
+            {/* Right Column: Hero Video Component */}
             <div className="lg:col-span-5 w-full">
-              <HeroSlider />
+              <HeroVideo />
             </div>
 
           </div>
@@ -659,17 +714,17 @@ export default function Home() {
                 {/* Tile 1 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/front.jpeg" 
-                    alt="Campus Building" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" 
+                    alt="Diamond Park Campus Building" 
+                    className="w-full h-full object-cover object-[center_20%] transform -rotate-45 scale-[1.42] group-hover:scale-[1.55] transition-transform duration-500" 
                   />
                 </div>
 
                 {/* Tile 2 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/hero-2.jpg" 
-                    alt="Student Event" 
+                    src="/images/WhatsApp Image 2026-06-06 at 12.12.44.jpeg" 
+                    alt="Fairfield Marriott Industrial Visit" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -677,8 +732,8 @@ export default function Home() {
                 {/* Tile 3 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/hero-1.jpg" 
-                    alt="Aviation Cabin" 
+                    src="/images/www.mysumedha (561).jpg" 
+                    alt="Aviation Flight Cabin Mockup" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -687,7 +742,7 @@ export default function Home() {
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
                     src="/images/hotel-management-content-1.jpg" 
-                    alt="Culinary Lab" 
+                    alt="Culinary Arts Training Lab" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -695,7 +750,7 @@ export default function Home() {
                 {/* Tile 5 (Center tile - hidden under Gold Seal) */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group opacity-0">
                   <img 
-                    src="/images/hero-campus.png" 
+                    src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" 
                     alt="Center Placeholder" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45]" 
                   />
@@ -705,7 +760,7 @@ export default function Home() {
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
                     src="/images/IMG_9009.JPG" 
-                    alt="Cafeteria" 
+                    alt="Interactive AV Smart Classroom" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -713,8 +768,8 @@ export default function Home() {
                 {/* Tile 7 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/IMG_9023.JPG" 
-                    alt="Classroom" 
+                    src="/images/WhatsApp Image 2026-05-06 at 9.59.05 AM.jpeg" 
+                    alt="Airport Practical Training" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -722,8 +777,8 @@ export default function Home() {
                 {/* Tile 8 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/IMG_9194.JPG" 
-                    alt="Sports Event" 
+                    src="/images/WhatsApp Image 2026-05-06 at 9.59.37 AM (1).jpeg" 
+                    alt="Sumedha Cultural Celebrations" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -731,8 +786,8 @@ export default function Home() {
                 {/* Tile 9 */}
                 <div className="w-28 sm:w-36 h-28 sm:h-36 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white bg-slate-100 group">
                   <img 
-                    src="/images/hotel-management-hero.jpg" 
-                    alt="Hotel Suite" 
+                    src="/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg" 
+                    alt="Hospitality Service Practicals" 
                     className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
                   />
                 </div>
@@ -850,16 +905,33 @@ export default function Home() {
                   idx === 0 ? 'sm:col-span-2 rounded-[40px] sm:rounded-[50px] p-8' : 'rounded-3xl p-6'
                 }`}
               >
-                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-4 bg-black/40">
-                  <img src={spot.videoThumb} alt={spot.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  {spot.isVideo && (
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-[#d9a441] text-[#0B2A68] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-4 bg-slate-900">
+                  {spot.mediaType === "video" ? (
+                    <video 
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    >
+                      <source src={spot.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img 
+                      src={spot.src} 
+                      alt={spot.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  )}
+                  {spot.mediaType === "video" && (
+                    <div className="absolute inset-0 bg-black/20 pointer-events-none flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-[#d9a441]/90 text-[#0B2A68] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform backdrop-blur-xs">
                         <Play className="w-5 h-5 ml-0.5 fill-current" />
                       </div>
                     </div>
                   )}
-                  <span className="absolute top-3 left-3 px-2.5 py-0.5 bg-[#0B2A68] text-white text-[9px] font-black uppercase rounded-full">
+                  <span className="absolute top-3 left-3 px-2.5 py-0.5 bg-[#0B2A68] text-white text-[9px] font-black uppercase rounded-full shadow-md flex items-center gap-1.5">
+                    {spot.mediaType === "video" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>}
                     {spot.category}
                   </span>
                 </div>
@@ -882,14 +954,21 @@ export default function Home() {
         </div>
         
         {/* Infinite Horizontal Marquee Track */}
-        <div className="w-full overflow-hidden relative group/marquee py-4 bg-white/[0.02]">
-          <div className="flex animate-marquee gap-12 sm:gap-16 whitespace-nowrap items-center">
-            {["TAJ HOTELS", "MARRIOTT INTERNATIONAL", "INDIGO AIRLINES", "HYATT HOTELS", "QATAR AIRWAYS", "HILTON WORLDWIDE", "ACCOR HOTELS", "SPICEJET AIRLINES", "EMIRATES", "OBEROI HOTELS", "AIR INDIA"].concat(["TAJ HOTELS", "MARRIOTT INTERNATIONAL", "INDIGO AIRLINES", "HYATT HOTELS", "QATAR AIRWAYS", "HILTON WORLDWIDE", "ACCOR HOTELS", "SPICEJET AIRLINES", "EMIRATES", "OBEROI HOTELS", "AIR INDIA"]).map((brand, idx) => (
-              <div key={idx} className="flex items-center gap-12 sm:gap-16">
-                <span className="font-serif text-base sm:text-lg font-black tracking-widest text-white/70 hover:text-[#ffe9b0] transition-colors cursor-default">
-                  {brand}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-[#d9a441]/40" />
+        <div className="w-full overflow-hidden relative group/marquee py-6 bg-white/[0.02]">
+          <div className="flex animate-marquee gap-8 sm:gap-12 whitespace-nowrap items-center">
+            {[...placementPartners, ...placementPartners].map((partner, idx) => (
+              <div key={idx} className="flex items-center gap-8 sm:gap-12 shrink-0">
+                <div className="h-14 sm:h-16 w-36 sm:w-44 bg-white/95 hover:bg-white rounded-2xl px-4 py-2 flex items-center justify-center shadow-lg border border-white/20 transition-all duration-300 hover:scale-105 group/logo">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    title={partner.name}
+                    className={`max-h-9 sm:max-h-11 max-w-[120px] sm:max-w-[140px] w-auto h-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 ${
+                      partner.name.includes('JetLite') ? 'brightness-0' : ''
+                    }`}
+                  />
+                </div>
+                <span className="w-2 h-2 rounded-full bg-[#d9a441]/50 shrink-0" />
               </div>
             ))}
           </div>
@@ -909,13 +988,13 @@ export default function Home() {
                 Begin Your Career Journey with Sumedha IIM
               </h2>
               <p className="text-sky-100 text-xs md:text-sm leading-relaxed font-medium">
-                Submit your preliminary application today to reserve your seat for the 2026 batch. Our admissions counselor will guide you through course selection and fee installments.
+                Submit your preliminary application today to reserve your seat for the 2026 batch. Our admissions counselor will guide you through course selection and admission details.
               </p>
               
               <div className="space-y-3 pt-2">
                 {[
                   "No Entrance Exam Required — Direct Merit Admissions",
-                  "4-Term Flexible Fee Payment Options",
+                  "Personalized Career Guidance & Mentorship",
                   "Guaranteed 5-Star Hotel IT & Airport Practical Exposure"
                 ].map((point, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-white">
@@ -929,7 +1008,7 @@ export default function Home() {
             {/* Application Form */}
             <div className="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl border border-slate-100">
               <h3 className="font-serif font-bold text-xl text-[#0B2A68] mb-1">Direct Admission Inquiry</h3>
-              <p className="text-slate-500 text-xs mb-6">Fill in your details below for instant course brochure & fee guide.</p>
+              <p className="text-slate-500 text-xs mb-6">Fill in your details below for instant course brochure & admission guide.</p>
               
               <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert("Application inquiry submitted successfully!"); }}>
                 <div>
@@ -944,12 +1023,18 @@ export default function Home() {
                   <label className="block text-xs font-bold text-slate-700 mb-1">Course Interested In *</label>
                   <select required className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs focus:outline-none focus:border-[#0284c7]">
                     <option value="">Select Course</option>
-                    <option value="dhm">DHM - Diploma in Hotel Management</option>
-                    <option value="dam">DAM - Diploma in Aviation Management</option>
-                    <option value="pgdhm">PGDHM - Post Graduate Hospitality</option>
-                    <option value="pgdam">PGDAM - Post Graduate Aviation</option>
+                    <option value="sdhm">SDHM - Diploma in Hotel Management</option>
+                    <option value="svtphm">SVTPHM - Vocational Training in Hotel Mgmt</option>
+                    <option value="sctphm">SCTPHM - Certificate in Hotel Management</option>
+                    <option value="sdam">SDAM - Diploma in Aviation Management</option>
+                    <option value="svtp">SVTP - Vocational Training Programme</option>
+                    <option value="sctp">SCTP - Certificate Training Programme</option>
                     <option value="bhm">BHM - Degree in Hotel Management</option>
                     <option value="bba">BBA Aviation Management</option>
+                    <option value="mba">MBA - Master of Business Administration</option>
+                    <option value="bca">BCA - Data Science & AI</option>
+                    <option value="bsc">BSC - Data Science / MPC</option>
+                    <option value="bcom">B.Com - Computers</option>
                   </select>
                 </div>
                 <button type="submit" className="w-full py-4 bg-[#0B2A68] hover:bg-[#061a40] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all">

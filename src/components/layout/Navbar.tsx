@@ -13,8 +13,8 @@ export default function Navbar() {
 
   const announcements = [
     { text: "Admissions Open 2026-27 — Degree & Diploma Programmes in Aviation & Hotel Management", href: "/admissions/apply" },
-    { text: "100% Placement Record — Over 2000+ Alumni placed in Taj, Marriott, IndiGo & Qatar Airways", href: "/placements" },
-    { text: "Flexible 4-Term Fee Installment Options Available for All Courses", href: "/admissions" },
+    { text: "100% Placement Record — Over 1500+ Alumni placed in Taj, Marriott, IndiGo & Qatar Airways", href: "/placements" },
+    { text: "Personalized Career Guidance & Practical Lab Mastery for All Courses", href: "/admissions" },
     { text: "State-of-the-Art Practical Lab Facilities & Experienced Aviation & Hotel Faculty in Vizag", href: "/about" },
   ];
 
@@ -25,7 +25,6 @@ export default function Navbar() {
       path: "/about",
       dropdown: [
         { name: "About College", path: "/about" },
-        { name: "Accreditations & Affiliations", path: "/about" },
         { name: "Faculty & Team", path: "/faculty" },
         { name: "Grievance & Disclosures", path: "/privacy" }
       ]
@@ -34,10 +33,12 @@ export default function Navbar() {
       name: "Programmes", 
       path: "/programmes",
       dropdown: [
-        { name: "DHM - Hotel Management", path: "/programmes/dhm" },
-        { name: "DAM - Aviation Management", path: "/programmes/dam" },
-        { name: "PGDHM - Post Graduate Hospitality", path: "/programmes/pgdhm" },
-        { name: "PGDAM - Post Graduate Aviation", path: "/programmes/pgdam" },
+        { name: "SDHM - Hotel Management", path: "/programmes/sdhm" },
+        { name: "SVTPHM - Vocational Hotel Mgmt", path: "/programmes/svtphm" },
+        { name: "SCTPHM - Certificate Hotel Mgmt", path: "/programmes/sctphm" },
+        { name: "SDAM - Aviation Management", path: "/programmes/sdam" },
+        { name: "SVTP - Vocational Training", path: "/programmes/svtp" },
+        { name: "SCTP - Certificate Training", path: "/programmes/sctp" },
         { name: "BHM - Degree in Hotel Mgmt", path: "/programmes/bhm" },
         { name: "BBA Aviation Management", path: "/programmes/bba-aviation" },
         { name: "MBA - Hospitality & Aviation", path: "/programmes/mba" },
@@ -48,7 +49,6 @@ export default function Navbar() {
       path: "/admissions",
       dropdown: [
         { name: "Admission Process", path: "/admissions" },
-        { name: "Fee Payment Terms", path: "/blog/hotel-management-fee-payment-options-vizag" },
         { name: "Apply Online 2026", path: "/admissions/apply" }
       ]
     },
@@ -138,8 +138,8 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-black uppercase tracking-wider text-slate-500">Email Inquiry</span>
-                <a href="mailto:admissions@mysumedha.com" className="text-xs font-bold text-[#0B2A68] hover:text-[#0284c7] transition-colors leading-tight">
-                  admissions@mysumedha.com
+                <a href="mailto:info@sumedhaiim.com" className="text-xs font-bold text-[#0B2A68] hover:text-[#0284c7] transition-colors leading-tight">
+                  info@sumedhaiim.com
                 </a>
               </div>
             </div>

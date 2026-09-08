@@ -5,22 +5,33 @@ import PageHero from "@/components/ui/PageHero";
 import CTAStrip from "@/components/ui/CTAStrip";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import HoverCard from "@/components/animations/HoverCard";
-import { Sparkles, Image as ImageIcon, Video, X } from "lucide-react";
+import { Image as ImageIcon, Video, X, Play } from "lucide-react";
 
 export default function Media() {
   const [activeTab, setActiveTab] = useState("All");
   const [activeLightbox, setActiveLightbox] = useState<string | null>(null);
 
-  const galleryItems = [
-    { title: "Commercial Kitchen Practical Training", category: "Practicals", src: "/images/hotel-management-content-1.jpg" },
-    { title: "Aviation Flight Cabin Mockup Drill", category: "Aviation", src: "/images/hero-1.jpg" },
-    { title: "Front Desk PMS Reception Workstations", category: "Practicals", src: "/images/hero-2.jpg" },
-    { title: "Main Diamond Park Campus Building", category: "Campus", src: "/images/front.jpeg" },
-    { title: "Digital Library & E-Learning Zone", category: "Campus", src: "/images/hero-campus.png" },
-    { title: "Student Cafeteria & Lounge", category: "Campus", src: "/images/IMG_9009.JPG" },
-    { title: "Smart AV Classroom Interactive Session", category: "Practicals", src: "/images/IMG_9023.JPG" },
-    { title: "Annual Campus Sports & Cultural Meet", category: "Events", src: "/images/IMG_9194.JPG" },
-    { title: "Luxury Hotel Suite Housekeeping Lab", category: "Practicals", src: "/images/hotel-management-hero.jpg" },
+  interface MediaGalleryItem {
+    title: string;
+    category: string;
+    type: "image" | "video";
+    src: string;
+    videoSrc?: string;
+  }
+
+  const galleryItems: MediaGalleryItem[] = [
+    { title: "Commercial Kitchen Practical Training", category: "Practicals", type: "image", src: "/images/hotel-management-content-1.jpg" },
+    { title: "Aviation Flight Cabin Mockup Drill", category: "Aviation", type: "image", src: "/images/www.mysumedha (561).jpg" },
+    { title: "Front Desk PMS Reception Workstations", category: "Practicals", type: "image", src: "/images/www.mysumedha (558).jpg" },
+    { title: "Main Diamond Park Campus Building", category: "Campus", type: "image", src: "/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" },
+    { title: "Digital Library & E-Learning Zone", category: "Campus", type: "image", src: "/images/www.mysumedha (1008).JPG" },
+    { title: "Campus Infrastructure & Academic Facilities", category: "Campus", type: "image", src: "/images/WhatsApp Image 2026-07-07 at 18.32.46.jpeg" },
+    { title: "Smart AV Classroom Interactive Session", category: "Practicals", type: "image", src: "/images/IMG_9009.JPG" },
+    { title: "Annual Campus Celebrations & Student Events", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.37 AM (1).jpeg" },
+    { title: "Luxury Hotel Hospitality Practical Training", category: "Practicals", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg" },
+    { title: "Airport Terminal In-Flight Training Drill", category: "Aviation", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.05 AM.jpeg" },
+    { title: "Industrial Visit at Fairfield by Marriott", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-06-06 at 12.12.44.jpeg" },
+    { title: "Annual Convocation & Student Felicitation", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.41 AM.jpeg" },
   ];
 
   const filteredItems = activeTab === "All"
@@ -50,13 +61,18 @@ export default function Media() {
         
         <div className="max-w-4xl mx-auto">
           <HoverCard className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl border-4 border-white bg-black">
-            <iframe 
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/7p7mrpLU7bM" 
-              title="Sumedha IIM Video Tour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-            ></iframe>
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls 
+              poster="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg"
+              className="w-full h-full object-cover"
+            >
+              <source src="/images/Videos/sumedha-intro.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </HoverCard>
           
           <div className="mt-8 p-6 bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-md text-center">
@@ -103,21 +119,39 @@ export default function Media() {
           {filteredItems.map((item, idx) => (
             <AnimatedSection key={idx} direction="up" delay={idx * 0.06}>
               <div 
-                onClick={() => setActiveLightbox(item.src)}
+                onClick={() => setActiveLightbox(item.type === "video" && item.videoSrc ? item.videoSrc : item.src)}
                 className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col h-full"
               >
-                <div className="relative h-64 w-full overflow-hidden bg-slate-100">
-                  <img 
-                    src={item.src} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                  />
+                <div className="relative h-64 w-full overflow-hidden bg-slate-900">
+                  {item.type === "video" && item.videoSrc ? (
+                    <video 
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline 
+                      poster={item.src}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    >
+                      <source src={item.videoSrc} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img 
+                      src={item.src} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  )}
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <span className="p-3 bg-white/90 rounded-full text-[#0B2A68] shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-                      <Sparkles className="w-5 h-5 text-[#d9a441]" />
+                      {item.type === "video" ? (
+                        <Play className="w-5 h-5 fill-[#0B2A68] text-[#0B2A68] ml-0.5" />
+                      ) : (
+                        <ImageIcon className="w-5 h-5 text-[#0B2A68]" />
+                      )}
                     </span>
                   </div>
-                  <span className="absolute top-3 left-3 px-3 py-1 bg-[#0B2A68]/90 text-white font-extrabold text-[9px] uppercase rounded-full shadow-sm backdrop-blur-sm">
+                  <span className="absolute top-3 left-3 px-3 py-1 bg-[#0B2A68]/90 text-white font-extrabold text-[9px] uppercase rounded-full shadow-sm backdrop-blur-sm flex items-center gap-1.5">
+                    {item.type === "video" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>}
                     {item.category}
                   </span>
                 </div>
@@ -127,7 +161,7 @@ export default function Media() {
                     {item.title}
                   </h3>
                   <span className="text-[10px] font-black text-sky-600 uppercase tracking-widest shrink-0 ml-2">
-                    VIEW
+                    {item.type === "video" ? "WATCH" : "VIEW"}
                   </span>
                 </div>
               </div>
@@ -144,15 +178,26 @@ export default function Media() {
         >
           <button 
             onClick={() => setActiveLightbox(null)}
-            className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors"
+            className="absolute top-6 right-6 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors z-10"
           >
             <X className="w-6 h-6" />
           </button>
-          <img 
-            src={activeLightbox} 
-            alt="Enlarged Preview" 
-            className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain border-2 border-white/20" 
-          />
+          {activeLightbox.endsWith(".mp4") ? (
+            <video 
+              src={activeLightbox} 
+              controls 
+              autoPlay 
+              playsInline 
+              className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain border-2 border-white/20"
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <img 
+              src={activeLightbox} 
+              alt="Enlarged Preview" 
+              className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain border-2 border-white/20" 
+            />
+          )}
         </div>
       )}
 

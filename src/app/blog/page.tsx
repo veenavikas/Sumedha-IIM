@@ -77,7 +77,7 @@ export default function Blog() {
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 overflow-hidden">
       <PageHero 
         title="Official Blog & Career Guides" 
-        subtitle="Insights, trends, fee advice, and salary guides in Aviation and Hospitality." 
+        subtitle="Insights, trends, career advice, and salary guides in Aviation and Hospitality." 
       />
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

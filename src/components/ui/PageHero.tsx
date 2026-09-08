@@ -6,7 +6,7 @@ interface PageHeroProps {
   imagePath?: string;
 }
 
-export default function PageHero({ title, subtitle, imagePath = "/images/hero-campus.png" }: PageHeroProps) {
+export default function PageHero({ title, subtitle, imagePath = "/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" }: PageHeroProps) {
   return (
     <section className="relative w-full min-h-[380px] h-auto flex items-center justify-center overflow-hidden py-24 md:py-32">
       <div 

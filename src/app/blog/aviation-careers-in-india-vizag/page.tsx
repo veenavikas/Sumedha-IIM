@@ -130,7 +130,7 @@ export default function BlogPost() {
           {/* Career 1 */}
           <div className="bg-white p-8 rounded-xl border border-border/50 shadow-sm">
             <h3 className="font-serif text-2xl font-bold text-navy mb-4">1. Airport Ground Staff</h3>
-            <p className="text-slate-700 mb-4">While the flight crew takes care of passengers mid-air, the <Link href="/programmes/pgdam" className="text-primary hover:underline font-bold">Ground staff training Andhra Pradesh</Link> programs prepare professionals to manage everything that happens from the tarmac to the terminal gates.</p>
+            <p className="text-slate-700 mb-4">While the flight crew takes care of passengers mid-air, the <Link href="/programmes/sdam" className="text-primary hover:underline font-bold">Ground staff training Andhra Pradesh</Link> programs prepare professionals to manage everything that happens from the tarmac to the terminal gates.</p>
             <ul className="list-disc pl-5 space-y-2 text-slate-700">
               <li><strong>Responsibilities:</strong> Managing ticket counters, guiding aircraft movements during taxiing, coordinating baggage loading/unloading, and handling terminal security checks.</li>
               <li><strong>Skills Required:</strong> Strong attention to detail, physical agility, deep adherence to safety protocols, and quick crisis-resolution skills.</li>
@@ -214,13 +214,13 @@ export default function BlogPost() {
               </tr>
               <tr className="bg-slate-50">
                 <td className="p-4 text-sm text-slate-700 font-medium">Fly domestic/international routes as a flight attendant or cabin host.</td>
-                <td className="p-4 text-sm text-primary font-bold"><Link href="/programmes/dam" className="hover:underline">Diploma in Cabin Crew</Link></td>
+                <td className="p-4 text-sm text-primary font-bold"><Link href="/programmes/sdam" className="hover:underline">Diploma in Cabin Crew</Link></td>
                 <td className="p-4 text-sm text-slate-700">1 Year / Short-Term</td>
                 <td className="p-4 text-sm text-slate-700">Flight safety, inflight hospitality, advanced grooming, and emergency drills.</td>
               </tr>
               <tr>
                 <td className="p-4 text-sm text-slate-700 font-medium">Secure immediate airport employment handling terminal check-ins, ramp operations, or cargo.</td>
-                <td className="p-4 text-sm text-primary font-bold"><Link href="/programmes/pgdam" className="hover:underline">Diploma in Airport Operations</Link></td>
+                <td className="p-4 text-sm text-primary font-bold"><Link href="/programmes/svtp" className="hover:underline">Vocational Training in Airport Operations</Link></td>
                 <td className="p-4 text-sm text-slate-700">6 to 12 Months</td>
                 <td className="p-4 text-sm text-slate-700">Ground Handling, baggage tracking systems, ticketing software, and airport safety.</td>
               </tr>

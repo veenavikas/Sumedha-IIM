@@ -1,13 +1,13 @@
 [
   {
-    "id": "dhm",
-    "title": "Diploma in Hotel Management (DHM)",
+    "id": "sdhm",
+    "title": "Sumedha Diploma in Hotel Management (SDHM)",
     "category": "Hospitality",
     "duration": "1 Year / 6 Months",
     "eligibility": "10th Pass",
-    "mode": "Part-time",
+    "mode": "Part-time / Full-time",
     "description": "An entry-level, highly practical diploma for immediate entry into the hospitality workforce.",
-    "overview": "The DHM is perfect for students seeking quick entry into the hospitality sector. Available in 6-month and 1-year formats, it covers the absolute essentials of hotel operations, focusing heavily on practical skills in food service and housekeeping.",
+    "overview": "The Sumedha Diploma in Hotel Management (SDHM) is perfect for students seeking quick entry into the hospitality sector. Available in 6-month and 1-year formats, it covers the absolute essentials of hotel operations, focusing heavily on practical skills in food service and housekeeping.",
     "curriculum": [
       "Basic Food Production",
       "Housekeeping Operations",
@@ -23,79 +23,124 @@
     ]
   },
   {
-    "id": "dam",
-    "title": "Diploma in Aviation Management (DAM)",
+    "id": "svtphm",
+    "title": "Sumedha Vocational Training Programme in Hotel Management (SVTPHM)",
+    "category": "Hospitality",
+    "duration": "6 Months / 1 Year",
+    "eligibility": "10th Pass",
+    "mode": "Vocational / Regular",
+    "description": "Practical vocational skill training in core hospitality operations, guest handling, and commercial culinary service.",
+    "overview": "The Sumedha Vocational Training Programme in Hotel Management (SVTPHM) delivers hands-on, job-oriented vocational training. Students gain direct practical mastery in hotel front office systems, culinary prep, table etiquette, and guest room management.",
+    "curriculum": [
+      "Front Office Procedures",
+      "Food & Beverage Service Techniques",
+      "Commercial Kitchen & Culinary Basics",
+      "Hospitality Housekeeping Practices",
+      "Spoken English & Professional Grooming"
+    ],
+    "careerProspects": [
+      "Hospitality Associate",
+      "F&B Service Specialist",
+      "Guest Service Executive",
+      "Front Desk Assistant"
+    ]
+  },
+  {
+    "id": "sctphm",
+    "title": "Sumedha Certificate Programme on Hotel Management (SCTPHM)",
+    "category": "Hospitality",
+    "duration": "3 Months / 6 Months",
+    "eligibility": "10th Pass",
+    "mode": "Certificate / Fast-track",
+    "description": "A focused certificate program offering essential hotel management training and guest service skills.",
+    "overview": "The Sumedha Certificate Programme on Hotel Management (SCTPHM) is an accelerated certificate course covering the operational fundamentals of hospitality, catering, and hotel guest relations for rapid employment in luxury hotels and resorts.",
+    "curriculum": [
+      "Hotel Operations Fundamentals",
+      "Guest Relations & Customer Care",
+      "Basic Food & Beverage Service",
+      "Housekeeping Essentials",
+      "Hygiene & Professional Etiquette"
+    ],
+    "careerProspects": [
+      "F&B Service Attendant",
+      "Banquet Executive",
+      "Guest Relations Assistant",
+      "Hotel Operations Trainee"
+    ]
+  },
+  {
+    "id": "sdam",
+    "title": "Sumedha Diploma in Aviation Management (SDAM)",
     "category": "Aviation",
     "duration": "1 Year",
     "eligibility": "Intermediate (10+2)",
     "mode": "Regular / Part-time",
-    "description": "A fast-track diploma program for aspiring cabin crew and ground staff, emphasizing grooming, communication, and basic aviation operations.",
-    "overview": "The Diploma in Aviation Management (DAM) is a specialized 1-year course focused on immediate employability. It thoroughly trains students in cabin crew responsibilities, ground handling, personality development, and passenger service excellence.",
+    "description": "A fast-track diploma program for aspiring cabin crew and ground staff, emphasizing grooming, communication, and aviation operations.",
+    "overview": "The Sumedha Diploma in Aviation Management (SDAM) is a specialized 1-year course focused on immediate employability. It thoroughly trains students in cabin crew responsibilities, ground handling, personality development, and passenger service excellence.",
     "curriculum": [
       "Cabin Crew Training",
-      "Personality Development",
+      "Personality Development & Grooming",
       "First Aid & Emergency Procedures",
-      "Passenger Handling",
-      "In-flight Services"
+      "Passenger Handling & Boarding",
+      "In-flight Services & Hospitality"
     ],
     "careerProspects": [
       "Cabin Crew / Air Hostess",
-      "Ground Staff",
+      "Airport Ground Staff",
       "Ticketing Executive",
       "Guest Relationship Executive"
     ]
   },
   {
-    "id": "pgdhm",
-    "title": "Post Graduate Diploma in Hotel Management (PGDHM)",
-    "category": "Hospitality",
-    "duration": "2 Years",
-    "eligibility": "Any Degree",
-    "mode": "Regular / Part-time",
-    "description": "A focused PG diploma equipping graduates with advanced skills in hotel administration and operational leadership.",
-    "overview": "Designed for graduates from any discipline, the PGDHM offers a fast-tracked immersion into hotel management. The 2-year program focuses on advanced operational techniques, leadership, and the financial aspects of running hospitality establishments.",
+    "id": "svtp",
+    "title": "Sumedha Vocational Training Programme (SVTP)",
+    "category": "Aviation",
+    "duration": "6 Months / 1 Year",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Vocational / Regular",
+    "description": "Comprehensive vocational training in airport ground operations, ramp management, and passenger handling.",
+    "overview": "The Sumedha Vocational Training Programme (SVTP) equips aspiring aviation candidates with real-world airport operations skills, ticketing software proficiency, baggage logistics, and customer handling techniques.",
     "curriculum": [
-      "Advanced Hotel Administration",
-      "Hospitality Finance",
-      "Strategic Marketing",
-      "Facility Planning",
-      "Service Quality Management"
+      "Airport Operations Fundamentals",
+      "Check-in & Boarding Procedures",
+      "Baggage Handling & Ramp Safety",
+      "Aviation Customer Service",
+      "Aviation Communication & Etiquette"
     ],
     "careerProspects": [
-      "Assistant Hotel Manager",
-      "F&B Manager",
-      "Banquet Manager",
-      "Guest Experience Director"
+      "Airport Ground Staff",
+      "Ramp Operations Agent",
+      "Customer Support Executive",
+      "Baggage Handling Supervisor"
     ]
   },
   {
-    "id": "pgdam",
-    "title": "Post Graduate Diploma in Aviation Management (PGDAM)",
+    "id": "sctp",
+    "title": "Sumedha Certificate Training Programme (SCTP)",
     "category": "Aviation",
-    "duration": "3 Years",
+    "duration": "3 Months / 6 Months",
     "eligibility": "Intermediate (10+2)",
-    "mode": "Regular / Part-time",
-    "description": "An integrated PG diploma program focusing on advanced aviation operations, fleet management, and airline economics.",
-    "overview": "The PGDAM is an extensive program designed for students aiming for specialized roles in aviation. Over three years, the curriculum covers in-depth operational procedures, regulatory frameworks, and the business strategies that drive modern airlines and airports.",
+    "mode": "Certificate / Fast-track",
+    "description": "Accelerated certificate program focusing on aviation hospitality, grooming, and passenger assistance.",
+    "overview": "The Sumedha Certificate Training Programme (SCTP) is an intensive, practical certificate course preparing students for entry-level airport and airline customer service roles with strong grooming and communication standards.",
     "curriculum": [
-      "Aviation Economics",
-      "Fleet Management",
-      "Air Traffic Control Basics",
-      "Aviation Law",
-      "Crew Management",
-      "Logistics & Supply Chain"
+      "In-flight & Ground Guest Services",
+      "Professional Grooming & Etiquette",
+      "Airline Terminology & Codes",
+      "Passenger Check-in Basics",
+      "Safety & Security Awareness"
     ],
     "careerProspects": [
-      "Aviation Consultant",
-      "Fleet Operations Manager",
-      "Regulatory Affairs Officer",
-      "Airline Commercial Manager"
+      "Airline Customer Service Agent",
+      "Airport Information Desk Executive",
+      "Check-in Assistant",
+      "Lounge Host / Hostess"
     ]
   },
   {
     "id": "bhm",
     "title": "Bachelor of Hotel Management (BHM)",
-    "category": "Hospitality",
+    "category": "Bachelors",
     "duration": "3 Years",
     "eligibility": "Intermediate (10+2)",
     "mode": "Regular",
@@ -118,34 +163,9 @@
     ]
   },
   {
-    "id": "bba-aviation",
-    "title": "BBA - CAT, MAT coaching included with 3 years degree",
-    "category": "Aviation",
-    "duration": "3 Years",
-    "eligibility": "Intermediate (10+2)",
-    "mode": "Regular",
-    "description": "A comprehensive undergraduate program focusing on airport operations, passenger handling, cargo management, and aviation safety.",
-    "overview": "The BBA in Aviation Management is designed to prepare students for leadership roles in the fast-paced aviation industry. Combining core business management principles with specialized aviation operations, this 3-year program ensures graduates are ready to tackle challenges in airline management, airport operations, and allied sectors.",
-    "curriculum": [
-      "Principles of Management",
-      "Airport Operations",
-      "Aviation Safety & Security",
-      "Airline Marketing",
-      "Travel & Tourism Management",
-      "Business Communication"
-    ],
-    "careerProspects": [
-      "Airport Manager",
-      "Airline Operations Executive",
-      "Ground Handling Manager",
-      "Aviation Security Officer",
-      "Cargo Manager"
-    ]
-  },
-  {
     "id": "bca-ds-ai",
     "title": "BCA - Data Science & Artificial Intelligence",
-    "category": "Technology",
+    "category": "Bachelors",
     "duration": "3 Years",
     "eligibility": "Intermediate (10+2) with Mathematics",
     "mode": "Regular",
@@ -172,7 +192,7 @@
   {
     "id": "bsc-ds",
     "title": "BSC - Data Science",
-    "category": "Technology",
+    "category": "Bachelors",
     "duration": "3 Years",
     "eligibility": "Intermediate (10+2) with Mathematics / Statistics",
     "mode": "Regular",
@@ -199,7 +219,7 @@
   {
     "id": "bcom-computers",
     "title": "B.Com - Computers",
-    "category": "Commerce",
+    "category": "Bachelors",
     "duration": "3 Years",
     "eligibility": "Intermediate (10+2) with Commerce / MPC / BiPC",
     "mode": "Regular",
@@ -226,7 +246,7 @@
   {
     "id": "bsc-mpc",
     "title": "BSC - General (MPC)",
-    "category": "Science",
+    "category": "Bachelors",
     "duration": "3 Years",
     "eligibility": "Intermediate (10+2) with MPC (Mathematics, Physics, Chemistry)",
     "mode": "Regular",
@@ -251,17 +271,42 @@
     ]
   },
   {
+    "id": "bba-aviation",
+    "title": "BBA - Aviation Management",
+    "category": "Management",
+    "duration": "3 Years",
+    "eligibility": "Intermediate (10+2)",
+    "mode": "Regular",
+    "description": "A comprehensive undergraduate program focusing on airport operations, passenger handling, cargo management, and aviation safety.",
+    "overview": "The BBA in Aviation Management is designed to prepare students for leadership roles in the fast-paced aviation industry. Combining core business management principles with specialized aviation operations, this 3-year program ensures graduates are ready to tackle challenges in airline management, airport operations, and allied sectors.",
+    "curriculum": [
+      "Principles of Management",
+      "Airport Operations",
+      "Aviation Safety & Security",
+      "Airline Marketing",
+      "Travel & Tourism Management",
+      "Business Communication"
+    ],
+    "careerProspects": [
+      "Airport Manager",
+      "Airline Operations Executive",
+      "Ground Handling Manager",
+      "Aviation Security Officer",
+      "Cargo Manager"
+    ]
+  },
+  {
     "id": "mba",
-    "title": "Master of Business Administration",
-    "category": "Hospitality",
+    "title": "Master of Business Administration (MBA)",
+    "category": "Management",
     "duration": "2 Years",
     "eligibility": "Any Degree",
     "mode": "Regular / Part-time",
-    "description": "A premium postgraduate program designed to build strategic leadership and advanced management skills for the global hospitality sector.",
-    "overview": "Our MBA program offers advanced business education tailored for the hospitality and service industries. It focuses on strategic management, international hospitality operations, and corporate leadership, empowering graduates to take on senior executive roles globally.",
+    "description": "A premium postgraduate program designed to build strategic leadership and advanced management skills for the global hospitality and aviation sectors.",
+    "overview": "Our MBA program offers advanced business education tailored for the hospitality, aviation, and corporate service industries. It focuses on strategic management, international operations, and executive leadership, empowering graduates to take on senior executive roles globally.",
     "curriculum": [
       "Strategic Management",
-      "International Hospitality Management",
+      "International Operations Management",
       "Corporate Finance",
       "Digital Marketing",
       "Organizational Behavior",
@@ -271,7 +316,7 @@
       "General Manager",
       "Corporate Director",
       "Management Consultant",
-      "Entrepreneur",
+      "Operations Director",
       "Revenue Manager"
     ]
   }

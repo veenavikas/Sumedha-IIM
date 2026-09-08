@@ -404,7 +404,7 @@ export default function BlogPost() {
               Ready to explore your customized payment schedule and secure your seat for <Link href="/admissions" className="text-primary hover:underline font-bold">Hotel Management Admission 2026</Link>?
             </p>
             <p className="font-medium text-lg bg-primary/5 p-6 rounded-2xl border border-primary/20">
-              👉 Get your personalized fee details today! Visit our official <Link href="/programmes" className="text-primary hover:underline font-bold">Fees Page</Link> to request fee information, or complete our quick <Link href="/admissions" className="text-primary hover:underline font-bold">Admission Form</Link> to speak directly with an expert admissions counselor!
+              👉 Get your personalized guidance today! Visit our official <Link href="/programmes" className="text-primary hover:underline font-bold">Programmes Page</Link> to explore our courses, or complete our quick <Link href="/admissions" className="text-primary hover:underline font-bold">Admission Form</Link> to speak directly with an expert admissions counselor!
             </p>
           </div>
         </article>

@@ -14,7 +14,7 @@ export default function Placements() {
     <div className="flex flex-col w-full min-h-screen bg-gradient-to-b from-white via-sky-50/50 to-blue-50/30 overflow-hidden">
       <PageHero 
         title="Placements & Alumni Success" 
-        subtitle="100% Placement Assistance. Over 2000+ graduates placed across leading airlines & 5-star hotel chains." 
+        subtitle="100% Placement Assistance. Over 1500+ graduates placed across leading airlines & 5-star hotel chains." 
       />
 
       {/* S1: Hero Stat */}
@@ -25,7 +25,7 @@ export default function Placements() {
             PROVEN TRACK RECORD
           </span>
           <h2 className="font-sans text-[80px] sm:text-[120px] md:text-[140px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0b2a68] via-[#0284c7] to-[#0369a1] my-2 leading-none">
-            2000+
+            1500+
           </h2>
           <p className="text-xl md:text-2xl text-[#0b2a68] font-black uppercase tracking-wider">Students Placed Successfully</p>
         </AnimatedSection>

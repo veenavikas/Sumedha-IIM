@@ -11,7 +11,7 @@ export default function Footer() {
             <span className="text-xs font-black text-[#d9a441] uppercase tracking-widest block mb-1">Admissions Open 2026-27</span>
             <h3 className="font-serif text-2xl md:text-4xl font-bold text-white">Begin Your Career in Aviation & Hotel Management</h3>
             <p className="text-sky-100 text-xs md:text-sm mt-2 max-w-2xl font-medium">
-              Join Visakhapatnam&apos;s most trusted institute with 100% placement record and 4-term flexible fee payment options.
+              Join Visakhapatnam&apos;s most trusted institute with 100% placement record and industry-aligned practical training.
             </p>
           </div>
           <Link
@@ -45,7 +45,7 @@ export default function Footer() {
             </p>
             <p className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#d9a441] shrink-0" />
-              <span>info@mysumedha.com | admissions@mysumedha.com</span>
+              <span>info@sumedhaiim.com</span>
             </p>
             <p className="text-[11px] text-slate-400 font-semibold pt-1">
               <span className="text-[#d9a441]">Working Hours:</span> Mon - Sun: 09:00 AM - 08:00 PM
@@ -80,9 +80,9 @@ export default function Footer() {
           <ul className="space-y-2 text-xs text-slate-300 font-medium">
             <li><Link href="/programmes/bba-aviation" className="hover:text-[#d9a441] transition-colors">BBA Aviation Management</Link></li>
             <li><Link href="/programmes/bhm" className="hover:text-[#d9a441] transition-colors">Degree in Hotel Mgmt (BHM)</Link></li>
-            <li><Link href="/programmes/dam" className="hover:text-[#d9a441] transition-colors">Diploma in Aviation (DAM)</Link></li>
-            <li><Link href="/programmes/dhm" className="hover:text-[#d9a441] transition-colors">Diploma in Hotel Mgmt (DHM)</Link></li>
-            <li><Link href="/programmes/pgdhm" className="hover:text-[#d9a441] transition-colors">PG Diploma Hospitality</Link></li>
+            <li><Link href="/programmes/sdam" className="hover:text-[#d9a441] transition-colors">Sumedha Diploma in Aviation (SDAM)</Link></li>
+            <li><Link href="/programmes/sdhm" className="hover:text-[#d9a441] transition-colors">Sumedha Diploma in Hotel Mgmt (SDHM)</Link></li>
+            <li><Link href="/programmes/svtp" className="hover:text-[#d9a441] transition-colors">Vocational Training (SVTP)</Link></li>
             <li><Link href="/programmes/mba" className="hover:text-[#d9a441] transition-colors">MBA Aviation & Hospitality</Link></li>
           </ul>
         </div>

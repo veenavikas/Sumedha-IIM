@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Sumedha IIM",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg",
         width: 1200,
         height: 630,
         alt: "Sumedha IIM Campus",

@@ -134,8 +134,8 @@ export default function Apply() {
             </div>
 
             <div>
-              <label htmlFor="notes" className="block text-xs font-bold text-[#0b2a68] mb-2 uppercase tracking-wider">Additional Notes / Preferred Term Schedule</label>
-              <textarea name="notes" id="notes" rows={3} placeholder="Mention any preferred term payment option..." className="w-full px-4 py-3 rounded-xl bg-sky-50/50 border border-sky-200 focus:outline-none focus:border-sky-500 text-sm"></textarea>
+              <label htmlFor="notes" className="block text-xs font-bold text-[#0b2a68] mb-2 uppercase tracking-wider">Additional Notes / Questions</label>
+              <textarea name="notes" id="notes" rows={3} placeholder="Mention any queries, interests, or special requests..." className="w-full px-4 py-3 rounded-xl bg-sky-50/50 border border-sky-200 focus:outline-none focus:border-sky-500 text-sm"></textarea>
             </div>
 
             <button

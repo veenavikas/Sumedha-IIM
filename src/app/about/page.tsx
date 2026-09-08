@@ -35,21 +35,13 @@ export default function About() {
               Equipped with over 60%+ practical lab training, commercial kitchens, mock bar setups, and flight handling simulation, our alumni are placed globally across major airports, international airlines, and luxury 5-star hotel chains.
             </p>
             
-            <div className="space-y-4">
-              {[
-                { year: "2010", text: "Founded in Visakhapatnam, Andhra Pradesh" },
-                { year: "2013", text: "State Board & Industry Training Accreditation" },
-                { year: "2026", text: "Over 2000+ Alumni Successfully Placed Globally" }
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-sky-100 shadow-sm">
-                  <div className="font-black text-[#0b2a68] text-xl px-3 py-1 bg-sky-100 rounded-xl text-sky-800 shrink-0">{item.year}</div>
-                  <div className="text-slate-700 text-sm font-semibold">{item.text}</div>
-                </div>
-              ))}
+            <div className="flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-sky-100 shadow-sm">
+              <div className="font-black text-[#0b2a68] text-xl px-3 py-1 bg-sky-100 rounded-xl text-sky-800 shrink-0">2010</div>
+              <div className="text-slate-700 text-sm font-semibold">Founded in Visakhapatnam, Andhra Pradesh</div>
             </div>
           </div>
           <div className="relative h-[450px] lg:h-[600px] rounded-[32px] overflow-hidden shadow-xl border border-sky-200 group">
-             <img src="/images/front.jpeg" alt="Sumedha IIM Campus Building" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+             <img src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" alt="Sumedha IIM Campus Building" className="absolute inset-0 w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500" />
              <div className="absolute inset-0 bg-gradient-to-t from-[#0b2a68]/60 via-transparent to-transparent z-10"></div>
              <div className="absolute bottom-6 left-6 right-6 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/40 shadow-lg">
                <p className="font-black text-[#0b2a68] text-sm">Diamond Park Campus • Dwaraka Nagar</p>
@@ -78,7 +70,7 @@ export default function About() {
                 <span className="text-xs font-black uppercase tracking-widest text-sky-200 block mb-3">Our Core Mission</span>
                 <h3 className="text-3xl font-black text-white mb-4">Quality & Accountability</h3>
                 <p className="text-sky-100 leading-relaxed text-lg font-medium">
-                  &quot;Creating success stories through practical lab mastery, transparent fee options, and 100% placement support.&quot;
+                  &quot;Creating success stories through practical lab mastery, dedicated career mentorship, and 100% placement support.&quot;
                 </p>
               </div>
             </AnimatedSection>

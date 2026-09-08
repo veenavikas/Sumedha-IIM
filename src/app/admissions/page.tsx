@@ -6,8 +6,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Admissions Process 2026 | Sumedha IIM Vizag",
-  description: "Learn about the admission process, eligibility criteria, required documents, and flexible term fee options at Sumedha IIM Vizag.",
-  keywords: "sumedha iim admissions, hotel management admission vizag, aviation admission vizag, term fee options"
+  description: "Learn about the admission process, eligibility criteria, required documents, and career guidance at Sumedha IIM Vizag.",
+  keywords: "sumedha iim admissions, hotel management admission vizag, aviation admission vizag"
 };
 
 export default function Admissions() {
@@ -29,11 +29,11 @@ export default function Admissions() {
         
         <div className="space-y-6 relative">
           {[
-            { step: "01", title: "Choose Programme", desc: "Select from BHM, BBA Aviation, DHM, DAM, or PG Diplomas based on your career interest." },
+            { step: "01", title: "Choose Programme", desc: "Select from BHM, BBA Aviation, SDHM, SDAM, or Vocational programmes based on your career interest." },
             { step: "02", title: "Fill Online Application", desc: "Complete the quick online application form with basic educational details." },
-            { step: "03", title: "Personal Counseling", desc: "Meet or call our admissions desk for personalized course guidance & term payment plan setup." },
+            { step: "03", title: "Personal Counseling", desc: "Meet or call our admissions desk for personalized course guidance & enrollment setup." },
             { step: "04", title: "Document Submission", desc: "Submit 10th/12th marksheets, transfer certificate, and passport size photos." },
-            { step: "05", title: "Seat Confirmation", desc: "Clear term 1 installment fee to confirm your seat and receive official orientation kit." }
+            { step: "05", title: "Seat Confirmation", desc: "Complete enrollment formalities to confirm your seat and receive your official orientation kit." }
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-6 bg-white/90 backdrop-blur-md p-6 rounded-3xl border border-sky-100 shadow-md">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0b2a68] to-[#0284c7] text-white font-black text-lg flex items-center justify-center shrink-0 shadow-md">

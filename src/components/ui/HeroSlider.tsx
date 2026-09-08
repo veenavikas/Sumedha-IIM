@@ -12,12 +12,12 @@ const slides = [
     tag: "PRACTICAL TRAINING",
   },
   {
-    src: "/images/hero-1.jpg",
+    src: "/images/www.mysumedha (561).jpg",
     title: "Flight Cabin Mockup Studio",
     tag: "AVIATION ACADEMY",
   },
   {
-    src: "/images/hero-2.jpg",
+    src: "/images/www.mysumedha (558).jpg",
     title: "5-Star Hotel Opera PMS Suite",
     tag: "HOSPITALITY LAB",
   },
@@ -29,7 +29,7 @@ const slides = [
   {
     src: "/images/www.mysumedha (1008).JPG",
     title: "State-of-the-Art Practical Training Labs",
-    tag: "INDUSTRY ACCREDITED",
+    tag: "PRACTICAL LABS",
   },
 ];
 

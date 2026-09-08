@@ -283,7 +283,7 @@ export default function BlogPost() {
         </div>
 
         <img 
-          src="/images/hotel-management-content-2.jpg" 
+          src="/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg" 
           alt="Trainee hotel management students practicing premium food and beverage table service setups inside a well-equipped training lab." 
           className="w-full rounded-2xl shadow-lg border border-border/50 mb-12" 
         />

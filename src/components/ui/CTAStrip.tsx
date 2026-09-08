@@ -14,7 +14,7 @@ export default function CTAStrip() {
           Begin Your Journey at Sumedha IIM Today
         </h2>
         <p className="text-slate-600 text-base md:text-lg mb-8 max-w-2xl mx-auto font-medium">
-          Get direct personalized admission & fee guidance from our career counselors.
+          Get direct personalized admission & career guidance from our career counselors.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link 

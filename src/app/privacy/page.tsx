@@ -37,7 +37,7 @@ export default function Privacy() {
 
           <h2 className="font-serif text-3xl font-bold text-navy mb-6">4. Contact Us</h2>
           <p className="text-slate leading-relaxed">
-            If you have any questions about this privacy policy or our privacy practices, please contact us at: <strong>info@mysumedha.com</strong>.
+            If you have any questions about this privacy policy or our privacy practices, please contact us at: <strong>info@sumedhaiim.com</strong>.
           </p>
         </div>
       </section>

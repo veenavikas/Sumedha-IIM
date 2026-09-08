@@ -55,8 +55,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold text-[#0b2a68] text-base mb-1">Email Enquiry</h3>
                   <p className="space-y-1">
-                    <a href="mailto:info@mysumedha.com" className="block text-slate-700 hover:text-sky-600 transition-colors font-semibold text-sm">info@mysumedha.com</a>
-                    <a href="mailto:admissions@mysumedha.com" className="block text-slate-500 hover:text-sky-600 transition-colors font-medium text-xs">admissions@mysumedha.com</a>
+                    <a href="mailto:info@sumedhaiim.com" className="block text-slate-700 hover:text-sky-600 transition-colors font-semibold text-sm">info@sumedhaiim.com</a>
                   </p>
                 </div>
               </HoverCard>
@@ -122,12 +121,18 @@ export default function Contact() {
                   <label className="block text-xs font-bold text-[#0b2a68] uppercase tracking-wider mb-1">Course Interested In</label>
                   <select required className="w-full px-4 py-3 bg-sky-50/50 rounded-xl border border-sky-200 text-sm focus:outline-none focus:border-sky-500">
                     <option value="">Select Programme</option>
-                    <option value="DHM">Diploma in Hotel Management (DHM)</option>
-                    <option value="DAM">Diploma in Aviation Management (DAM)</option>
+                    <option value="SDHM">Sumedha Diploma in Hotel Management (SDHM)</option>
+                    <option value="SVTPHM">Sumedha Vocational Training in Hotel Mgmt (SVTPHM)</option>
+                    <option value="SCTPHM">Sumedha Certificate on Hotel Mgmt (SCTPHM)</option>
+                    <option value="SDAM">Sumedha Diploma in Aviation Management (SDAM)</option>
+                    <option value="SVTP">Sumedha Vocational Training Programme (SVTP)</option>
+                    <option value="SCTP">Sumedha Certificate Training Programme (SCTP)</option>
                     <option value="BHM">Degree in Hotel Management (BHM)</option>
                     <option value="BBA Aviation">BBA Aviation Management</option>
-                    <option value="PGDHM">PG Diploma Hospitality</option>
                     <option value="MBA">MBA Aviation & Hospitality</option>
+                    <option value="BCA">BCA - Data Science & AI</option>
+                    <option value="BSC">BSC - Data Science / MPC</option>
+                    <option value="BCOM">B.Com - Computers</option>
                   </select>
                 </div>
                 <div>

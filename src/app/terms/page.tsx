@@ -24,9 +24,9 @@ export default function Terms() {
             You may use our site for lawful purposes only. You must not use our site in any way that breaches any applicable local, national, or international law or regulation. All content on this site, including text, graphics, logos, and images, is the property of Sumedha IIM.
           </p>
 
-          <h2 className="font-serif text-3xl font-bold text-navy mb-6">3. Admissions & Fees</h2>
+          <h2 className="font-serif text-3xl font-bold text-navy mb-6">3. Admissions & Enrollment</h2>
           <p className="text-slate leading-relaxed mb-8">
-            All admission details, fee structures, and course durations mentioned on the website are subject to change without prior notice. The final terms of enrollment will be provided to the student directly by the admissions office.
+            All admission details, enrollment criteria, and course durations mentioned on the website are subject to change without prior notice. The final terms of enrollment will be provided to the student directly by the admissions office.
           </p>
 
           <h2 className="font-serif text-3xl font-bold text-navy mb-6">4. Changes to Terms</h2>

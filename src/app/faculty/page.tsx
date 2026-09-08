@@ -11,12 +11,10 @@ export const metadata = {
 };
 
 const facultyPhotos: { [key: string]: string } = {
-  "1": "/images/IMG_9194.JPG",
-  "2": "/images/hero-2.jpg",
-  "3": "/images/hotel-management-content-1.jpg",
-  "4": "/images/hero-1.jpg",
-  "5": "/images/IMG_9023.JPG",
-  "6": "/images/IMG_9009.JPG",
+  "f1": "/images/IMG_9194.JPG",
+  "f2": "/images/IMG_9009.JPG",
+  "f3": "/images/www.mysumedha (1004).JPG",
+  "f4": "/images/WhatsApp Image 2026-05-06 at 9.58.28 AM.jpeg",
 };
 
 export default function Faculty() {
@@ -44,7 +42,7 @@ export default function Faculty() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {facultyData.map((f, idx) => {
-            const photoSrc = facultyPhotos[f.id] || "/images/hero-1.jpg";
+            const photoSrc = facultyPhotos[f.id] || "/images/hotel-management-content-1.jpg";
             return (
               <AnimatedSection key={f.id} direction="up" delay={idx * 0.08}>
                 <HoverCard className="bg-white/95 backdrop-blur-xl rounded-[32px] border border-slate-200/80 shadow-xl hover:shadow-2xl overflow-hidden flex flex-col h-full group hover:-translate-y-2 transition-all duration-300">

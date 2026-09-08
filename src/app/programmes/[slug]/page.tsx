@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Download, ArrowRight, CheckCircle2 } from "lucide-react";
 import coursesData from "@/data/courses.json";
@@ -8,17 +8,28 @@ import CTAStrip from "@/components/ui/CTAStrip";
 import { Metadata } from "next";
 
 export function generateStaticParams() {
-  return coursesData.map((course) => ({
+  const params = coursesData.map((course) => ({
     slug: course.id,
   }));
+  // Add legacy slugs for redirect compatibility
+  params.push({ slug: "dhm" });
+  params.push({ slug: "dam" });
+  return params;
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  if (params.slug === "dhm") {
+  if (params.slug === "dhm" || params.slug === "sdhm") {
     return {
       title: "Diploma in Hotel Management in Vizag | Sumedha IIM",
-      description: "Join Sumedha IIM's Diploma in Hotel Management in Vizag. Industry-relevant curriculum, hands-on training & strong placements. Apply for 2026.",
-      keywords: "diploma in hotel management vizag, hotel management colleges in vizag, hotel management course after 12th, hotel management admission 2026"
+      description: "Join Sumedha IIM's Diploma in Hotel Management (SDHM) in Vizag. Industry-relevant curriculum, hands-on training & strong placements. Apply for 2026.",
+      keywords: "diploma in hotel management vizag, hotel management colleges in vizag, hotel management course after 12th, hotel management admission 2026, sdhm"
+    };
+  }
+  if (params.slug === "dam" || params.slug === "sdam") {
+    return {
+      title: "Diploma in Aviation Management in Vizag | Sumedha IIM",
+      description: "Join Sumedha IIM's Diploma in Aviation Management (SDAM) in Vizag. Industry-relevant cabin crew & ground staff curriculum. Apply for 2026.",
+      keywords: "diploma in aviation management vizag, aviation colleges in vizag, cabin crew course vizag, aviation admission 2026, sdam"
     };
   }
   const course = coursesData.find((c) => c.id === params.slug);
@@ -28,6 +39,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function ProgrammeDetail({ params }: { params: { slug: string } }) {
+  // Legacy redirects for compatibility
+  if (params.slug === "dhm") {
+    redirect("/programmes/sdhm");
+  }
+  if (params.slug === "dam") {
+    redirect("/programmes/sdam");
+  }
+
   const course = coursesData.find((c) => c.id === params.slug);
 
   if (!course) {
