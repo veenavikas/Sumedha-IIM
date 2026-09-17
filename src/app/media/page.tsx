@@ -20,18 +20,52 @@ export default function Media() {
   }
 
   const galleryItems: MediaGalleryItem[] = [
-    { title: "Commercial Kitchen Practical Training", category: "Practicals", type: "image", src: "/images/hotel-management-content-1.jpg" },
+    { title: "Front Office PMS Reception Workstations", category: "Practicals", type: "image", src: "/images/hotel-management-content-1.jpg" },
     { title: "Aviation Flight Cabin Mockup Drill", category: "Aviation", type: "image", src: "/images/www.mysumedha (561).jpg" },
-    { title: "Front Desk PMS Reception Workstations", category: "Practicals", type: "image", src: "/images/www.mysumedha (558).jpg" },
-    { title: "Main Diamond Park Campus Building", category: "Campus", type: "image", src: "/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" },
-    { title: "Digital Library & E-Learning Zone", category: "Campus", type: "image", src: "/images/www.mysumedha (1008).JPG" },
-    { title: "Campus Infrastructure & Academic Facilities", category: "Campus", type: "image", src: "/images/WhatsApp Image 2026-07-07 at 18.32.46.jpeg" },
+    { title: "Commercial Kitchen Practical Training", category: "Practicals", type: "image", src: "/images/commercial-training-kitchen.jpg" },
+    { title: "Campus Building", category: "Campus", type: "image", src: "/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" },
     { title: "Smart AV Classroom Interactive Session", category: "Practicals", type: "image", src: "/images/IMG_9009.JPG" },
     { title: "Annual Campus Celebrations & Student Events", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.37 AM (1).jpeg" },
     { title: "Luxury Hotel Hospitality Practical Training", category: "Practicals", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg" },
     { title: "Airport Terminal In-Flight Training Drill", category: "Aviation", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.05 AM.jpeg" },
     { title: "Industrial Visit at Fairfield by Marriott", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-06-06 at 12.12.44.jpeg" },
     { title: "Annual Convocation & Student Felicitation", category: "Events", type: "image", src: "/images/WhatsApp Image 2026-05-06 at 9.59.41 AM.jpeg" },
+    // Newly added campus & event photos
+    { title: "Classroom Lecture Session", category: "Practicals", type: "image", src: "/images/media/media-photo-1.jpg" },
+    { title: "Dignitaries Seated on Stage", category: "Events", type: "image", src: "/images/media/media-photo-2.jpg" },
+    { title: "Floral Decorated Ganesha Idol", category: "Events", type: "image", src: "/images/media/media-photo-3.jpg" },
+    { title: "Tarang Memento Presentation on Stage", category: "Events", type: "image", src: "/images/media/media-photo-4.jpg" },
+    { title: "Certificate of Participation Award Ceremony", category: "Events", type: "image", src: "/images/media/media-photo-5.jpg" },
+    { title: "Group Stage Photo at Welcome Ceremony", category: "Events", type: "image", src: "/images/media/media-photo-6.jpg" },
+    { title: "Inaugural Ceremonial Lamp Lighting", category: "Events", type: "image", src: "/images/media/media-photo-7.jpg" },
+    { title: "Participation Certificate Presentation to Student", category: "Events", type: "image", src: "/images/media/media-photo-8.jpg" },
+    { title: "Students & Faculty Stage Group Photo", category: "Events", type: "image", src: "/images/media/media-photo-9.jpg" },
+    { title: "Flower Bouquet Presentation to Student", category: "Events", type: "image", src: "/images/media/media-photo-10.jpg" },
+    { title: "Students Cultural Stage Performance", category: "Events", type: "image", src: "/images/media/media-photo-11.jpg" },
+    { title: "Front Office Reception Desk Practical Training", category: "Practicals", type: "image", src: "/images/media/media-photo-12.png" },
+    { title: "Hospitality Students at Reception Desk", category: "Practicals", type: "image", src: "/images/media/media-photo-13.png" },
+    { title: "Students in Traditional Welcoming Posture", category: "Practicals", type: "image", src: "/images/media/media-photo-14.png" },
+    { title: "Students Seated in Campus Reception Lounge", category: "Campus", type: "image", src: "/images/media/media-photo-15.jpg" },
+    { title: "Student Academic Counseling Session", category: "Campus", type: "image", src: "/images/media/media-photo-16.png" },
+    { title: "Achievement Trophy Presentation to Student", category: "Events", type: "image", src: "/images/media/media-photo-17.jpg" },
+    { title: "Stage Address by Dignitary", category: "Events", type: "image", src: "/images/media/media-photo-18.jpg" },
+    { title: "Student Cohort on Stage with Faculty", category: "Events", type: "image", src: "/images/media/media-photo-19.jpg" },
+    { title: "Felicitation Bouquet Presentation to Student", category: "Events", type: "image", src: "/images/media/media-photo-20.jpg" },
+    { title: "Student Anchors Hosting Stage Event", category: "Events", type: "image", src: "/images/media/media-photo-21.jpg" },
+    { title: "Speaker Address from the Podium", category: "Events", type: "image", src: "/images/media/media-photo-22.jpg" },
+    { title: "Institute Leadership on Event Stage", category: "Events", type: "image", src: "/images/media/media-photo-23.jpg" },
+    { title: "Tarang 2026 Memento Presentation Ceremony", category: "Events", type: "image", src: "/images/media/media-photo-24.jpg" },
+    { title: "Student Felicitation with Floral Bouquet", category: "Events", type: "image", src: "/images/media/media-photo-25.jpg" },
+    { title: "Dignitary Address to Audience on Stage", category: "Events", type: "image", src: "/images/media/media-photo-26.jpg" },
+    { title: "Male Student Cohort Group Stage Photo", category: "Events", type: "image", src: "/images/media/media-photo-27.jpg" },
+    { title: "Female Student Cohort Group Stage Photo", category: "Events", type: "image", src: "/images/media/media-photo-28.jpg" },
+    { title: "Students Group in Festive Attire on Stage", category: "Events", type: "image", src: "/images/media/media-photo-29.jpg" },
+    { title: "Faculty & Families Group Photo on Stage", category: "Events", type: "image", src: "/images/media/media-photo-30.jpg" },
+    { title: "Independence Day Campus Celebrations", category: "Events", type: "image", src: "/images/media/media-photo-31.jpg" },
+    { title: "Leadership at Independence Day Celebrations", category: "Events", type: "image", src: "/images/media/media-photo-32.jpg" },
+    { title: "Address from the Garlanded Podium on Independence Day", category: "Events", type: "image", src: "/images/media/media-photo-33.jpg" },
+    { title: "Podium Speech during Campus Celebrations", category: "Events", type: "image", src: "/images/media/media-photo-34.png" },
+    { title: "National Flag Hoisting Ceremony on Campus Terrace", category: "Events", type: "image", src: "/images/media/media-photo-35.jpg" },
   ];
 
   const filteredItems = activeTab === "All"
@@ -45,7 +79,7 @@ export default function Media() {
         subtitle="Explore life at Sumedha IIM through campus tours, practical labs, and student event showcases." 
       />
 
-      {/* Official Video Showcase */}
+      {/* Official Video Showcase & Campus Videos (Positioned directly ABOVE photo gallery) */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full border-b border-sky-100 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 font-extrabold text-xs uppercase tracking-widest border border-sky-200 inline-flex items-center gap-1.5">
@@ -59,7 +93,8 @@ export default function Media() {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
+        {/* 1. Existing Media Video */}
+        <div className="max-w-4xl mx-auto mb-16">
           <HoverCard className="relative aspect-video rounded-[32px] overflow-hidden shadow-2xl border-4 border-white bg-black">
             <video 
               autoPlay 
@@ -82,6 +117,41 @@ export default function Media() {
             <p className="text-slate-600 text-xs font-medium">
               Over 60%+ practical exposure across commercial culinary labs, flight mock cabins, and Property Management System workstations.
             </p>
+          </div>
+        </div>
+
+        {/* 2 & 3. Newly Added Videos: video1 and video2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Video 1 Card */}
+          <div className="bg-white/95 backdrop-blur-xl rounded-[28px] sm:rounded-[32px] border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden p-3 sm:p-4">
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner">
+              <video 
+                controls 
+                muted 
+                playsInline 
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                <source src="/images/Videos/video1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          {/* Video 2 Card */}
+          <div className="bg-white/95 backdrop-blur-xl rounded-[28px] sm:rounded-[32px] border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden p-3 sm:p-4">
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner">
+              <video 
+                controls 
+                muted 
+                playsInline 
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                <source src="/images/Videos/video2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </section>

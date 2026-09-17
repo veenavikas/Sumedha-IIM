@@ -60,7 +60,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full flex flex-col z-50">
+    <>
       {/* 1. Marquee Announcement Ticker (Scrolling Infinite Bar) */}
       <div className="group bg-[#041a4a] text-white text-[11px] sm:text-sm font-semibold py-2 overflow-hidden border-b border-white/10 relative z-30">
         <div className="animate-marquee">
@@ -85,7 +85,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 2. Sleek Modern Top Institutional Header */}
+      {/* Complete Sticky Header: White Top Information Bar + Blue Navigation Bar */}
+      <header className="sticky top-0 z-50 w-full flex flex-col shadow-md">
+        {/* 2. Sleek Modern Top Institutional Header */}
       <div className="bg-white py-4 px-4 sm:px-8 border-b border-slate-200 shadow-sm relative">
         <div className="max-w-[1500px] mx-auto flex items-center justify-between gap-6">
           
@@ -157,8 +159,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* 3. Sticky Main Navigation Bar */}
-      <nav className="sticky top-0 z-40 bg-gradient-to-r from-[#0B2A68] via-[#0284c7] to-[#0369a1] text-white shadow-lg">
+      {/* 3. Main Navigation Bar */}
+      <nav className="w-full bg-gradient-to-r from-[#0B2A68] via-[#0284c7] to-[#0369a1] text-white shadow-lg relative z-40">
         <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex min-h-[56px] items-center justify-between">
           
           {/* Desktop Nav Items */}
@@ -291,7 +293,8 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
-    </header>
+        </nav>
+      </header>
+    </>
   );
 }

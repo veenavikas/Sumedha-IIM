@@ -55,7 +55,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 pt-2">
             <a href="https://facebook.com/sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="Facebook">FB</a>
             <a href="https://www.instagram.com/sumedhaiim?utm_source=qr&igsh=cnFud3RxZGhwdGxj" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="Instagram">IG</a>
-            <a href="https://www.youtube.com/@SUMEDHA-o7v" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="YouTube">YT</a>
+            <a href="https://www.youtube.com/@sumedhaiim" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#d9a441] hover:text-[#0B2A68] flex items-center justify-center transition-colors text-xs font-bold" title="YouTube">YT</a>
           </div>
         </div>
 

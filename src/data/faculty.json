@@ -1,34 +1,52 @@
 [
   {
-    "id": "f1",
-    "name": "Dr. K. Srinivasa Rao",
-    "designation": "Principal & Head of Hospitality",
-    "expertise": "Food & Beverage Management, Hospitality Operations",
-    "background": "Former General Manager at Taj Group with 20+ years of industry experience.",
-    "image": "/images/faculty/srinivasa.jpg"
+    "id": "1",
+    "name": "Dr.Matha Govinda Raju",
+    "qualification": "Ph.D"
   },
   {
-    "id": "f2",
-    "name": "Capt. Ramesh Kumar",
-    "designation": "Head of Aviation Management",
-    "expertise": "Airport Operations, Aviation Safety",
-    "background": "Ex-Air India Pilot & Aviation Consultant.",
-    "image": "/images/faculty/ramesh.jpg"
+    "id": "2",
+    "name": "Adari Bhaskar Rao",
+    "qualification": "M.com, M.A Hindi literature, PGDCA"
   },
   {
-    "id": "f3",
-    "name": "Ms. Sunita Sharma",
-    "designation": "Lead Instructor - Grooming & Communication",
-    "expertise": "Personality Development, Cabin Crew Training",
-    "background": "Former Senior Cabin Crew at Emirates Airlines.",
-    "image": "/images/faculty/sunita.jpg"
+    "id": "3",
+    "name": "Kodigudla Jeseela",
+    "qualification": "MBA, M.com"
   },
   {
-    "id": "f4",
-    "name": "Chef Anand Menon",
-    "designation": "Executive Chef Instructor",
-    "expertise": "Culinary Arts, Food Production",
-    "background": "Over 15 years as Executive Chef across international luxury cruise lines.",
-    "image": "/images/faculty/anand.jpg"
+    "id": "4",
+    "name": "Ashwini Tompala",
+    "qualification": "MBA"
+  },
+  {
+    "id": "5",
+    "name": "Pathi Manikanta",
+    "qualification": "BBA + Aviation"
+  },
+  {
+    "id": "6",
+    "name": "Yalangi Deepthi",
+    "qualification": "MBA"
+  },
+  {
+    "id": "7",
+    "name": "Dadi Shirisha",
+    "qualification": "MBA"
+  },
+  {
+    "id": "8",
+    "name": "Singuluri Ramya",
+    "qualification": "Diploma in Aviation"
+  },
+  {
+    "id": "9",
+    "name": "Ganta Renuka",
+    "qualification": "B.Tech"
+  },
+  {
+    "id": "10",
+    "name": "N.Hari Krishna",
+    "qualification": "BHM"
   }
 ]

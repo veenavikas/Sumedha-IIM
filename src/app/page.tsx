@@ -4,9 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import HeroVideo from "@/components/ui/HeroVideo";
 import { 
-  ArrowRight, Award, Users, BookOpen, Hotel, Plane, Briefcase, 
-  GraduationCap, Play, Star, Calendar, Download, Sparkles, 
-  ChevronRight, Trophy, ShieldCheck, Heart, Coffee, Utensils, FileText, FlaskConical, Megaphone
+  ArrowRight, Award, Users, Hotel, Plane, Briefcase, 
+  GraduationCap, Play, Star, Sparkles, 
+  Trophy, ShieldCheck, Coffee, Utensils, FlaskConical
 } from "lucide-react";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
       textColor: "text-blue-600",
       desc: "Comprehensive culinary arts, food production, front office management, and housekeeping training with 5-star hotel internships.",
       coursesCount: "3 Programmes Available",
-      link: "/programmes"
+      link: "/programmes?category=Hospitality"
     },
     {
       title: "Aviation & Cabin Crew",
@@ -39,7 +39,7 @@ export default function Home() {
       textColor: "text-purple-600",
       desc: "Simulated aircraft flight cabin training, airport ground handling, passenger customer service, and IATA safety protocols.",
       coursesCount: "3 Programmes Available",
-      link: "/programmes"
+      link: "/programmes?category=Aviation"
     },
     {
       title: "Bachelors",
@@ -49,7 +49,7 @@ export default function Home() {
       textColor: "text-emerald-600",
       desc: "Undergraduate degree programs including BHM, BCA Data Science & AI, B.Sc, and B.Com Computers with hands-on industrial pathways.",
       coursesCount: "5 Programmes Available",
-      link: "/programmes"
+      link: "/programmes?category=Bachelors"
     },
     {
       title: "Management",
@@ -59,38 +59,10 @@ export default function Home() {
       textColor: "text-amber-600",
       desc: "Industry-focused BBA & MBA management programmes designed for strategic leadership in aviation, hospitality, and corporate business.",
       coursesCount: "2 Programmes Available",
-      link: "/programmes"
+      link: "/programmes?category=Management"
     }
   ];
 
-  const noticesList = [
-    { title: "Online Registration Open for Admissions 2026-27 Batch", date: "AUG 20, 2026", isNew: true, link: "/admissions/apply" },
-    { title: "Annual Aviation & Hotel Management Examination Schedule Announced", date: "AUG 18, 2026", isNew: true, link: "/news" },
-    { title: "5-Star Hotel Internship Placement Drive for SDHM Final Year", date: "AUG 12, 2026", isNew: false, link: "/placements" },
-    { title: "Aviation Cabin Crew Mock Drill & Safety Workshop", date: "AUG 05, 2026", isNew: false, link: "/campus" },
-    { title: "Annual Culinary Fest & Mocktail Competition Registration", date: "JUL 28, 2026", isNew: false, link: "/campus" },
-  ];
-
-  const calendarsList = [
-    { title: "SDHM & BHM Academic Calendar 2026-27", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "Aviation Management Term II Calendar", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "Vocational & Certificate Internship Timetable 2026", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "Examinations & Practical Evaluation Schedule", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "Industrial Exposure Training Calendar", date: "DOWNLOAD PDF", link: "/programmes" },
-    { title: "Annual Campus Sports & Cultural Week", date: "DOWNLOAD PDF", link: "/programmes" },
-  ];
-
-  const curriculumList = [
-    { title: "SDHM Hotel Management — course structure (R26)", link: "/programmes/sdhm" },
-    { title: "SDAM Aviation Management — course structure (R26)", link: "/programmes/sdam" },
-  ];
-
-  const syllabusList = [
-    { title: "Hospitality Management (BHM) — syllabus (R26)", link: "/programmes/bhm" },
-    { title: "Aviation Management (BBA) — syllabus (R26)", link: "/programmes/bba-aviation" },
-    { title: "BCA Data Science & AI — syllabus (R26)", link: "/programmes/bca-ds-ai" },
-    { title: "Master of Business Administration (MBA) — syllabus (R26)", link: "/programmes/mba" },
-  ];
 
   const whyChooseUsCards = [
     {
@@ -120,20 +92,14 @@ export default function Home() {
     { name: "Culinary Labs", icon: Utensils },
     { name: "Aviation Cabin", icon: Plane },
     { name: "Front Office Suite", icon: Hotel },
-    { name: "Housekeeping Lab", icon: Heart },
-    { name: "Library & IT", icon: BookOpen },
     { name: "Student Amenities", icon: Coffee }
   ];
 
   const allFacilities = [
-    { title: "Commercial Training Kitchen", category: "Culinary Labs", image: "/images/hotel-management-content-1.jpg", desc: "Advanced multi-station commercial kitchen for culinary training." },
+    { title: "Front Office Reception Suite", category: "Front Office Suite", image: "/images/hotel-management-content-1.jpg", desc: "Opera PMS software workstations and simulated hotel reception." },
     { title: "Flight Cabin Mockup Studio", category: "Aviation Cabin", image: "/images/www.mysumedha (561).jpg", desc: "Simulated aircraft flight cabin for cabin crew emergency drills." },
-    { title: "Front Office Reception Suite", category: "Front Office Suite", image: "/images/www.mysumedha (558).jpg", desc: "Opera PMS software workstations and simulated hotel reception." },
-    { title: "Model Guest Room Lab", category: "Housekeeping Lab", image: "/images/WhatsApp Image 2026-06-06 at 12.11.59.jpeg", desc: "5-star luxury model suite for housekeeping & laundry operations." },
-    { title: "Digital Library & E-Learning", category: "Library & IT", image: "/images/WhatsApp Image 2026-05-06 at 9.59.28 AM.jpeg", desc: "Quiet study zones, hospitality journals, and high-speed e-library." },
-    { title: "Mock Bar & Beverage Lab", category: "Culinary Labs", image: "/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg", desc: "Mixology & beverage service lab for flair bartending and sommelier skills." },
-    { title: "Student Cafeteria & Lounge", category: "Student Amenities", image: "/images/WhatsApp Image 2026-06-06 at 12.12.51 (1).jpeg", desc: "Hygienic campus cafeteria serving nutritious meals and coffee." },
-    { title: "Air-Conditioned Classrooms", category: "Student Amenities", image: "/images/IMG_9009.JPG", desc: "Smart interactive AV classrooms with ergonomic seating." }
+    { title: "Commercial Training Kitchen", category: "Culinary Labs", image: "/images/commercial-training-kitchen.jpg", desc: "Advanced multi-station commercial kitchen for culinary training." },
+    { title: "Air-Conditioned Classrooms", category: "Student Amenities", image: "/images/air-conditioned-classrooms.jpg", desc: "Smart interactive AV classrooms with ergonomic seating." }
   ];
 
   const filteredFacilities = activeFacilityTab === "All" 
@@ -156,7 +122,7 @@ export default function Home() {
       type: "Featured Campus Event", 
       category: "Culinary Arts", 
       mediaType: "image", 
-      src: "/images/hotel-management-content-1.jpg" 
+      src: "/images/annual-culinary-competition.jpg" 
     },
     { 
       title: "IndiGo & Qatar Airways Campus Recruitment Drive", 
@@ -351,165 +317,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. NOTICES & ACADEMIC RESOURCES (WITH MARQUEE SCROLL & LIVE ANIMATION) */}
-      <section className="py-24 bg-gradient-to-b from-[#f0f7ff] via-[#e0f2fe] to-[#f0f7ff] border-y border-sky-100 relative overflow-hidden">
-        <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#0284c7] block mb-2">
-              — STAY UPDATED —
-            </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-black text-[#0B2A68] leading-tight">
-              Notices & <span className="text-[#d9a441]">Academic Resources</span>
-            </h2>
-            <p className="text-slate-600 text-xs md:text-sm mt-2 font-medium">
-              Latest notices, calendars, curriculum and downloadable academic resources.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            {/* Card 1: Notice Board (With Live Blinking Indicator & Auto-Scroll Ticker) */}
-            <div className="bg-white p-7 rounded-[32px] border border-slate-100 shadow-2xl hover:shadow-sky-400/20 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#0B2A68] text-white rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <Megaphone className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-serif font-bold text-lg text-[#0B2A68] leading-tight">Notice Board</h3>
-                        <span className="relative flex h-2.5 w-2.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                        </span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 font-medium">5 live notices</p>
-                    </div>
-                  </div>
-                  <Link href="/news" className="text-xs font-bold text-[#0284c7] hover:underline inline-flex items-center gap-1 group/link">
-                    View All <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-
-                {/* Vertical Auto-Scrolling Ticker Window */}
-                <div className="h-[270px] overflow-hidden relative group/ticker">
-                  <div className="space-y-3 animate-marquee-vertical">
-                    {[...noticesList, ...noticesList].map((n, idx) => (
-                      <div key={idx} className="p-3.5 bg-slate-100/70 rounded-2xl border border-slate-200/60 hover:bg-white hover:border-sky-300 hover:shadow-md transition-all duration-300 flex items-center justify-between text-xs text-slate-700">
-                        <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                          <FileText className="w-4 h-4 text-slate-400 shrink-0 group-hover:text-[#0284c7] transition-colors" />
-                          <Link href={n.link} className="font-semibold text-[#0B2A68] hover:text-[#0284c7] truncate">
-                            {n.title}
-                          </Link>
-                        </div>
-                        {n.isNew && (
-                          <span className="px-2 py-0.5 bg-gradient-to-r from-[#d9a441] to-[#ffe9b0] text-[#0B2A68] text-[8px] font-black uppercase rounded-md shadow-sm shrink-0 animate-pulse">
-                            NEW
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Academic Calendars */}
-            <div className="bg-white p-7 rounded-[32px] border border-slate-100 shadow-2xl hover:shadow-sky-400/20 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#0284c7] text-white rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <Calendar className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif font-bold text-lg text-[#0B2A68] leading-tight">Academic Calendars</h3>
-                      <p className="text-[11px] text-slate-400 font-medium">6 PDFs Available</p>
-                    </div>
-                  </div>
-                  <Link href="/programmes" className="text-xs font-bold text-[#0284c7] hover:underline inline-flex items-center gap-1 group/link">
-                    View All <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-
-                <div className="space-y-3">
-                  {calendarsList.map((c, idx) => (
-                    <div key={idx} className="p-3 bg-slate-100/70 rounded-2xl border border-slate-200/60 hover:bg-white hover:border-sky-300 hover:shadow-md transition-all duration-300 flex items-center justify-between text-xs group/item">
-                      <div className="flex items-center gap-2.5 min-w-0 pr-2">
-                        <Calendar className="w-4 h-4 text-[#0284c7] shrink-0 group-hover/item:scale-110 transition-transform" />
-                        <span className="font-semibold text-[#0B2A68] truncate">{c.title}</span>
-                      </div>
-                      <Link href={c.link} className="text-slate-400 group-hover/item:text-[#0284c7] group-hover/item:translate-y-0.5 transition-all shrink-0">
-                        <Download className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3: Curriculum & Syllabus */}
-            <div className="bg-white p-7 rounded-[32px] border border-slate-100 shadow-2xl hover:shadow-sky-400/20 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
-              <div>
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#d9a441] text-[#0B2A68] rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                      <BookOpen className="w-5 h-5 text-[#0B2A68]" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif font-bold text-lg text-[#0B2A68] leading-tight">Curriculum & Syllabus</h3>
-                      <p className="text-[11px] text-slate-400 font-medium">6 PDFs Available</p>
-                    </div>
-                  </div>
-                  <Link href="/programmes" className="text-xs font-bold text-[#0284c7] hover:underline inline-flex items-center gap-1 group/link">
-                    View All <ChevronRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-
-                {/* Sub-Header 1: CURRICULUM */}
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-2 block">
-                  CURRICULUM
-                </span>
-                <div className="space-y-2 mb-4">
-                  {curriculumList.map((item, idx) => (
-                    <div key={idx} className="p-2.5 bg-slate-100/70 rounded-2xl border border-slate-200/60 hover:bg-white hover:border-sky-300 hover:shadow-md transition-all duration-300 flex items-center justify-between text-xs group/item">
-                      <div className="flex items-center gap-2 min-w-0 pr-2">
-                        <FileText className="w-4 h-4 text-[#0284c7] shrink-0 group-hover/item:scale-110 transition-transform" />
-                        <span className="font-semibold text-[#0B2A68] truncate">{item.title}</span>
-                      </div>
-                      <Link href={item.link} className="text-slate-400 group-hover/item:text-[#0284c7] group-hover/item:translate-y-0.5 transition-all shrink-0">
-                        <Download className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Sub-Header 2: SYLLABUS */}
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-2 block">
-                  SYLLABUS
-                </span>
-                <div className="space-y-2">
-                  {syllabusList.map((item, idx) => (
-                    <div key={idx} className="p-2.5 bg-slate-100/70 rounded-2xl border border-slate-200/60 hover:bg-white hover:border-sky-300 hover:shadow-md transition-all duration-300 flex items-center justify-between text-xs group/item">
-                      <div className="flex items-center gap-2 min-w-0 pr-2">
-                        <BookOpen className="w-4 h-4 text-[#0284c7] shrink-0 group-hover/item:scale-110 transition-transform" />
-                        <span className="font-semibold text-[#0B2A68] truncate">{item.title}</span>
-                      </div>
-                      <Link href={item.link} className="text-slate-400 group-hover/item:text-[#0284c7] group-hover/item:translate-y-0.5 transition-all shrink-0">
-                        <Download className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* 5. OUR FACULTY / WHY CHOOSE US (DEEP NAVY WITH 4 CREAM CARDS - EXACT SCREENSHOT 2 MATCH) */}
       <section className="bg-[#04173d] text-white py-24 shadow-2xl relative overflow-hidden">
@@ -716,7 +523,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" 
                     alt="Diamond Park Campus Building" 
-                    className="w-full h-full object-cover object-[center_20%] transform -rotate-45 scale-[1.42] group-hover:scale-[1.55] transition-transform duration-500" 
+                    className="w-full h-full object-cover object-[center_20%] transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -725,7 +532,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-06-06 at 12.12.44.jpeg" 
                     alt="Fairfield Marriott Industrial Visit" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -734,7 +541,7 @@ export default function Home() {
                   <img 
                     src="/images/www.mysumedha (561).jpg" 
                     alt="Aviation Flight Cabin Mockup" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -743,7 +550,7 @@ export default function Home() {
                   <img 
                     src="/images/hotel-management-content-1.jpg" 
                     alt="Culinary Arts Training Lab" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -752,7 +559,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-07-07 at 18.32.44.jpeg" 
                     alt="Center Placeholder" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45]" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42]" 
                   />
                 </div>
 
@@ -761,7 +568,7 @@ export default function Home() {
                   <img 
                     src="/images/IMG_9009.JPG" 
                     alt="Interactive AV Smart Classroom" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -770,7 +577,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-05-06 at 9.59.05 AM.jpeg" 
                     alt="Airport Practical Training" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -779,7 +586,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-05-06 at 9.59.37 AM (1).jpeg" 
                     alt="Sumedha Cultural Celebrations" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -788,7 +595,7 @@ export default function Home() {
                   <img 
                     src="/images/WhatsApp Image 2026-05-06 at 9.57.32 AM.jpeg" 
                     alt="Hospitality Service Practicals" 
-                    className="w-full h-full object-cover transform -rotate-45 scale-[1.45] group-hover:scale-[1.6] transition-transform duration-500" 
+                    className="w-full h-full object-cover transform -rotate-45 scale-[1.42] group-hover:scale-[1.52] transition-transform duration-500" 
                   />
                 </div>
 
@@ -901,11 +708,13 @@ export default function Home() {
             {spotlightEvents.map((spot, idx) => (
               <div 
                 key={idx} 
-                className={`bg-white/10 backdrop-blur-md border border-white/20 shadow-xl group flex flex-col justify-between ${
-                  idx === 0 ? 'sm:col-span-2 rounded-[40px] sm:rounded-[50px] p-8' : 'rounded-3xl p-6'
+                className={`backdrop-blur-md rounded-3xl p-6 shadow-xl transition-all duration-300 group flex flex-col justify-between h-full ${
+                  idx === 0 
+                    ? 'bg-gradient-to-b from-white/[0.16] to-white/[0.08] border-2 border-[#d9a441]/70 shadow-2xl shadow-[#d9a441]/10 ring-1 ring-[#d9a441]/30 hover:border-[#d9a441]' 
+                    : 'bg-white/10 border border-white/20 hover:border-white/40 hover:bg-white/[0.14]'
                 }`}
               >
-                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-4 bg-slate-900">
+                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-4 bg-slate-900 shrink-0">
                   {spot.mediaType === "video" ? (
                     <video 
                       autoPlay 
@@ -934,10 +743,18 @@ export default function Home() {
                     {spot.mediaType === "video" && <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>}
                     {spot.category}
                   </span>
+                  {idx === 0 && (
+                    <span className="absolute top-3 right-3 px-2.5 py-0.5 bg-[#d9a441] text-[#0B2A68] text-[9px] font-black uppercase rounded-full shadow-md flex items-center gap-1">
+                      <Star className="w-2.5 h-2.5 fill-current" />
+                      Featured
+                    </span>
+                  )}
                 </div>
-                <div>
-                  <span className="text-[10px] font-extrabold text-[#d9a441] uppercase tracking-wider block mb-1">{spot.date} • {spot.type}</span>
-                  <h3 className="font-serif font-bold text-lg text-white mb-2 leading-snug group-hover:text-[#ffe9b0] transition-colors">{spot.title}</h3>
+                <div className="flex flex-col flex-grow justify-between">
+                  <div>
+                    <span className="text-[10px] font-extrabold text-[#d9a441] uppercase tracking-wider block mb-1">{spot.date} • {spot.type}</span>
+                    <h3 className="font-serif font-bold text-lg text-white mb-2 leading-snug group-hover:text-[#ffe9b0] transition-colors">{spot.title}</h3>
+                  </div>
                 </div>
               </div>
             ))}

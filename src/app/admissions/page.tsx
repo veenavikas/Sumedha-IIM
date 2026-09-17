@@ -30,7 +30,7 @@ export default function Admissions() {
         <div className="space-y-6 relative">
           {[
             { step: "01", title: "Choose Programme", desc: "Select from BHM, BBA Aviation, SDHM, SDAM, or Vocational programmes based on your career interest." },
-            { step: "02", title: "Fill Online Application", desc: "Complete the quick online application form with basic educational details." },
+            { step: "02", title: "Fill Online/Offline Application", desc: "Complete the quick online application form with basic educational details." },
             { step: "03", title: "Personal Counseling", desc: "Meet or call our admissions desk for personalized course guidance & enrollment setup." },
             { step: "04", title: "Document Submission", desc: "Submit 10th/12th marksheets, transfer certificate, and passport size photos." },
             { step: "05", title: "Seat Confirmation", desc: "Complete enrollment formalities to confirm your seat and receive your official orientation kit." }

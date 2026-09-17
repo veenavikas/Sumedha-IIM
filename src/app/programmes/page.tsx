@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import CourseCard from "@/components/ui/CourseCard";
 import CTAStrip from "@/components/ui/CTAStrip";
@@ -17,9 +18,34 @@ const categories = [
 
 type CategoryType = typeof categories[number]["id"];
 
-export default function Programmes() {
-  const [activeTab, setActiveTab] = useState<CategoryType>("All");
+function ProgrammesContent() {
+  const searchParams = useSearchParams();
   
+  const getInitialCategory = (): CategoryType => {
+    const param = searchParams.get("category");
+    if (param) {
+      const matched = categories.find(
+        (cat) => cat.id.toLowerCase() === param.toLowerCase()
+      );
+      if (matched) return matched.id;
+    }
+    return "All";
+  };
+
+  const [activeTab, setActiveTab] = useState<CategoryType>(getInitialCategory);
+
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      const matched = categories.find(
+        (cat) => cat.id.toLowerCase() === categoryParam.toLowerCase()
+      );
+      if (matched) {
+        setActiveTab(matched.id);
+      }
+    }
+  }, [searchParams]);
+
   const filteredCourses = activeTab === "All" 
     ? coursesData 
     : coursesData.filter(c => c.category === activeTab);
@@ -61,5 +87,17 @@ export default function Programmes() {
 
       <CTAStrip />
     </div>
+  );
+}
+
+export default function Programmes() {
+  return (
+    <Suspense fallback={
+      <div className="flex justify-center items-center min-h-[400px]">
+        <div className="text-sky-800 font-bold text-sm">Loading programmes...</div>
+      </div>
+    }>
+      <ProgrammesContent />
+    </Suspense>
   );
 }
