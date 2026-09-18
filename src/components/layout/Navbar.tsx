@@ -92,11 +92,11 @@ export default function Navbar() {
         <div className="max-w-[1500px] mx-auto flex items-center justify-between gap-6">
           
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center group shrink-0">
+          <Link href="/" className="flex items-center group shrink-0 py-1">
             <img 
               src="/images/sumedha-full-logo.png" 
               alt="Sumedha International Institute of Hospitality & Management" 
-              className="h-12 sm:h-16 lg:h-20 w-auto max-w-[280px] sm:max-w-[420px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-14 sm:h-20 lg:h-24 xl:h-28 w-auto max-w-[320px] sm:max-w-[460px] lg:max-w-[540px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
             />
           </Link>
 
@@ -236,7 +236,7 @@ export default function Navbar() {
           {/* Mobile Header Bar */}
           <div className="lg:hidden flex items-center justify-between w-full py-2">
             <div className="flex items-center gap-2">
-              <img src="/images/sumedha-full-logo.png" alt="Sumedha Logo" className="h-8 w-auto object-contain" />
+              <img src="/images/sumedha-full-logo.png" alt="Sumedha Logo" className="h-10 sm:h-12 w-auto object-contain" />
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
