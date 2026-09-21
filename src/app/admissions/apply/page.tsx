@@ -1,15 +1,16 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { X, Sparkles } from "lucide-react";
+import { X, Sparkles, AlertCircle, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import coursesData from "@/data/courses.json";
-import emailjs from '@emailjs/browser';
+import { sendContactEnquiry } from "@/lib/emailjs";
 
 export default function Apply() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const form = useRef<HTMLFormElement>(null);
   const router = useRouter();
 
@@ -22,21 +23,33 @@ export default function Apply() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.current) return;
+    if (!form.current || isSubmitting) return;
 
     setIsSubmitting(true);
+    setErrorMessage("");
 
     try {
-      await emailjs.sendForm(
-        'service_5idndue',
-        'template_et5of67',
-        form.current,
-        'TdpD25IKOoMCpPrze'
-      );
+      const formData = new FormData(form.current);
+      const firstName = formData.get("firstName")?.toString() || "";
+      const lastName = formData.get("lastName")?.toString() || "";
+      const email = formData.get("email")?.toString() || "";
+      const phone = formData.get("phone")?.toString() || "";
+      const course = formData.get("course")?.toString() || "";
+      const qualification = formData.get("qualification")?.toString() || "";
+      const notes = formData.get("notes")?.toString() || "";
+
+      await sendContactEnquiry({
+        name: `${firstName} ${lastName}`.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        title: `Admissions Application: ${course}`,
+        message: `Highest Qualification: ${qualification}\nAdditional Notes / Queries: ${notes || "None"}`,
+      });
+
       router.push('/thank-you');
     } catch (error) {
       console.error('FAILED...', error);
-      alert('Failed to send application. Please try again later.');
+      setErrorMessage('Failed to send application. Please call our admission helpline at +91 8886 197 778 or try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -94,6 +107,16 @@ export default function Apply() {
             <h2 className="text-2xl font-black text-[#0b2a68]">Student Admission Application</h2>
           </div>
 
+          {errorMessage && (
+            <div className="mb-6 p-4 bg-rose-50 border border-rose-200 text-rose-800 rounded-2xl flex items-start gap-3 animate-in fade-in duration-300">
+              <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+              <div>
+                <p className="font-bold text-sm">Submission Error</p>
+                <p className="text-xs text-rose-700 mt-0.5">{errorMessage}</p>
+              </div>
+            </div>
+          )}
+
           <form ref={form} onSubmit={handleSubmit} className="space-y-6">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -141,9 +164,16 @@ export default function Apply() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 bg-gradient-to-r from-[#0b2a68] to-[#0284c7] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:shadow-sky-glow transition-all"
+              className="w-full py-4 bg-gradient-to-r from-[#0b2a68] to-[#0284c7] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:shadow-sky-glow transition-all disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {isSubmitting ? "Submitting Application..." : "Submit Online Application"}
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Submitting Application...</span>
+                </>
+              ) : (
+                <span>Submit Online Application</span>
+              )}
             </button>
           </form>
         </div>
