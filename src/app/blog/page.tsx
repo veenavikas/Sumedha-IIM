@@ -10,6 +10,36 @@ import { useEffect, useState } from "react";
 export default function Blog() {
   const allBlogPosts = [
     {
+      id: 8,
+      title: "How Much Does It Cost to Study Hotel Management in Vizag? A Complete Fee Guide",
+      date: "September 25, 2026",
+      excerpt: "Planning to study hotel management in Vizag? Discover tuition fees, training expenses, hostel charges, EMI options, and hidden costs to budget smartly.",
+      category: "Hospitality Careers",
+      author: "Sumedha IIM",
+      slug: "hotel-management-fees-in-vizag",
+      image: "/images/hotel-management-fees-vizag-hero.jpg"
+    },
+    {
+      id: 7,
+      title: "Hotel Management Career Options After 12th in India: What Can You Do After BHM?",
+      date: "September 15, 2026",
+      excerpt: "Discover career options after Hotel Management in India. Explore paths in hotels, culinary, events, airlines, cruise lines, and BHM scope after 12th.",
+      category: "Hospitality Careers",
+      author: "Sumedha IIM",
+      slug: "hotel-management-career-options-after-12th",
+      image: "/images/hotel-management-career-options-hero.jpg"
+    },
+    {
+      id: 6,
+      title: "BBA Aviation Career Options: What Can You Do After Graduation?",
+      date: "September 5, 2026",
+      excerpt: "Explore top BBA Aviation career options after 12th in India. Learn about airport operations, airline management, ground handling, cargo logistics, and salary trends.",
+      category: "Aviation Careers",
+      author: "Sumedha IIM",
+      slug: "bba-aviation-career-options-after-graduation",
+      image: "/images/bba-aviation-career-options-hero.jpg"
+    },
+    {
       id: 5,
       title: "Sumedha IIM vs Other Hotel Management Colleges in Vizag: What to Actually Compare",
       date: "August 20, 2026",
