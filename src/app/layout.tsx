@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.png',
   },
+  verification: {
+    google: "JzvO1HhCMt_IowxRxztLiLtO9I3WEa4hUzd1HkgPWOk",
+  },
   openGraph: {
     title: "Sumedha IIM Visakhapatnam",
     description: "Visakhapatnam's Gateway to Aviation & Hospitality Careers.",
